@@ -1,0 +1,2710 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>autocreditco documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">autocreditco documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Interfaces</li>
+  <li class="breadcrumb-item"
+  >
+  FilterFormData</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/components/search/search.component.ts</code>
+        </p>
+
+
+
+
+        <section data-compodoc="block-index">
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#_id" 
+>
+                                            _id
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#button" 
+>
+                                            button
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#collapsed" 
+>
+                                            collapsed
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#data" 
+>
+                                            data
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#default_hide" 
+>
+                                            default_hide
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#dependant" 
+>
+                                            dependant
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#dependant_field" 
+>
+                                            dependant_field
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#error" 
+>
+                                            error
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#format" 
+>
+                                            format
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#name" 
+>
+                                            name
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#operation" 
+>
+                                            operation
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#search" 
+>
+                                            search
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#searchDependant" 
+>
+                                            searchDependant
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#select" 
+>
+                                            select
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#temp" 
+>
+                                            temp
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#temp_hide" 
+>
+                                            temp_hide
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#type" 
+>
+                                            type
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section data-compodoc="block-properties">
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="_id"></a>
+                                        <span class="name "><b>_id</b>
+                                            <a href="#_id">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>_id:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="button"></a>
+                                        <span class="name "><b>button</b>
+                                            <a href="#button">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>button:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="collapsed"></a>
+                                        <span class="name "><b>collapsed</b>
+                                            <a href="#collapsed">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>collapsed:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="data"></a>
+                                        <span class="name "><b>data</b>
+                                            <a href="#data">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>data:         <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="default_hide"></a>
+                                        <span class="name "><b>default_hide</b>
+                                            <a href="#default_hide">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>default_hide:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="dependant"></a>
+                                        <span class="name "><b>dependant</b>
+                                            <a href="#dependant">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>dependant:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="dependant_field"></a>
+                                        <span class="name "><b>dependant_field</b>
+                                            <a href="#dependant_field">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>dependant_field:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="error"></a>
+                                        <span class="name "><b>error</b>
+                                            <a href="#error">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>error:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="format"></a>
+                                        <span class="name "><b>format</b>
+                                            <a href="#format">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>format:     <code>string | undefined</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>string | undefined</code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="name"></a>
+                                        <span class="name "><b>name</b>
+                                            <a href="#name">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>name:     <code>literal type</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>literal type</code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="operation"></a>
+                                        <span class="name "><b>operation</b>
+                                            <a href="#operation">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>operation:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="search"></a>
+                                        <span class="name "><b>search</b>
+                                            <a href="#search">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>search:         <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="searchDependant"></a>
+                                        <span class="name "><b>searchDependant</b>
+                                            <a href="#searchDependant">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>searchDependant:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="select"></a>
+                                        <span class="name "><b>select</b>
+                                            <a href="#select">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>select:         <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="temp"></a>
+                                        <span class="name "><b>temp</b>
+                                            <a href="#temp">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>temp:         <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="temp_hide"></a>
+                                        <span class="name "><b>temp_hide</b>
+                                            <a href="#temp_hide">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>temp_hide:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="type"></a>
+                                        <span class="name "><b>type</b>
+                                            <a href="#type">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>type:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, Inject, NgZone, OnInit, PLATFORM_ID, ViewEncapsulation } from &#x27;@angular/core&#x27;;
+import { CommonModule, isPlatformBrowser, NgOptimizedImage } from &#x27;@angular/common&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from &#x27;@angular/forms&#x27;;
+
+// custom service
+import { HttpService } from &#x27;../../utilities/services/http.service&#x27;;
+import { LocalStorageService } from &#x27;../../utilities/services/local-storage.service&#x27;;
+
+// primeng
+import { SelectItem, ConfirmationService, MessageService } from &#x27;primeng/api&#x27;;
+import { ButtonModule } from &#x27;primeng/button&#x27;;
+import { DividerModule } from &#x27;primeng/divider&#x27;;
+import { DropdownModule, DropdownChangeEvent } from &#x27;primeng/dropdown&#x27;;
+import { InputTextModule } from &#x27;primeng/inputtext&#x27;;
+import { InputSwitchChangeEvent, InputSwitchModule } from &#x27;primeng/inputswitch&#x27;;
+import { ChipModule } from &#x27;primeng/chip&#x27;;
+import { KeyFilterModule } from &#x27;primeng/keyfilter&#x27;;
+import { SkeletonModule } from &#x27;primeng/skeleton&#x27;;
+import { PaginatorModule } from &#x27;primeng/paginator&#x27;;
+import { DialogModule } from &#x27;primeng/dialog&#x27;;
+import { ConfirmDialogModule } from &#x27;primeng/confirmdialog&#x27;;
+import { ToastModule } from &#x27;primeng/toast&#x27;;
+import { TooltipModule } from &#x27;primeng/tooltip&#x27;;
+import { AvatarModule } from &#x27;primeng/avatar&#x27;;
+import { TabViewModule } from &#x27;primeng/tabview&#x27;;
+
+// geo lib
+import { getPreciseDistance } from &#x27;geolib&#x27;;
+import { PanelModule } from &#x27;primeng/panel&#x27;;
+
+// responsive
+import { BreakpointObserver, LayoutModule } from &#x27;@angular/cdk/layout&#x27;;
+import { fromEvent } from &#x27;rxjs&#x27;;
+import { CSVService } from &#x27;../../utilities/services/csv.service&#x27;;
+
+interface FilterFormData {
+  _id: string,
+  name: { label: string, value: string },
+  type: string,
+  format?: string | undefined, // check which type data user can write or enter
+  error?: string, // set error message
+  searchDependant?: string, // front-side set to operation in dependant element
+  dependant: boolean, // check dependant on any element
+  dependant_field: string, // get dependant field if dependant
+  default_hide: boolean, // check option default hide or not
+  temp_hide: boolean, // store option  default hide value
+  button?: boolean, // apply button to fetch data as per perticuler filter option
+  operation?: string, // add operator related perticular element condition
+  search?: any, // for search by input in list
+  temp?: any, // store temporary select value by 2 way
+  select?: any, // store final selection by query
+  data: any // detail about that perticular element
+  collapsed: boolean, // small device collapse state
+}
+
+@Component({
+  selector: &#x27;app-search&#x27;,
+  standalone: true,
+  imports: [CommonModule, FormsModule, ToastModule, NgOptimizedImage, TooltipModule, AvatarModule, TabViewModule, ReactiveFormsModule, ConfirmDialogModule, LayoutModule, DividerModule, InputTextModule, KeyFilterModule, ChipModule, PanelModule, DialogModule, PaginatorModule, InputSwitchModule, DropdownModule, ButtonModule, SkeletonModule],
+  templateUrl: &#x27;./search.component.html&#x27;,
+  styleUrl: &#x27;./search.component.scss&#x27;,
+  encapsulation: ViewEncapsulation.None,
+  providers: [ConfirmationService, MessageService],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class SearchComponent implements OnInit {
+
+  // car
+  arrAllCar: any &#x3D; undefined;
+
+  // city - postalcode
+  objOuterLocation &#x3D; { count: 0, make: &#x27;Car&#x27;, condition: &#x27;New &amp; Used&#x27;, city: &#x27;&#x27; };
+
+  // filter
+  groupedSortDefault: SelectItem[] | undefined;
+  dataPagination &#x3D; [15, 30, 50, 100];
+  strDefaultSort &#x3D; &#x27;default&#x27;;
+  page &#x3D; 0;
+  limit &#x3D; 15;
+
+  // filter
+  arrFilterForm: FilterFormData[] | undefined; // FilterFormData[]
+  arrFilterFormCopy: FilterFormData[] | undefined;
+  currentFilterData: FilterFormData | undefined;
+  selectedFilter: any;
+  isFilterLoading: boolean &#x3D; false;
+
+  regExPostalCode: RegExp &#x3D; /^[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ -]?\d[ABCEGHJ-NPRSTV-Z]\d$/i;  // regex for postal code
+  stateHomeDelivery: boolean &#x3D; false;
+
+  // mobile filter section
+  isMobileFilterDialogOpen: boolean &#x3D; false;
+  isMobileScreen &#x3D; this.breakpointObserver.isMatched(&#x27;(max-width: 599px)&#x27;);
+
+  // alert subscribe model
+  isAlertSubscribeDialogOpen: boolean &#x3D; false;
+
+  // form price &amp; list alert
+  formAlertListing &#x3D; new FormGroup({
+    email: new FormControl&lt;string | null&gt;(null, [Validators.required, Validators.email])
+  });
+
+  // form payment
+  formPayment &#x3D; new FormGroup({
+    min: new FormControl&lt;number | null&gt;(0, [Validators.required]),
+    max: new FormControl&lt;number | null&gt;(null, [Validators.required]),
+    frequency: new FormControl(&#x27;Bi-Weekly&#x27;),
+    term: new FormControl&lt;number | null&gt;(36),
+    down_payment: new FormControl&lt;number | null&gt;(0),
+    apr: new FormControl&lt;number | null&gt;(4.99),
+  });
+  objPaymentInfo: any &#x3D; {
+    term: [12, 24, 36, 48, 60, 72, 84, 96],
+    frequency: [&#x27;Weekly&#x27;, &#x27;Bi-Weekly&#x27;, &#x27;Monthly&#x27;],
+    apr: 8,
+    down_payment: 0,
+  };
+  isPaymenShowInSidebar: boolean &#x3D; false;
+
+  // handle selected filters data values on apply button or from list selection 
+  arrFilterQueryString: any &#x3D; [
+    { name: &#x27;Distance&#x27;, value: &#x27;national&#x27; },
+    { name: &#x27;condition&#x27;, value: [&#x27;new&#x27;, &#x27;used&#x27;] },
+    { name: &#x27;seller_type&#x27;, value: [&#x27;dealer&#x27;, &#x27;private_person&#x27;] }
+  ];
+
+  /**
+   * Constructor for the SearchComponent class.
+   * Initializes the component and sets up query parameter handling.
+   *
+   * @param router - Angular Router for navigation.
+   * @param ngZone - NgZone service for executing work outside of the Angular zone.
+   * @param route - ActivatedRoute service for accessing route parameters.
+   * @param httpService - Custom HTTP service for making API calls.
+   * @param cdRef - ChangeDetectorRef for manually triggering change detection.
+   * @param platformId - Injection token identifying the current platform.
+   * @param messageService - PrimeNG MessageService for displaying messages.
+   * @param breakpointObserver - BreakpointObserver for responsive design.
+   * @param localStorageService - Custom service for interacting with local storage.
+   * @param confirmationService - PrimeNG ConfirmationService for displaying confirmation dialogs.
+   */
+  constructor(
+    private readonly router: Router,
+    private readonly ngZone: NgZone,
+    private readonly route: ActivatedRoute,
+    private readonly csvService: CSVService,
+    private readonly httpService: HttpService,
+    private readonly cdRef: ChangeDetectorRef,
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private readonly messageService: MessageService,
+    private readonly breakpointObserver: BreakpointObserver,
+    private readonly localStorageService: LocalStorageService,
+    private readonly confirmationService: ConfirmationService,
+  ) {
+    this.route.queryParams.subscribe(params &#x3D;&gt; {
+      if (params &amp;&amp; Object.keys(params).length &gt; 0) {
+        this.arrFilterQueryString &#x3D; [];
+        const paramsObject &#x3D; Object.keys(params);
+        paramsObject.forEach(async key &#x3D;&gt; {
+          if ([&#x27;condition&#x27;, &#x27;seller_type&#x27;, &#x27;body_type&#x27;].includes(key)) {
+            this.arrFilterQueryString.push({ name: key, value: params[key].split(&#x27;,&#x27;) })
+          } else if (key &#x3D;&#x3D;&#x3D; &#x27;code&#x27;) {
+            const code &#x3D; params[key].match(/.{1,3}/g).join(&#x27; &#x27;).toUpperCase().trim();
+            // find address by postal code using google map
+            const response: any &#x3D; await this.httpService.getWithOutsideURL(&#x60;https://geogratis.gc.ca/services/geolocation/en/locate?q&#x3D;${code.trim()}&#x60;);
+            const newLocation &#x3D; {
+              lat: response[0].geometry.coordinates[1],
+              lng: response[0].geometry.coordinates[0]
+            };
+            this.localStorageService.setObject(&#x27;location&#x27;, newLocation);
+            this.localStorageService.set(&#x27;code&#x27;, code);
+            this.arrFilterQueryString.push({ name: key, value: code })
+          } else {
+            // prevent to store finance data
+            if ([&#x27;amount&#x27;, &#x27;apr&#x27;, &#x27;term&#x27;, &#x27;dp&#x27;].includes(key)) return
+            this.arrFilterQueryString.push({ name: key, value: params[key] });
+          }
+        });
+        if (paramsObject.includes(&#x27;amount&#x27;)) {
+          this.formPayment.patchValue({
+            min: 0,
+            max: Number(params[&#x27;amount&#x27;]),
+            apr: Number(params[&#x27;apr&#x27;]),
+            frequency: &#x27;Monthly&#x27;,
+            term: Number(params[&#x27;term&#x27;]),
+            down_payment: Number(params[&#x27;dp&#x27;])
+          });
+          this.isPaymenShowInSidebar &#x3D; true;
+        }
+        if (!paramsObject.includes(&#x27;condition&#x27;)) {
+          this.arrFilterQueryString.push({ name: &#x27;condition&#x27;, value: [&#x27;new&#x27;, &#x27;used&#x27;] });
+        }
+        if (!paramsObject.includes(&#x27;seller_type&#x27;)) {
+          this.arrFilterQueryString.push({ name: &#x27;seller_type&#x27;, value: [&#x27;dealer&#x27;, &#x27;private_person&#x27;] });
+        }
+      } else {
+        // set query parameter for future referance
+        const query &#x3D; this.localStorageService.getObject(&#x27;query&#x27;);
+        if (query) {
+          this.arrFilterQueryString &#x3D; JSON.parse(query)
+        }
+      }
+    });
+  }
+
+
+  /**
+   * Initializes the component by setting up filters, handling page refresh on back button press,
+   * managing location data, and fetching car list data.
+   * 
+   * This method is called automatically when the component is initialized.
+   * It performs the following tasks:
+   * 1. Initializes filter values
+   * 2. Sets up a listener for the browser&#x27;s back button to refresh the page
+   * 3. Checks for existing location data and sets a default if none exists
+   * 4. Fetches the car list based on current filters
+   * 
+   * @returns A promise that resolves when all initialization tasks are complete
+   */
+  async ngOnInit(): Promise&lt;void&gt; {
+    // init filters 
+    await this.onInitValues();
+
+    // refresh page if user press back button for call api car list with previos query
+    fromEvent(window, &#x27;popstate&#x27;).subscribe((e) &#x3D;&gt; {
+      location.reload();
+    });
+
+    // check already have code then find data by filter
+    const code &#x3D; this.localStorageService.get(&#x27;code&#x27;);
+    if (!code) {
+      this.localStorageService.setObject(&#x27;location&#x27;, {
+        &quot;lat&quot;: 43.7594778,
+        &quot;lng&quot;: -79.5490934
+      });
+    }
+
+    // car list by filter
+    await this.getDataByFilter();
+  }
+
+  /**
+ * Initializes and sets up various values and configurations for the component.
+ * This includes setting up sort options, loading payment data, fetching and processing filter data,
+ * and applying any previously saved filter settings.
+ * 
+ * This method performs the following tasks:
+ * 1. Sets up the default sort options for the listing.
+ * 2. Loads and applies any saved payment data.
+ * 3. Fetches filter data from the API and processes it.
+ * 4. Applies any previously saved filter settings from the query string.
+ * 5. Sets up dependencies between different filter options.
+ * 6. Handles special cases for certain filter types (e.g., location, condition, seller type, make, model).
+ * 
+ * @async
+ * @returns {Promise&lt;void&gt;} A promise that resolves when all initialization tasks are complete.
+ */
+  async onInitValues(): Promise&lt;void&gt; {
+    // fetch make option from API
+    this.groupedSortDefault &#x3D; [
+      {
+        label: &#x27;Default&#x27;,
+        value: &#x27;default&#x27;,
+      },
+      {
+        label: &#x27;Price: Low to High&#x27;,
+        value: &#x27;price_low_to_high&#x27;,
+      },
+      {
+        label: &#x27;Price: High to Low&#x27;,
+        value: &#x27;price_high_to_low&#x27;,
+      },
+      {
+        label: &#x27;Posted Date: New to old&#x27;,
+        value: &#x27;posted_date_new_to_old&#x27;,
+      },
+      {
+        label: &#x27;Posted Date: Old to New&#x27;,
+        value: &#x27;posted_date_old_to_new&#x27;,
+      },
+      {
+        label: &#x27;Kilometeres: Low to High&#x27;,
+        value: &#x27;kilometeres_low_to_high&#x27;,
+      },
+      {
+        label: &#x27;Kilometeres: High to Low&#x27;,
+        value: &#x27;kilometeres_high_to_low&#x27;,
+      },
+      {
+        label: &#x27;Year: New to Old&#x27;,
+        value: &#x27;year_new_to_old&#x27;,
+      },
+      {
+        label: &#x27;Year: Old to New&#x27;,
+        value: &#x27;year_old_to_new&#x27;,
+      },
+      {
+        label: &#x27;Nearest Location&#x27;,
+        value: &#x27;nearest_location&#x27;,
+        disabled: this.localStorageService.getObject(&#x27;location&#x27;) ? false : true
+      },
+    ];
+
+    // set payment in form and finance
+    const payment &#x3D; this.localStorageService.getObject(&#x27;payment&#x27;);
+    if (payment) {
+      this.formPayment.patchValue(payment);
+      this.isPaymenShowInSidebar &#x3D; true;
+    }
+
+    // set selected filter
+    this.ngZone.runOutsideAngular(async () &#x3D;&gt; {
+
+      // get filters from api
+      this.arrFilterForm &#x3D; (await this.httpService.get(&#x27;filter&#x27;) as any).data.sort((a: any, b: any) &#x3D;&gt; a.position - b.position);
+
+      // reomve features from filter array
+      this.arrFilterForm &#x3D; this.arrFilterForm?.filter((ele: any) &#x3D;&gt; ele.name.value !&#x3D;&#x3D; &#x27;features&#x27;);
+      this.arrFilterForm?.forEach((element: any) &#x3D;&gt; {
+        if ([&#x27;location&#x27;, &#x27;year&#x27;, &#x27;features&#x27;, &#x27;mileage&#x27;, &#x27;asking_price&#x27;].includes(element.name.value)) return
+        element.data?.sort((a: any, b: any) &#x3D;&gt; a.value.localeCompare(b.value));
+      });
+      this.arrFilterFormCopy &#x3D; JSON.parse(JSON.stringify(this.arrFilterForm));
+
+      // manage hide and show filter section
+      this.arrFilterForm?.forEach(async (element: FilterFormData) &#x3D;&gt; {
+
+        // small device collapse state
+        element.collapsed &#x3D; false;
+
+        // check if section is dependant then on which element it&#x27;s depended and set child depend field in parent dependent
+        if (element.dependant) {
+          const selectFilterIndex &#x3D; this.arrFilterForm?.findIndex((eleDependant: any) &#x3D;&gt; element.dependant_field &#x3D;&#x3D;&#x3D; eleDependant.name.value);
+          this.arrFilterForm![selectFilterIndex!].searchDependant &#x3D; element.name.value;
+        }
+
+        // set default distance &amp; postal code if user added before
+        if (element.type &#x3D;&#x3D;&#x3D; &#x27;multi&#x27;) {
+          const eleCode &#x3D; element.data.find((ele: any) &#x3D;&gt; ele.name &#x3D;&#x3D;&#x3D; &#x27;Code&#x27;);
+          if (eleCode) {
+            const code &#x3D; this.localStorageService.get(&#x27;code&#x27;);
+            if (code) {
+              // set value in form filter panel
+              element.select &#x3D; true;
+              eleCode.select &#x3D; code;
+              eleCode.temp &#x3D; code;
+
+              // find city as per postal code from static CSV file
+              const csv: any &#x3D; await this.httpService.getWithOutsideURLCSV(&#x27;assets/csv/canadacities.csv&#x27;);
+              const city &#x3D; this.csvService.CSVToJSON(csv).find((city: any) &#x3D;&gt; city.postal?.includes(code?.split(&#x27; &#x27;)[0].toUpperCase())).city;
+              if (city) {
+                this.objOuterLocation.city &#x3D; &#x60;In ${city}&#x60;;
+              } else {
+                this.objOuterLocation.city &#x3D; &#x27;At Your Location&#x27;;
+              }
+
+              // if has already postal code then set temp hide true to show other options - reverse boolean condition
+              element.temp_hide &#x3D; true;
+            }
+          }
+
+          if (element.data.find((ele: any) &#x3D;&gt; ele.name &#x3D;&#x3D;&#x3D; &#x27;Distance&#x27;)) {
+            // check filter query has ditance element
+            const distance &#x3D; this.arrFilterQueryString.find((ele: any) &#x3D;&gt; ele.name &#x3D;&#x3D;&#x3D; &#x27;distance&#x27;);
+            const eleDistanceData &#x3D; element.data.find((ele: any) &#x3D;&gt; ele.name &#x3D;&#x3D;&#x3D; &#x27;Distance&#x27;);
+            element.select &#x3D; !!eleCode.select;
+            // if filter query found then set distance otherwise set default distance
+            eleDistanceData.select &#x3D; distance ? distance.value : &#x27;National&#x27;; // eleDistanceData.data[1].value
+            eleDistanceData.temp &#x3D; distance ? distance.value : &#x27;national&#x27;; // eleDistanceData.data[1].value
+          }
+        } else if (element.name.value &#x3D;&#x3D;&#x3D; &#x27;condition&#x27;) {
+          const defaultCondition &#x3D; [
+            {
+              &quot;label&quot;: &quot;New&quot;,
+              &quot;value&quot;: &quot;new&quot;,
+              &quot;checked&quot;: true
+            },
+            {
+              &quot;label&quot;: &quot;Used&quot;,
+              &quot;value&quot;: &quot;used&quot;,
+              &quot;checked&quot;: true
+            }
+          ];
+          const condition &#x3D; this.arrFilterQueryString.find((ele: any) &#x3D;&gt; ele.name &#x3D;&#x3D;&#x3D; &#x27;condition&#x27;)?.value;
+          // add selected option as chip in side panel
+          element.select &#x3D; condition?.map((ele: any) &#x3D;&gt; { return defaultCondition.find((element: any) &#x3D;&gt; element.value &#x3D;&#x3D;&#x3D; ele) }) || defaultCondition;
+          // mark checked in popup
+          element.data.forEach((ele: any) &#x3D;&gt; {
+            if (element.select.find((slt: any) &#x3D;&gt; slt.value &#x3D;&#x3D;&#x3D; ele.value)) {
+              ele.checked &#x3D; true;
+            }
+          });
+          // set temp hide so other option visible after make and model selected
+          element.temp_hide &#x3D; true;
+        } else if (element.name.value &#x3D;&#x3D;&#x3D; &#x27;seller_type&#x27;) {
+          const defaultSellerType &#x3D; [
+            {
+              &quot;label&quot;: &quot;Dealer&quot;,
+              &quot;value&quot;: &quot;dealer&quot;,
+              &quot;checked&quot;: true
+            },
+            {
+              &quot;label&quot;: &quot;Private Person&quot;,
+              &quot;value&quot;: &quot;private_person&quot;,
+              &quot;checked&quot;: true
+            }
+          ];
+          const seller_type &#x3D; this.arrFilterQueryString.find((ele: any) &#x3D;&gt; ele.name &#x3D;&#x3D;&#x3D; &#x27;seller_type&#x27;)?.value;
+          // add selected option as chip in side panel
+          element.select &#x3D; seller_type?.map((ele: any) &#x3D;&gt; { return defaultSellerType.find((element: any) &#x3D;&gt; element.value &#x3D;&#x3D;&#x3D; ele) }) || defaultSellerType;
+          // mark checked in popup
+          element.data.forEach((ele: any) &#x3D;&gt; {
+            if (element.select.find((slt: any) &#x3D;&gt; slt.value &#x3D;&#x3D;&#x3D; ele.value)) {
+              ele.checked &#x3D; true;
+            }
+          });
+          // set temp hide so other option visible after make and model selected
+          element.temp_hide &#x3D; true;
+        } else if (element.name.value &#x3D;&#x3D;&#x3D; &#x27;make&#x27;) {
+          // check make available in query string array
+          const make &#x3D; this.arrFilterQueryString.find((ele: any) &#x3D;&gt; ele.name &#x3D;&#x3D;&#x3D; &#x27;make&#x27;);
+          if (make) {
+            element.select &#x3D; make.value;
+            element.temp &#x3D; make.value;
+            element.temp_hide &#x3D; true;
+
+            // make model enable
+            const model &#x3D; this.arrFilterForm!.filter((ele: any) &#x3D;&gt; ele.name.value &#x3D;&#x3D;&#x3D; &#x27;model&#x27;);
+            model[0].default_hide &#x3D; false;
+
+            // find related models to make and set
+            const searchDependantData &#x3D; this.arrFilterFormCopy!.findIndex((element: any) &#x3D;&gt; element.name.value &#x3D;&#x3D;&#x3D; &#x27;model&#x27;);
+            const dependantData &#x3D; this.arrFilterFormCopy![searchDependantData].data.filter((element: any) &#x3D;&gt; element.join &#x3D;&#x3D;&#x3D; make.value);
+            this.arrFilterForm![searchDependantData].data &#x3D; dependantData;
+          }
+        } else if (element.name.value &#x3D;&#x3D;&#x3D; &#x27;model&#x27;) {
+          // check model available in query string array
+          const model &#x3D; this.arrFilterQueryString.find((ele: any) &#x3D;&gt; ele.name &#x3D;&#x3D;&#x3D; &#x27;model&#x27;);
+          if (model) {
+            element.select &#x3D; model.value;
+            element.temp &#x3D; model.value;
+            this.arrFilterForm?.forEach((element: any) &#x3D;&gt; element.default_hide &#x3D; false)
+          }
+        } else if (element.name.value &#x3D;&#x3D;&#x3D; &#x27;home_services&#x27;) {
+          // unhide from side panel
+          element.temp_hide &#x3D; true;
+
+          // check home service available in saved query
+          const home_services &#x3D; this.arrFilterQueryString.find((ele: any) &#x3D;&gt; ele.name &#x3D;&#x3D;&#x3D; &#x27;home_services&#x27;);
+          if (home_services) {
+            home_services.value.forEach((ele: any) &#x3D;&gt; {
+              // set in side panel
+              if (ele.value &#x3D;&#x3D;&#x3D; &#x27;home_delivery&#x27;) {
+                this.stateHomeDelivery &#x3D; true;
+                // this.onChangeHomeDelivery({ checked: true, originalEvent: {} as any })
+              }
+              const home_service &#x3D; element.data.find((element: any) &#x3D;&gt; element.value &#x3D;&#x3D;&#x3D; ele.value);
+              home_service!.checked &#x3D; true;
+              if (element.select) {
+                element.select.push(home_service);
+              } else {
+                element.select &#x3D; [home_service];
+              }
+            })
+          }
+        } else {
+          // check filter available in saved query
+          const filter &#x3D; this.arrFilterQueryString.find((ele: any) &#x3D;&gt; ele.name &#x3D;&#x3D;&#x3D; element.name.value);
+          if (filter &amp;&amp; element.type &#x3D;&#x3D;&#x3D; &#x27;checkbox&#x27;) {
+            filter.value.forEach((item: any) &#x3D;&gt; {
+              const home_service &#x3D; element.data.find((element: any) &#x3D;&gt; element.value &#x3D;&#x3D;&#x3D; item);
+              home_service!.checked &#x3D; true;
+              if (element.select) {
+                element.select.push(home_service);
+              } else {
+                element.select &#x3D; [home_service];
+              }
+            })
+          }
+          if (filter &amp;&amp; element.type &#x3D;&#x3D;&#x3D; &#x27;dropdown&#x27; &amp;&amp; element.name.value &#x3D;&#x3D;&#x3D; &#x27;year&#x27;) {
+            // set selected year in side panel
+            element.select &#x3D; true;
+            filter.value.forEach((item: any) &#x3D;&gt; {
+              const findFilterType &#x3D; element.data.find((element: any) &#x3D;&gt; element.name &#x3D;&#x3D;&#x3D; item.name);
+              if (findFilterType) {
+                findFilterType.temp &#x3D; item.value;
+                findFilterType.select &#x3D; item.value;
+              }
+            });
+          }
+          if (filter &amp;&amp; element.type &#x3D;&#x3D;&#x3D; &#x27;textbox&#x27; &amp;&amp; element.name.value &#x3D;&#x3D;&#x3D; &#x27;mileage&#x27;) {
+            // set selected mileage in side panel
+            element.select &#x3D; true;
+            filter.value.forEach((item: any) &#x3D;&gt; {
+              const findFilterType &#x3D; element.data.find((element: any) &#x3D;&gt; element.name &#x3D;&#x3D;&#x3D; item.name);
+              if (findFilterType) {
+                findFilterType.temp &#x3D; item.value;
+                findFilterType.select &#x3D; item.value + &#x27; km&#x27;;
+              }
+            });
+          }
+          if (filter &amp;&amp; element.type &#x3D;&#x3D;&#x3D; &#x27;textbox&#x27; &amp;&amp; element.name.value &#x3D;&#x3D;&#x3D; &#x27;asking_price&#x27;) {
+            // set selected price in side panel
+            element.select &#x3D; true;
+            filter.value.forEach((item: any) &#x3D;&gt; {
+              const findFilterType &#x3D; element.data.find((element: any) &#x3D;&gt; element.name &#x3D;&#x3D;&#x3D; item.name);
+              if (findFilterType) {
+                findFilterType.temp &#x3D; item.value;
+                findFilterType.select &#x3D; &#x27;$&#x27; + item.value;
+              }
+            });
+          }
+
+          element.temp_hide &#x3D; element.default_hide ?? false
+        }
+      });
+    });
+  }
+
+  /**
+   * Calculates the distance between the user&#x27;s location and each car&#x27;s location.
+   * This function updates the distance property of each car in the arrAllCar.data array.
+   * It only works if the user has given location permission and if running in a browser environment.
+   * 
+   * The function uses the getPreciseDistance function to calculate the distance,
+   * which is then rounded up to the nearest kilometer and appended with &#x27;KM&#x27;.
+   * 
+   * @remarks
+   * This function doesn&#x27;t take any parameters as it uses class properties and methods.
+   * It relies on the localStorageService to get the user&#x27;s location and isPlatformBrowser for environment check.
+   * 
+   * @returns {void} This function doesn&#x27;t return a value, it updates the arrAllCar.data array in place.
+   */
+  calculateDistance(): void {
+    // check user give location permission
+    const location &#x3D; this.localStorageService.getObject(&#x27;location&#x27;);
+    if (location) {
+      // set distance
+      if (this.arrAllCar?.data &amp;&amp; this.arrAllCar.data.length &gt; 0) {
+        // check it&#x27;s browser
+        if (isPlatformBrowser(this.platformId)) {
+          this.arrAllCar.data.map(async (element: any) &#x3D;&gt; {
+            // distance by library
+            element.distance &#x3D; Math.ceil(getPreciseDistance(
+              { latitude: location.lat, longitude: location.lng },
+              {
+                latitude: element.user.length &gt; 0 ? element.user[0].location.coordinates[1] : element.store.location.coordinates[1],
+                longitude: element.user.length &gt; 0 ? element.user[0].location.coordinates[0] : element.store.location.coordinates[0]
+              }
+            ) / 1000) + &#x27; KM&#x27;;
+          })
+        }
+      }
+    }
+  }
+
+
+  /**
+   * Checks if a &#x27;make&#x27; filter query exists in the current filter query string array.
+   * 
+   * This function searches the &#x60;arrFilterQueryString&#x60; array for an element with the name &#x27;make&#x27;.
+   * It&#x27;s typically used to determine if a car make has been selected in the filter options.
+   * 
+   * @returns {boolean} Returns true if a &#x27;make&#x27; filter query exists, false otherwise.
+   */
+  checkFilterQueryMakeExist(): boolean {
+    return !!this.arrFilterQueryString.find((ele: any) &#x3D;&gt; ele.name &#x3D;&#x3D;&#x3D; &#x27;make&#x27;);
+  }
+
+  /**
+   * Checks if both &#x27;make&#x27; and &#x27;model&#x27; filter queries exist in the current filter query string array.
+   * 
+   * This function searches the &#x60;arrFilterQueryString&#x60; array for elements with the names &#x27;make&#x27; and &#x27;model&#x27;.
+   * It&#x27;s typically used to determine if both a car make and model have been selected in the filter options.
+   * 
+   * @returns {boolean} Returns true if both &#x27;make&#x27; and &#x27;model&#x27; filter queries exist, false otherwise.
+   */
+  checkFilterQueryMakeModelExist(): boolean {
+    return !!this.arrFilterQueryString.find((ele: any) &#x3D;&gt; ele.name &#x3D;&#x3D;&#x3D; &#x27;make&#x27;) &amp;&amp;
+      !!this.arrFilterQueryString.find((ele: any) &#x3D;&gt; ele.name &#x3D;&#x3D;&#x3D; &#x27;model&#x27;);
+  }
+
+  /**
+   * Handles the change event of the sort option dropdown.
+   * This function sorts the array of cars (this.arrAllCar.data) based on the selected sort option.
+   * 
+   * @param event - The DropdownChangeEvent object containing information about the selected sort option.
+   * @param event.value - The value of the selected sort option. Possible values include:
+   *                      &#x27;price_low_to_high&#x27;, &#x27;price_high_to_low&#x27;, &#x27;kilometeres_low_to_high&#x27;,
+   *                      &#x27;kilometeres_high_to_low&#x27;, &#x27;year_old_to_new&#x27;, &#x27;year_new_to_old&#x27;,
+   *                      &#x27;posted_date_new_to_old&#x27;, &#x27;posted_date_old_to_new&#x27;, &#x27;nearest_location&#x27;, &#x27;default&#x27;.
+   * 
+   * @returns A Promise that resolves when the sorting operation is complete.
+   *          If the &#x27;default&#x27; option is selected, it triggers a new data fetch using getDataByFilter().
+   */
+  async onChangeSortOption(event: DropdownChangeEvent): Promise&lt;void&gt; {
+    if (event.value &#x3D;&#x3D;&#x3D; &#x27;price_low_to_high&#x27;) {
+      this.arrAllCar.data &#x3D; this.arrAllCar.data.sort((a: any, b: any) &#x3D;&gt; Number(a.asking_price) - Number(b.asking_price));
+    }
+    if (event.value &#x3D;&#x3D;&#x3D; &#x27;price_high_to_low&#x27;) {
+      this.arrAllCar.data &#x3D; this.arrAllCar.data.sort((a: any, b: any) &#x3D;&gt; Number(b.asking_price) - Number(a.asking_price));
+    }
+    if (event.value &#x3D;&#x3D;&#x3D; &#x27;kilometeres_low_to_high&#x27;) {
+      this.arrAllCar.data &#x3D; this.arrAllCar.data.sort((a: any, b: any) &#x3D;&gt; Number(a.odometer) - Number(b.odometer));
+    }
+    if (event.value &#x3D;&#x3D;&#x3D; &#x27;kilometeres_high_to_low&#x27;) {
+      this.arrAllCar.data &#x3D; this.arrAllCar.data.sort((a: any, b: any) &#x3D;&gt; Number(b.odometer) - Number(a.odometer));
+    }
+    if (event.value &#x3D;&#x3D;&#x3D; &#x27;year_old_to_new&#x27;) {
+      this.arrAllCar.data &#x3D; this.arrAllCar.data.sort((a: any, b: any) &#x3D;&gt; Number(a.year) - Number(b.year));
+    }
+    if (event.value &#x3D;&#x3D;&#x3D; &#x27;year_new_to_old&#x27;) {
+      this.arrAllCar.data &#x3D; this.arrAllCar.data.sort((a: any, b: any) &#x3D;&gt; Number(b.year) - Number(a.year));
+    }
+    if (event.value &#x3D;&#x3D;&#x3D; &#x27;posted_date_new_to_old&#x27;) {
+      this.arrAllCar.data &#x3D; this.arrAllCar.data.sort((a: any, b: any) &#x3D;&gt; new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+    }
+    if (event.value &#x3D;&#x3D;&#x3D; &#x27;posted_date_old_to_new&#x27;) {
+      this.arrAllCar.data &#x3D; this.arrAllCar.data.sort((b: any, a: any) &#x3D;&gt; new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+    }
+    if (event.value &#x3D;&#x3D;&#x3D; &#x27;nearest_location&#x27;) {
+      const location &#x3D; this.localStorageService.getObject(&#x27;location&#x27;);
+      if (location) {
+        this.arrAllCar.data.forEach((element: any) &#x3D;&gt; {
+          element.nearBy &#x3D; this.getDistanceFromLatLonInKm(location.lat, location.lng, element.store.location.lat, element.store.location.lng)
+        });
+        this.arrAllCar.data &#x3D; this.arrAllCar.data.sort((a: any, b: any) &#x3D;&gt; Number(a.nearBy) - Number(b.nearBy));
+      }
+    }
+    if (event.value &#x3D;&#x3D;&#x3D; &#x27;default&#x27;) {
+      await this.getDataByFilter();
+    }
+  }
+
+  /**
+   * Calculates the distance between two points on Earth given their latitude and longitude coordinates.
+   * This function uses the Haversine formula to compute the great-circle distance between two points on a sphere.
+   *
+   * @param userLat - The latitude of the user&#x27;s location in decimal degrees.
+   * @param userLong - The longitude of the user&#x27;s location in decimal degrees.
+   * @param dealerLat - The latitude of the dealer&#x27;s location in decimal degrees.
+   * @param dealerLng - The longitude of the dealer&#x27;s location in decimal degrees.
+   * @returns The distance between the two points in kilometers.
+   */
+  getDistanceFromLatLonInKm(userLat: number, userLong: number, dealerLat: number, dealerLng: number): number {
+    const earthRadius: number &#x3D; 6371; // Radius of the earth in km
+
+    const dLat &#x3D; Math.abs(userLat - dealerLat) * Math.PI / 180.0;
+    const dLon &#x3D; Math.abs(userLong - dealerLng) * Math.PI / 180.0;
+
+    // convert to radians
+    const lat &#x3D; (userLat) * Math.PI / 180.0;
+    const clat &#x3D; (dealerLat) * Math.PI / 180.0;
+
+    // apply formula
+    const a &#x3D; Math.pow(Math.sin(dLat / 2), 2) +
+      Math.pow(Math.sin(dLon / 2), 2) *
+      Math.cos(lat) *
+      Math.cos(clat);
+
+    const c &#x3D; 2 * Math.asin(Math.sqrt(a));
+    return earthRadius * c; // Distance in km
+  };
+
+  /**
+   * Validates a Canadian postal code and updates the error state of the associated element.
+   * 
+   * This function uses a regular expression to check if the given string is a valid
+   * Canadian postal code. If it is valid, any existing error on the element is cleared.
+   * If it&#x27;s invalid, an error message is set on the element.
+   * 
+   * @param postal - The postal code string to be validated.
+   * @param element - The form element or object associated with the postal code input.
+   *                  This object should have an &#x27;error&#x27; property that can be set or cleared.
+   * 
+   * @returns void This function doesn&#x27;t return a value, it updates the &#x27;error&#x27; property of the element.
+   */
+  checkPostalCode(postal: string, element: any): void {
+      const regex &#x3D; new RegExp(/^[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ][ ]?\d[ABCEGHJKLMNPRSTVWXYZ]\d$/i);
+      const isPostalCode &#x3D; regex.test(postal);
+      element.error &#x3D; isPostalCode ? undefined : &quot;Enter Valid Postal Code&quot;;
+  }
+
+  /**
+   * Converts a string to title case, replacing underscores with spaces.
+   * If a filter is provided, it attempts to find a matching label from the filter data.
+   *
+   * @param key - The string to be capitalized or the value to find in the filter data.
+   * @param filter - Optional. The name of the filter to search for a matching label.
+   * @returns The capitalized string, the matching label from the filter data, or undefined if no match is found or key is falsy.
+   */
+  replaceStringToCapitalize(key: any, filter?: any): string | undefined {
+    // get uppercase letter by label
+    if (filter) {
+      const filterExist &#x3D; this.arrFilterForm?.find((element: any) &#x3D;&gt; element.name.value &#x3D;&#x3D;&#x3D; filter);
+      if (filterExist) {
+        const labelFilter &#x3D; filterExist.data.find((element: any) &#x3D;&gt; element.value &#x3D;&#x3D;&#x3D; key);
+        return labelFilter.label
+      }
+    }
+
+    if (!key) return
+    return key.toLowerCase().replace(/_/g, &#x27; &#x27;).replace(/(?: |\b)(\w)/g, (key: string, p1: string) &#x3D;&gt; {
+      return key.toUpperCase();
+    })
+  }
+
+  /**
+   * Sorts an array of elements based on their &#x27;label&#x27; property in ascending order.
+   * 
+   * @param element - An array of objects, each containing a &#x27;label&#x27; property to be sorted.
+   * @returns A new array with the same elements sorted alphabetically by their &#x27;label&#x27; property.
+   */
+  sortPopupElementData(element: Array&lt;any&gt;): Array&lt;any&gt; {
+    return element.sort((a: any, b: any) &#x3D;&gt; (a.label &gt; b.label) ? 1 : ((a.label &gt; b.label) ? -1 : 0));
+  }
+
+  /**
+   * Searches for a specific car service within an array of services.
+   * 
+   * @param services - An array of service objects. Each object is expected to have an &#x27;alias&#x27; property.
+   * @param service - The alias of the service to search for.
+   * @returns The service object if found, or false if the service is not found or if the services array is empty or undefined.
+   */
+  findCarServices(services: any, service: string) {
+    return services &amp;&amp; services.length &gt; 0 ? services.find((srvc: any) &#x3D;&gt; srvc.alias &#x3D;&#x3D;&#x3D; service) : false;
+  }
+
+  /**
+   * Closes a filter popup by its ID and removes the blur effect from the filter section.
+   * 
+   * This function hides the specified popup by adding a &#x27;hidden&#x27; class to it,
+   * and removes the blur effect from the filter section by removing the
+   * &#x27;body-filter-popup&#x27; class.
+   *
+   * @param id - The ID of the popup element to be closed.
+   * @returns void
+   */
+  closeFilterPopUpByID(id: string): void {
+    // hide popup by add hidden class from element of popup
+    const currentPopup &#x3D; document.getElementById(id);
+    currentPopup?.classList.add(&#x27;hidden&#x27;);
+    // remove blur on filter section
+    const eleFilterSection &#x3D; document.getElementById(&#x27;filter-section&#x27;);
+    eleFilterSection!.classList.remove(&#x27;body-filter-popup&#x27;);
+  }
+
+  /**
+ * Loads and processes filter data based on user selection or application.
+ * This function handles various types of filters (textbox, dropdown, multi-select, checkbox, etc.),
+ * updates the filter query string, manages dependent filters, and triggers data fetching based on the new filter state.
+ *
+ * @param filter - The filter form data object containing information about the selected filter.
+ * @param select - Optional. The selected value for textbox-list type filters.
+ * @returns A Promise that resolves when all filter processing and data fetching is complete.
+ */
+  async loadFilterDataByApplyOrList(filter: FilterFormData, select?: string) {
+
+    this.selectedFilter &#x3D; filter;
+    if (filter.type !&#x3D;&#x3D; &#x27;multi&#x27;) {
+      // check it&#x27;s already in search list or not, if then remove
+      const findIsExist &#x3D; this.arrFilterQueryString.findIndex((element: any) &#x3D;&gt; element.name &#x3D;&#x3D;&#x3D; filter.name.value);
+      if (findIsExist &gt; -1) {
+        this.arrFilterQueryString.splice(findIsExist, 1);
+      }
+    }
+
+    // textbox or dropdown
+    if (filter.type &#x3D;&#x3D;&#x3D; &#x27;textbox&#x27; || filter.type &#x3D;&#x3D; &#x27;dropdown&#x27;) {
+      if (filter.operation &amp;&amp; filter.type &#x3D;&#x3D;&#x3D; &#x27;textbox&#x27; &amp;&amp; (filter.data[0].temp &amp;&amp; filter.data[1].temp)) {
+        if (filter.operation &#x3D;&#x3D;&#x3D; &#x27;maximum&#x27;) {
+          if (Number(filter.data[0].temp) &gt; Number(filter.data[1].temp)) {
+            filter.error &#x3D; &#x27;Min value should be less than max value&#x27;;
+            return
+          }
+          filter.error &#x3D; undefined;
+        }
+        if (filter.operation &#x3D;&#x3D;&#x3D; &#x27;minimum&#x27;) {
+          if (Number(filter.data[0].temp) &lt; Number(filter.data[1].temp)) {
+            filter.error &#x3D; &#x27;Min value should be higher than max value&#x27;;
+            return
+          }
+          filter.error &#x3D; undefined;
+        }
+      }
+      filter.data.forEach((element: any) &#x3D;&gt; {
+        if (element.temp) {
+          const findCondition &#x3D; this.arrFilterQueryString.findIndex((element: any) &#x3D;&gt; element.name &#x3D;&#x3D;&#x3D; filter.name.value);
+          if (findCondition &gt; -1) {
+            this.arrFilterQueryString[findCondition].value.push({ name: element.name, operation: !!filter.operation, value: element.temp })
+          } else {
+            this.arrFilterQueryString.push({ name: filter.name.value, value: [{ name: element.name, operation: !!filter.operation, value: element.temp }] })
+          }
+          filter.select &#x3D; true; // to show current filter chips in side menu
+          const suffix &#x3D; filter.type &#x3D;&#x3D;&#x3D; &#x27;textbox&#x27; &amp;&amp; filter.name.value &#x3D;&#x3D;&#x3D; &#x27;mileage&#x27; ? &#x60;${element.temp} km&#x60; :
+            filter.type &#x3D;&#x3D;&#x3D; &#x27;textbox&#x27; &amp;&amp; filter.name.value &#x3D;&#x3D;&#x3D; &#x27;asking_price&#x27; ? &#x60;$${element.temp}&#x60; : &#x27;&#x27;;
+          element.select &#x3D; filter.type &#x3D;&#x3D;&#x3D; &#x27;textbox&#x27; ? suffix : element.temp; // set final value to elements to show in chips
+        } else {
+          element.select &#x3D; undefined;
+          element.temp &#x3D; undefined;
+        }
+      });
+    }
+    // multi
+    if (filter.type &#x3D;&#x3D;&#x3D; &#x27;multi&#x27;) {
+      filter.data.forEach(async (element: any) &#x3D;&gt; {
+        // check it&#x27;s already in search list or not, if then remove
+        const findIsExist &#x3D; this.arrFilterQueryString.findIndex((ele: any) &#x3D;&gt; element.name &#x3D;&#x3D;&#x3D; ele.name);
+        if (findIsExist &gt; -1) {
+          this.arrFilterQueryString.splice(findIsExist, 1);
+        }
+
+        if (element.type &#x3D;&#x3D;&#x3D; &#x27;textbox&#x27;) {
+          // check element is code textbox
+          if (element.name &#x3D;&#x3D;&#x3D; &#x27;Code&#x27;) {
+            const strCode &#x3D; element.temp.indexOf(&#x27; &#x27;) &gt;&#x3D; 0 ? element.temp.toUpperCase() : element.temp.match(/.{1,3}/g).join(&#x27; &#x27;).toUpperCase();
+            const code &#x3D; this.localStorageService.get(&#x27;code&#x27;);
+            if (code) {
+              if (code !&#x3D;&#x3D; strCode.toUpperCase()) {
+                // canadian site
+                const response: any &#x3D; await this.httpService.getWithOutsideURL(&#x60;https://geogratis.gc.ca/services/geolocation/en/locate?q&#x3D;${strCode.toUpperCase().trim()}&#x60;);
+                const newLocation &#x3D; {
+                  lat: response[0].geometry.coordinates[1],
+                  lng: response[0].geometry.coordinates[0]
+                };
+                this.localStorageService.setObject(&#x27;location&#x27;, newLocation);
+                this.localStorageService.set(&#x27;code&#x27;, strCode.toUpperCase());
+              }
+            } else {
+              const response: any &#x3D; await this.httpService.getWithOutsideURL(&#x60;https://geogratis.gc.ca/services/geolocation/en/locate?q&#x3D;${strCode.toUpperCase().trim()}&#x60;);
+              const newLocation &#x3D; {
+                lat: response[0].geometry.coordinates[1],
+                lng: response[0].geometry.coordinates[0]
+              };
+              this.localStorageService.setObject(&#x27;location&#x27;, newLocation);
+              this.localStorageService.set(&#x27;code&#x27;, strCode.toUpperCase());
+            }
+            this.arrFilterQueryString.push({ name: element.name, oprator: element.operator, value: element.temp });
+          }
+        } else {
+          this.arrFilterQueryString.push({ name: element.name, value: element.temp });
+        }
+        filter.select &#x3D; true; // to show current filter chips in side menu 
+        element.select &#x3D; element.temp; // set final value to elements to show in chips
+      });
+    }
+
+    // checkbox
+    if ([&#x27;checkbox&#x27;, &#x27;multi-select&#x27;, &#x27;multi-choice&#x27;].includes(filter.type)) {
+      const tempChecked: any &#x3D; [];
+      const resultSidebarChip: any &#x3D; [];
+      // take temp data
+      filter.data.forEach((element: any) &#x3D;&gt; {
+        // modify as per status
+        if (element.checked) {
+          tempChecked.push(filter.type &#x3D;&#x3D;&#x3D; &#x27;checkbox&#x27; ? element.value : { value: element.value });
+          resultSidebarChip.push(element);
+        } else if (&#x27;checked&#x27; in element) {
+          const findIndex &#x3D; tempChecked.findIndex((x: any) &#x3D;&gt; x &#x3D;&#x3D; element.value);
+          if (findIndex &gt; -1) {
+            tempChecked.temp.splice(findIndex, 1);
+          }
+        }
+      });
+
+      // arrange for final set
+      this.arrFilterQueryString.push({ name: filter.name.value, value: tempChecked });
+      filter.select &#x3D; resultSidebarChip; // set final value to elements to show in chips
+
+      // manage home delivery both state 
+      if (filter.type &#x3D;&#x3D;&#x3D; &#x27;multi-choice&#x27;) {
+        if (tempChecked.find((x: any) &#x3D;&gt; x.value &#x3D;&#x3D;&#x3D; &#x27;home_delivery&#x27;)) {
+          this.stateHomeDelivery &#x3D; true;
+        } else {
+          this.stateHomeDelivery &#x3D; false;
+        }
+      }
+    }
+
+    // textbox-list
+    if (filter.type &#x3D;&#x3D;&#x3D; &#x27;textbox-list&#x27;) {
+
+      // check filter is make - if then delete model from query if model exist
+      if (filter.name.value &#x3D;&#x3D;&#x3D; &#x27;make&#x27;) {
+        // make default filter with reset
+        this.arrFilterForm?.forEach((element: any) &#x3D;&gt; {
+          if ([&#x27;location&#x27;, &#x27;distance&#x27;, &#x27;condition&#x27;, &#x27;seller_type&#x27;, &#x27;home_services&#x27;, &#x27;make&#x27;].includes(element.name.value.toLowerCase())) return
+          // find model index and clear from query
+          if (element.name.value &#x3D;&#x3D;&#x3D; &#x27;model&#x27;) {
+            const filterModelIndex &#x3D; this.arrFilterQueryString.findIndex((fltr: any) &#x3D;&gt; fltr.name &#x3D;&#x3D;&#x3D; &#x27;model&#x27;);
+            if (filterModelIndex &gt; -1) {
+              // remove filter from query and sidebar
+              this.arrFilterQueryString.splice(filterModelIndex, 1);
+              if (Array.isArray(element.select)) {
+                element.select.forEach((data: any) &#x3D;&gt; {
+                  data.checked &#x3D; false;
+                });
+              }
+              element.select &#x3D; undefined;
+            }
+          }
+          if (element.name.value &#x3D;&#x3D;&#x3D; &#x27;trim&#x27;) {
+            const filterTrimIndex &#x3D; this.arrFilterQueryString.findIndex((fltr: any) &#x3D;&gt; fltr.name &#x3D;&#x3D;&#x3D; &#x27;trim&#x27;);
+            if (filterTrimIndex &gt; -1) {
+              // remove filter from query and sidebar
+              this.arrFilterQueryString.splice(filterTrimIndex, 1);
+              if (Array.isArray(element.select)) {
+                element.select.forEach((data: any) &#x3D;&gt; {
+                  data.checked &#x3D; false;
+                });
+              }
+              element.select &#x3D; undefined;
+            }
+          }
+        })
+      }
+
+      // check search dependant
+      if (filter.searchDependant) {
+        const searchDependantData &#x3D; this.arrFilterFormCopy!.findIndex((element: any) &#x3D;&gt; element.name.value &#x3D;&#x3D;&#x3D; filter.searchDependant);
+        const dependantData &#x3D; this.arrFilterFormCopy![searchDependantData].data.filter((element: any) &#x3D;&gt; element.join &#x3D;&#x3D;&#x3D; select);
+        this.arrFilterForm![searchDependantData].data &#x3D; dependantData;
+      }
+
+      filter.select &#x3D; select; // set final value to elements to show in chips
+      this.arrFilterQueryString.push({ name: filter.name.value, value: select })
+    }
+
+    // get data by filter
+    await this.getDataByFilter();
+
+    // remove query string if exist
+    if (this.router.url.includes(&#x27;?&#x27;)) {
+      const url: string &#x3D; this.router.url.substring(0, this.router.url.indexOf(&quot;?&quot;));
+      this.router.navigateByUrl(url);
+    }
+
+    // manage hide &amp; show filter - set temp hide true so meet condition all true and make selectable other filters
+    if (!filter.temp_hide) {
+      const selectFilterIndex &#x3D; this.arrFilterForm?.findIndex((element: any) &#x3D;&gt; element.name.value &#x3D;&#x3D;&#x3D; filter.name.value);
+      this.arrFilterForm![selectFilterIndex!].temp_hide &#x3D; true;
+    }
+
+    this.hideAllPopupFilter(&#x27;any&#x27;);
+    this.currentPopUpID &#x3D; undefined;
+  }
+
+  /**
+ * Fetches and processes car data based on applied filters.
+ * 
+ * This asynchronous function performs the following tasks:
+ * 1. Prepares the filter query based on the current filter state.
+ * 2. Retrieves car data either from local storage or through an API call.
+ * 3. Updates the filter counts and visibility based on the retrieved data.
+ * 4. Calculates distances and payments for the retrieved cars.
+ * 5. Applies any default sorting if specified.
+ * 
+ * The function uses NgZone to run outside Angular&#x27;s change detection to improve performance.
+ * It also manages the loading state and triggers change detection after processing.
+ * 
+ * @returns {Promise&lt;void&gt;} A promise that resolves when all data fetching and processing is complete.
+ */
+  async getDataByFilter() {
+    // set filter in query
+    const objRequest: any &#x3D; {};
+    this.arrFilterQueryString.forEach((query: any) &#x3D;&gt; {
+      objRequest[&#x60;${query.name.toLowerCase()}&#x60;] &#x3D; query.value;
+    });
+
+    // add default distance if it&#x27;s not exist
+    if (!objRequest.distance) {
+      objRequest.distance &#x3D; &#x27;national&#x27;;
+    }
+
+    if (objRequest.distance &#x3D;&#x3D;&#x3D; &#x27;national&#x27;) {
+      objRequest.distance &#x3D; &#x27;100000&#x27;
+    }
+
+    // load skeleton
+    this.arrAllCar &#x3D; undefined;
+
+    // loading filtr
+    this.isFilterLoading &#x3D; true;
+
+    // load outside zone js to make app stable
+    this.ngZone.runOutsideAngular(async () &#x3D;&gt; {
+
+      if (this.localStorageService.get(&#x27;page&#x27;)) {
+        this.page &#x3D; Number(this.localStorageService.get(&#x27;page&#x27;));
+        this.limit &#x3D; Number(this.localStorageService.get(&#x27;limit&#x27;));
+
+        // remove unnecessary page limit to maintain previous state to manage back records
+        this.localStorageService.remove(&#x27;page&#x27;);
+        this.localStorageService.remove(&#x27;limit&#x27;);
+
+        // check car is available
+        const car &#x3D; this.localStorageService.getObject(&#x27;car&#x27;);
+        if (car) {
+          this.arrAllCar &#x3D; car;
+          this.arrFilterForm &#x3D; this.localStorageService.getObject(&#x27;filter&#x27;);
+          this.localStorageService.remove(&#x27;car&#x27;);
+          this.localStorageService.remove(&#x27;filter&#x27;);
+        } else {
+          location.reload();
+        }
+      } else {
+        // find car from api by filters
+        this.arrAllCar &#x3D; await this.httpService.post(&#x60;car/client/filter?page&#x3D;${this.page}&amp;list&#x3D;${this.limit}&#x60;, { ...this.localStorageService.getObject(&#x27;location&#x27;), ...objRequest })
+      }
+
+      // set total found result
+      this.objOuterLocation.count &#x3D; this.arrAllCar.total;
+
+      // set query parameter for future referance
+      const query &#x3D; this.localStorageService.getObject(&#x27;query&#x27;);
+      // if selected another filter then only change query list in saved preferance
+      if (this.selectedFilter) {
+        if (query) {
+          this.localStorageService.remove(&#x27;query&#x27;);
+        }
+        // save updated filter from query array li storage
+        this.localStorageService.setObject(&#x27;query&#x27;, JSON.stringify(this.arrFilterQueryString));
+      }
+
+      // set calculation for count
+      this.arrAllCar.filters.forEach((car: any) &#x3D;&gt; {
+
+        // set dynamic year
+        if (car.name &#x3D;&#x3D;&#x3D; &#x27;year&#x27;) {
+          const filterYear &#x3D; this.arrFilterForm?.find((element: any) &#x3D;&gt; element.name.value &#x3D;&#x3D;&#x3D; car.name);
+          filterYear?.data.forEach((element: any) &#x3D;&gt; {
+            element.data &#x3D; car.count.map((ele: any) &#x3D;&gt; { return { label: ele, value: ele } });
+          });
+          return
+        }
+
+        // if not selected filter then return when filter is model or trim
+        if (!query &amp;&amp; !this.selectedFilter &amp;&amp; [&#x27;model&#x27;, &#x27;trim&#x27;].includes(car.name)) return
+
+        // check current filter is same then return we not make change in current filter
+        if (this.selectedFilter &amp;&amp; car.name &#x3D;&#x3D;&#x3D; this.selectedFilter.name.value) return
+
+        if (![&#x27;condition&#x27;, &#x27;seller_type&#x27;].includes(car.name)) {
+          // check filter already included in query
+          const filterExist &#x3D; this.arrFilterQueryString.find((element: any) &#x3D;&gt; element.name &#x3D;&#x3D;&#x3D; car.name);
+          if (filterExist) {
+            if (car.count.length !&#x3D;&#x3D; filterExist.value.length &amp;&amp; ![&#x27;make&#x27;, &#x27;model&#x27;].includes(filterExist.name)) {
+              const filterGet &#x3D; car.count.map((ele: any) &#x3D;&gt; { return ele._id });
+              const missingElements &#x3D; filterExist.value.filter((element: any) &#x3D;&gt; !filterGet.includes(element));
+              missingElements.forEach((ele: any) &#x3D;&gt; {
+                const findMissingFilter &#x3D; this.arrFilterForm?.find((element: any) &#x3D;&gt; element.name.value &#x3D;&#x3D;&#x3D; car.name);
+                const findFilterCount &#x3D; findMissingFilter?.data.find((element: any) &#x3D;&gt; element.value &#x3D;&#x3D; ele);
+                findFilterCount.count &#x3D; 0;
+                findFilterCount.include &#x3D; true;
+              });
+            }
+            const filterPrevious &#x3D; this.arrFilterForm?.find((element: any) &#x3D;&gt; element.name.value &#x3D;&#x3D;&#x3D; car.name);
+            if (filterPrevious) {
+              filterPrevious.data.forEach((flt: any) &#x3D;&gt; {
+                const filterCount &#x3D; car.count.find((ele: any) &#x3D;&gt; ele._id &#x3D;&#x3D;&#x3D; flt.value);
+                if (filterCount) {
+                  flt.count &#x3D; filterCount.count;
+                  flt.include &#x3D; false;
+                } else {
+                  flt.count &#x3D; 0;
+                }
+              });
+            }
+            return
+          }
+        }
+
+        const filter &#x3D; this.arrFilterForm?.find((filter: any) &#x3D;&gt; filter.name.value &#x3D;&#x3D;&#x3D; car.name);
+        if (filter &amp;&amp; (filter.type &#x3D;&#x3D;&#x3D; &#x27;checkbox&#x27; || filter.type &#x3D;&#x3D;&#x3D; &#x27;textbox-list&#x27;)) {
+          if (filter.data.length &#x3D;&#x3D;&#x3D; 0) {
+            const filterCopy &#x3D; this.arrFilterFormCopy?.find((filter: any) &#x3D;&gt; filter.name.value &#x3D;&#x3D;&#x3D; car.name);
+            filter.data &#x3D; filterCopy?.data;
+          }
+          filter.data.forEach((multi: any) &#x3D;&gt; {
+            const dataCount &#x3D; car.count.find((flt: any) &#x3D;&gt; flt._id &#x3D;&#x3D;&#x3D; multi.value);
+            if (dataCount) {
+              multi.count &#x3D; dataCount.count;
+            } else {
+              multi.count &#x3D; 0;
+              if (multi.include) {
+                multi.include &#x3D; false;
+              }
+            }
+          });
+        }
+      });
+
+      // changed array calculate distance
+      this.calculateDistance();
+
+      // calculate payment
+      this.calculatePayment();
+
+      // stop loading in popup
+      this.isFilterLoading &#x3D; false;
+
+      // check there is sort oprtation available or not
+      if (this.strDefaultSort !&#x3D;&#x3D; &#x27;default&#x27;) {
+        // change sort option default
+        this.onChangeSortOption({ value: this.strDefaultSort, originalEvent: null as any })
+      }
+
+      // apply change in UI
+      this.cdRef.detectChanges();
+    });
+  }
+
+  /**
+ * Clears all applied filters and resets the filter form to its default state.
+ * 
+ * This function performs the following tasks:
+ * 1. Resets the selected filter value.
+ * 2. Sets the default query string for distance, condition, and seller type.
+ * 3. Updates the local storage with the new query.
+ * 4. Resets all filter form data, except for location, condition, and seller type.
+ * 5. Resets pagination to default values.
+ * 6. Removes payment calculation if it was previously shown.
+ * 7. Fetches new data based on the default filters.
+ * 
+ * @returns {void} This function doesn&#x27;t return a value.
+ */
+  onClearFilters(): void {
+    // reset selected filter value
+    this.selectedFilter &#x3D; undefined;
+
+    // set default query 
+    this.arrFilterQueryString &#x3D; [
+      { name: &#x27;Distance&#x27;, value: &#x27;national&#x27; },
+      { name: &#x27;condition&#x27;, value: [&#x27;new&#x27;, &#x27;used&#x27;] },
+      { name: &#x27;seller_type&#x27;, value: [&#x27;dealer&#x27;, &#x27;private_person&#x27;] },
+    ];
+
+    // set query parameter for future referance
+    const query &#x3D; this.localStorageService.getObject(&#x27;query&#x27;);
+    if (query) {
+      this.localStorageService.remove(&#x27;query&#x27;);
+    }
+    // save updated filter from query array li storage
+    this.localStorageService.setObject(&#x27;query&#x27;, JSON.stringify(this.arrFilterQueryString));
+
+    // reset filter, all data to 0
+    this.arrFilterForm!.forEach((filter: any) &#x3D;&gt; {
+      if ([&#x27;location&#x27;, &#x27;condition&#x27;, &#x27;seller_type&#x27;].includes(filter.name.value)) return
+      filter.select &#x3D; undefined;
+      filter.temp &#x3D; undefined;
+      if ([&#x27;checkbox&#x27;, &#x27;text-box&#x27;, &#x27;textbox-list&#x27;, &#x27;multi-select&#x27;].includes(filter.type)) {
+        filter.data.forEach(async (data: any) &#x3D;&gt; {
+          data.checked &#x3D; false;
+        });
+      }
+    });
+
+    // reset paginiation
+    this.page &#x3D; 0;
+    this.limit &#x3D; 15;
+
+    // remove payment calculation if available
+    if (this.isPaymenShowInSidebar) {
+      this.isPaymenShowInSidebar &#x3D; false;
+      this.formPayment.reset({
+        min: null,
+        max: null,
+        down_payment: 0,
+        frequency: &#x27;Bi-Weekly&#x27;,
+        term: 36,
+        apr: 9
+      });
+
+      // remove payment storage
+      this.localStorageService.remove(&#x27;payment&#x27;);
+    }
+
+    // get data by default filter
+    this.getDataByFilter();
+  }
+
+  /**
+   * Redirects the user to the car details page for a specific car.
+   * 
+   * This function saves the current page state (including pagination and filter information)
+   * to local storage before navigating to the details page. This allows for a seamless
+   * return to the search results later.
+   *
+   * @param id - The unique identifier of the car to view details for.
+   * @returns {void} This function doesn&#x27;t return a value.
+   */
+  redirectToCarDetails(id: string): void {
+    if (this.currentPopUpID) return;
+    this.localStorageService.set(&#x27;page&#x27;, String(this.page));
+    this.localStorageService.set(&#x27;limit&#x27;, String(this.limit));
+    this.localStorageService.setObject(&#x27;car&#x27;, this.arrAllCar);
+    this.localStorageService.setObject(&#x27;filter&#x27;, this.arrFilterForm!);
+    this.router.navigateByUrl(&#x60;/detail/${id}&#x60;);
+  }
+
+  /**
+   * Pagination on car list
+   * @param event 
+   */
+  async onPageChange(event: any) {
+    this.page &#x3D; event.page;
+    this.limit &#x3D; event.rows;
+    await this.getDataByFilter();
+  }
+
+  /**
+   * Handles the change event for the home delivery option in the filter.
+   * Updates the filter query string and form data based on the user&#x27;s selection.
+   * 
+   * @param event - The InputSwitchChangeEvent triggered by the home delivery toggle.
+   *                Contains the current state of the switch (checked or unchecked).
+   * 
+   * @returns A Promise that resolves when the filter data has been updated and new results have been fetched.
+   */
+  async onChangeHomeDelivery(event: InputSwitchChangeEvent): Promise&lt;void&gt; {
+      const home_services &#x3D; this.arrFilterQueryString.find((element: any) &#x3D;&gt; element.name &#x3D;&#x3D;&#x3D; &#x27;home_services&#x27;);
+      const home_service_form &#x3D; this.arrFilterForm?.find((element: any) &#x3D;&gt; element.name.value &#x3D;&#x3D;&#x3D; &#x27;home_services&#x27;);
+      const home_delivery &#x3D; home_service_form?.data.find((element: any) &#x3D;&gt; element.value &#x3D;&#x3D;&#x3D; &#x27;home_delivery&#x27;);
+      if (event.checked) {
+        home_delivery.checked &#x3D; true;
+        if (home_services) {
+          home_services.value.push({ value: &#x27;home_delivery&#x27; });
+          if (home_service_form?.select) {
+            home_service_form.select.push(home_delivery);
+          } else {
+            home_service_form!.select &#x3D; [home_delivery];
+          }
+        } else {
+          this.arrFilterQueryString.push({ name: &#x27;home_services&#x27;, value: [{ value: &#x27;home_delivery&#x27; }] });
+          if (home_service_form?.select) {
+            home_service_form.select.push(home_delivery);
+          } else {
+            home_service_form!.select &#x3D; [home_delivery];
+          }
+        }
+      } else {
+        home_delivery.checked &#x3D; false;
+        if (home_services) {
+          home_services.value.splice(home_services.value.findIndex((element: any) &#x3D;&gt; element.value &#x3D;&#x3D;&#x3D; &#x27;home_delivery&#x27;), 1);
+          home_service_form?.select.splice(home_service_form.select.findIndex((element: any) &#x3D;&gt; element.value &#x3D;&#x3D;&#x3D; &#x27;home_delivery&#x27;), 1);
+        } else {
+          this.arrFilterQueryString.splice(this.arrFilterQueryString.findIndex((element: any) &#x3D;&gt; element.name &#x3D;&#x3D;&#x3D; &#x27;home_services&#x27;), 1);
+          if (home_service_form?.select) {
+            home_service_form.select.splice(home_service_form.select.findIndex((element: any) &#x3D;&gt; element.value &#x3D;&#x3D;&#x3D; &#x27;home_delivery&#x27;), 1);
+          } else {
+            home_service_form!.select &#x3D; undefined;
+          }
+        }
+      }
+
+      await this.getDataByFilter();
+  }
+
+  // serach from list by input serach bar
+  /**
+   * Searches and filters the list of filter options based on user input.
+   * 
+   * This function performs a case-insensitive search on the filter options,
+   * updates the search results, and triggers change detection to update the UI.
+   * 
+   * @param search - The search string entered by the user.
+   * @param filter - The FilterFormData object representing the current filter.
+   * @param index - The index of the current filter in the arrFilterForm array.
+   * 
+   * @returns {void} This function doesn&#x27;t return a value, but updates the filter object and triggers UI updates.
+   */
+  seachByInputFromFilterList(search: string, filter: FilterFormData, index: number): void {
+    // copy main array for search
+    const arrTempFilter &#x3D; this.arrFilterForm![index].data.map((element: any) &#x3D;&gt; element);
+    // find data as per search string from copy array
+    filter.search &#x3D; arrTempFilter.filter((element: any) &#x3D;&gt; {
+      return this.replaceStringToCapitalize(element.label)!.toLowerCase().includes(search.toLowerCase());
+    });
+    // refill array if search string is empty
+    if (!search) {
+      filter.data &#x3D; this.arrFilterForm![index].data;
+    }
+
+    // display matched data in list &amp; show detected changes
+    this.cdRef.detectChanges();
+  }
+
+  /**
+   * Performs a search operation on dropdown filter options based on the specified maximum value.
+   * This function is specifically designed for filters with a &#x27;maximum&#x27; operation.
+   * 
+   * @param index - The index of the current filter option within its parent filter.
+   * @param indexParent - The index of the parent filter in the main filter array.
+   * @param filter - The FilterFormData object representing the current filter.
+   * 
+   * @returns {void} This function doesn&#x27;t return a value, but updates the &#x60;search&#x60; property of the filter object.
+   */
+  searchByDropDownFilterOperation(index: number, indexParent: number, filter: FilterFormData): void {
+
+    // check is operation apply on the dropdown? not then return
+    if (!filter.operation) return
+
+    if (filter.operation &#x3D;&#x3D;&#x3D; &#x27;maximum&#x27;) {
+      if (index &#x3D;&#x3D; 0) {
+        // copy main array for search
+        const arrTempFilter &#x3D; this.arrFilterForm![indexParent].data[1].data.map((element: any) &#x3D;&gt; element);
+        // find data as per search string from copy array
+        filter.search &#x3D; arrTempFilter.filter((element: any) &#x3D;&gt; {
+          return Number(element.value) &gt; this.arrFilterForm![indexParent].data[0].temp;
+        });
+        // refill array if search string is empty
+        if (!this.arrFilterForm![indexParent].data[0].temp) {
+          filter.search &#x3D; this.arrFilterForm![indexParent].data[1].data;
+        }
+      }
+    }
+  }
+
+  /**
+ * Clears the specified filter from the popup and updates the search results accordingly.
+ * 
+ * This function performs the following tasks:
+ * 1. Resets the selected filter and its associated data.
+ * 2. Updates the filter query string array.
+ * 3. Handles special cases for &#x27;make&#x27; and &#x27;model&#x27; filters.
+ * 4. Updates the local storage with the new query.
+ * 5. Fetches new data based on the updated filters.
+ * 6. Hides all popup filters and resets the current popup ID.
+ *
+ * @param filter - The FilterFormData object representing the filter to be cleared.
+ * @returns A Promise that resolves when all operations are complete.
+ */
+  async clearFilterFromPopUp(filter: FilterFormData) {
+
+    // remove selected filter so we can update last filter count value&#x27;s
+    this.selectedFilter &#x3D; undefined;
+
+    if (filter.type &#x3D;&#x3D;&#x3D; &#x27;dropdown&#x27; || filter.type &#x3D;&#x3D;&#x3D; &#x27;textbox&#x27;) {
+      filter.data[0].temp &#x3D; undefined;
+      filter.data[1].temp &#x3D; undefined;
+      filter.data[0].select &#x3D; undefined;
+      filter.data[1].select &#x3D; undefined;
+      filter.select &#x3D; undefined;
+
+      // reset asking price - payment if it&#x27;s displayed
+      if (filter.name.value &#x3D;&#x3D;&#x3D; &#x27;asking_price&#x27;) {
+        this.isPaymenShowInSidebar &#x3D; false;
+        this.formPayment.reset({
+          min: null,
+          max: null,
+          down_payment: 0,
+          frequency: &#x27;Bi-Weekly&#x27;,
+          term: 36,
+          apr: 9
+        });
+
+        // remove payment storage
+        this.localStorageService.remove(&#x27;payment&#x27;);
+      }
+    }
+    if ([&#x27;checkbox&#x27;, &#x27;multi-choice&#x27;, &#x27;multi-select&#x27;].includes(filter.type)) {
+      filter.select &#x3D; undefined;
+      filter.temp &#x3D; undefined;
+      filter.data.forEach((element: any) &#x3D;&gt; {
+        element.checked &#x3D; false;
+      });
+    }
+    if (filter.type &#x3D;&#x3D;&#x3D; &#x27;textbox-list&#x27;) {
+      if (filter.name.value &#x3D;&#x3D;&#x3D; &#x27;make&#x27;) {
+        // remove model if it&#x27;s already selected 
+        const filterModelIndex &#x3D; this.arrFilterQueryString.findIndex((fltr: any) &#x3D;&gt; fltr.name &#x3D;&#x3D;&#x3D; &#x27;model&#x27;);
+        if (filterModelIndex &gt; -1) {
+          // remove filter from query and sidebar
+          this.arrFilterQueryString.splice(filterModelIndex, 1);
+          const model &#x3D; this.arrFilterForm?.find((element: any) &#x3D;&gt; element.name.value &#x3D;&#x3D;&#x3D; &#x27;model&#x27;);
+          model!.select &#x3D; undefined;
+        }
+      }
+      filter.select &#x3D; undefined;
+      filter.temp &#x3D; undefined;
+    }
+
+    // check it&#x27;s already in search list or not, if thenremove selected reset filter entry from query string array
+    const findIsExist &#x3D; this.arrFilterQueryString.findIndex((element: any) &#x3D;&gt; element.name.toLowerCase() &#x3D;&#x3D;&#x3D; filter.name.value);
+    if (findIsExist &gt; -1) {
+      this.arrFilterQueryString.splice(findIsExist, 1);
+    }
+
+    if (filter.name.value &#x3D;&#x3D;&#x3D; &#x27;make&#x27; || filter.name.value &#x3D;&#x3D;&#x3D; &#x27;model&#x27;) {
+      // unhide location and make field for further selection
+      const allTrue &#x3D; this.arrFilterForm?.every((element: any) &#x3D;&gt; element.temp_hide &#x3D;&#x3D;&#x3D; true);
+      if (allTrue) {
+        this.arrFilterForm?.forEach((element: any) &#x3D;&gt; {
+          if (filter.name.value &#x3D;&#x3D;&#x3D; &#x27;make&#x27;) {
+            if ([&#x27;location&#x27;, &#x27;make&#x27;, &#x27;seller_type&#x27;, &#x27;condition&#x27;, &#x27;home_services&#x27;].includes(element.name.value)) return
+          } else if (filter.name.value &#x3D;&#x3D;&#x3D; &#x27;model&#x27;) {
+            if ([&#x27;location&#x27;, &#x27;make&#x27;, &#x27;model&#x27;, &#x27;seller_type&#x27;, &#x27;condition&#x27;, &#x27;home_services&#x27;].includes(element.name.value)) return
+          }
+          element.default_hide &#x3D; true;
+          if (element.select || element.temp) {
+            //delete entry from arr query string if multiple entries to remove
+            const findIsExist &#x3D; this.arrFilterQueryString.findIndex((flt: any) &#x3D;&gt; element.name.value &#x3D;&#x3D;&#x3D; flt.name);
+            if (findIsExist &gt; -1) {
+              this.arrFilterQueryString.splice(findIsExist, 1);
+            }
+            element.select &#x3D; undefined;
+            element.temp &#x3D; undefined;
+          }
+        })
+      }
+    }
+
+    // set query parameter for future referance
+    const query &#x3D; this.localStorageService.getObject(&#x27;query&#x27;);
+    if (query) {
+      this.localStorageService.remove(&#x27;query&#x27;);
+    }
+
+    // save updated filter from query array li storage
+    this.localStorageService.setObject(&#x27;query&#x27;, JSON.stringify(this.arrFilterQueryString));
+
+    // get data by filter
+    await this.getDataByFilter();
+
+    this.hideAllPopupFilter(&#x27;any&#x27;);
+    this.currentPopUpID &#x3D; undefined;
+  }
+
+  /**
+ * Calculates the payment settings for the search results.
+ *
+ * @param calculate - A flag indicating whether to calculate the payment settings based on the form values.
+ * If true, the function adds the selected values to the sidebar and updates the filter query string.
+ * If false, the function calculates the financing amount for each vehicle in the search results.
+ *
+ * @remarks The function first checks if the form values are valid. If not, it returns without performing any calculations.
+ * If the calculate flag is true, the function adds the selected asking price range to the sidebar and updates the filter query string.
+ * It then calls the &#x60;getDataByFilter&#x60; method to update the search results.
+ * If the calculate flag is false, the function calculates the financing amount for each vehicle in the search results.
+ * Finally, it calls the &#x60;hideAllPopupFilter&#x60; method to hide any open filter popups.
+ */
+  async calculatePayment(calculate?: boolean) {
+    // return if payment is invalid
+    if (this.formPayment.invalid) return
+
+    // get payment data
+    const data &#x3D; this.formPayment.value;
+
+    // get requency of payment
+    const frequency &#x3D; data.frequency &#x3D;&#x3D;&#x3D; &#x27;Weekly&#x27; ? 4 : data.frequency &#x3D;&#x3D;&#x3D; &#x27;Bi-Weekly&#x27; ? 2 : 1;
+
+    // if it&#x27;s new form payment then call api by dynamic total - else just calculate finance amount
+    if (calculate) {
+
+      // sum dynamic maximum by form payment max
+      const maxAmount &#x3D; data.max!;
+      const maxSubTotal &#x3D; maxAmount * data.term! * frequency;
+      const maxAprTotal &#x3D; maxSubTotal * data.apr! / 100;
+      const maxTotal &#x3D; maxSubTotal + maxAprTotal + data.down_payment!;
+
+      // sum dynamic maximum by form payment min
+      const minAmount &#x3D; data.min!;
+      const minSubTotal &#x3D; minAmount * data.term! * frequency;
+      const minAprTotal &#x3D; minAmount * data.apr!;
+      const minTotal &#x3D; minSubTotal + minAprTotal;
+
+      // add selected value in sidebar by chip
+      const findAskingPrice &#x3D; this.arrFilterForm?.find((element: any) &#x3D;&gt; element.name.value &#x3D;&#x3D;&#x3D; &#x27;asking_price&#x27;);
+      findAskingPrice!.select &#x3D; true;
+      findAskingPrice!.data.forEach((item: any) &#x3D;&gt; {
+        if (item.name &#x3D;&#x3D;&#x3D; &quot;Maximum&quot;) {
+          item.temp &#x3D; maxTotal;
+          item.select &#x3D; &#x60;$${maxTotal}&#x60;;
+        }
+        if (item.name &#x3D;&#x3D;&#x3D; &quot;Minimum&quot;) {
+          item.temp &#x3D; minTotal;
+          item.select &#x3D; &#x60;$${minTotal}&#x60;;
+        }
+      });
+
+      // add min max price in query list
+      this.arrFilterQueryString.push({
+        name: &#x27;asking_price&#x27;,
+        value: [
+          { name: &quot;Maximum&quot;, operation: true, value: maxTotal },
+          { name: &quot;Minimum&quot;, operation: true, value: minTotal }
+        ]
+      });
+
+      // set query parameter for future referance
+      const query &#x3D; this.localStorageService.getObject(&#x27;query&#x27;);
+      if (query) {
+        this.localStorageService.remove(&#x27;query&#x27;);
+      }
+      // save updated filter from query list storage
+      this.localStorageService.setObject(&#x27;query&#x27;, JSON.stringify(this.arrFilterQueryString));
+
+      // save updated form payment storage
+      this.localStorageService.setObject(&#x27;payment&#x27;, data);
+
+      // call api to get data between min max price
+      await this.getDataByFilter();
+
+      // display payment detail in side panel
+      this.isPaymenShowInSidebar &#x3D; true;
+    } else {
+      this.arrAllCar.data.forEach((element: any) &#x3D;&gt; {
+        const yearTerm &#x3D; this.calculatorTermByYear(Number(element.name.split(&#x27; &#x27;)[0]))
+        const term &#x3D; data.term! &lt; yearTerm.pop()! ? data.term : yearTerm.pop()!;
+        const amount &#x3D; (element.asking_price - data.down_payment!) / term! / frequency;
+        if (amount &lt; data.max! &amp;&amp; element.asking_price &gt; data.down_payment!) {
+          element.finance &#x3D; {
+            apr: data.apr,
+            frequency: data.frequency,
+            amount
+          }
+        }
+      });
+    }
+
+    this.hideAllPopupFilter(&#x27;any&#x27;);
+    this.currentPopUpID &#x3D; undefined;
+  }
+
+  /**
+ * Calculates the financing terms available for a given vehicle manufacturing year.
+ *
+ * @param year - The manufacturing year of the vehicle.
+ * @returns An array of financing terms in months, sorted in ascending order.
+ *
+ * @remarks The financing terms are based on the manufacturing year and are specific to the vehicle financing industry.
+ */
+  calculatorTermByYear(year: number) {
+    if (year &gt;&#x3D; 2013 &amp;&amp; year &lt;&#x3D; 2015) {
+      return [12, 24, 36, 48]
+    } else if (year &#x3D;&#x3D; 2016) {
+      return [12, 24, 36, 48, 60]
+    } else if (year &#x3D;&#x3D; 2017) {
+      return [12, 24, 36, 48, 60, 72]
+    } else if (year &#x3D;&#x3D; 2018) {
+      return [12, 24, 36, 48, 60, 72, 84]
+    } else if (year &gt;&#x3D; 2019) {
+      return [12, 24, 36, 48, 60, 72, 84, 96]
+    }
+    return [12, 24, 36]
+  }
+
+  /**
+ * Constructs a string representation of the payment filter settings for the sidebar.
+ *
+ * @returns {string} - A formatted string representing the payment filter settings.
+ * The string includes the minimum and maximum payment amounts, the payment frequency,
+ * the financing term, and the down payment amount.
+ */
+  strPaymentForShidebar(): string {
+    const dataPayment &#x3D; this.formPayment.value;
+    return &#x60;$${dataPayment.min} - $${dataPayment.max}, ${dataPayment.frequency}, ${dataPayment.term} Months, $${dataPayment.down_payment} Down Payment&#x60;;
+  }
+
+  /**
+ * Submits the filter settings for an alert subscription.
+ * 
+ * This function logs the current form values and filter query strings,
+ * then sends a POST request to the &#x27;alert-subscribe&#x27; endpoint with the filter data.
+ * If the response indicates a successful subscription, it sets the &#x27;isAlertSuccessDialogOpen&#x27; flag to true.
+ */
+  async submitFilterForAlert() {
+    const code &#x3D; this.localStorageService.get(&#x27;code&#x27;);
+    if (!code) {
+      this.messageService.add({ severity: &#x27;error&#x27;, detail: &#x27;Add location in search panel.&#x27;, summary: &#x27;Postal Code&#x27;, life: 5000 });
+      return
+    }
+    await this.httpService.post(&#x27;alert-subscribe&#x27;, {
+      postal_code: this.localStorageService.get(&#x27;code&#x27;),
+      filter: this.arrFilterQueryString.filter((element: any) &#x3D;&gt; [&#x27;Distance&#x27;, &#x27;condition&#x27;, &#x27;seller_type&#x27;, &#x27;make&#x27;, &#x27;model&#x27;].includes(element.name)),
+      ...this.formAlertListing.value
+    })
+      .then((res: any) &#x3D;&gt; {
+        if (res.success) {
+          this.formAlertListing.reset();
+          this.confirmationService.confirm({});
+          this.isAlertSubscribeDialogOpen &#x3D; false;
+        }
+      });
+  }
+
+  /**
+   * Opens the alert subscription dialog and submits the filter for an alert.
+   * 
+   * This function sets the &#x60;isAlertSubscribeDialogOpen&#x60; flag to true, which likely
+   * triggers the display of an alert subscription dialog in the UI. It then calls
+   * the &#x60;submitFilterForAlert&#x60; method to process the filter submission for the alert.
+   * 
+   * @returns {Promise&lt;void&gt;} A promise that resolves when the alert filter has been submitted.
+   */
+  async submitFilterForAlertDialog(): Promise&lt;void&gt; {
+    this.isAlertSubscribeDialogOpen &#x3D; true;
+    await this.submitFilterForAlert();
+  }
+
+  // set global page event - anywhere click on page
+  /**
+ * Handles click events on the document to manage filter popups.
+ * This method controls the opening and closing of filter popups, handles interactions
+ * with popup elements, and manages the state of filters and query strings.
+ *
+ * @param {MouseEvent} event - The mouse event triggered by the click.
+ * @param {HTMLElement} targetElement - The HTML element that was clicked.
+ * @returns {void}
+ */
+  currentPopUpID: string | undefined; // set current open popup filter id
+  isFilterPopUpOpen: boolean &#x3D; false; // toggle condition when popup will be open
+  @HostListener(&#x27;document:click&#x27;, [&#x27;$event&#x27;, &#x27;$event.target&#x27;])
+  public onClick(event: MouseEvent, targetElement: HTMLElement): void {
+
+    // check is click to open popup filter menu
+    const isOpenForFilter &#x3D; targetElement.classList.contains(&#x27;open-filter-popup&#x27;);
+    // check element depend on above filters then it&#x27;s hide by major filters by return
+    if (isOpenForFilter &amp;&amp; targetElement.getAttribute(&#x27;disabled&#x27;)) return;
+    // get id of current popup menu
+    const getCurrentPopUpID &#x3D; targetElement.nextElementSibling?.getAttribute(&#x27;id&#x27;);
+    // check it&#x27;s click on menu to open open and it&#x27;s already opened or not
+    if (isOpenForFilter &amp;&amp; !this.isFilterPopUpOpen) {
+      // settrue so know popup is opened before
+      this.isFilterPopUpOpen &#x3D; true;
+      // hide all another popup if there is one open otherwise all popup will be close
+      this.hideAllPopupFilter(getCurrentPopUpID);
+      // set blur on filter section
+      const eleFilterSection &#x3D; document.getElementById(&#x27;filter-section&#x27;);
+      eleFilterSection!.classList.add(&#x27;body-filter-popup&#x27;);
+    } else {
+      // check click is on popup or not
+      const filterBody &#x3D; document.getElementById(this.currentPopUpID!)?.contains(targetElement);
+      if (filterBody) return // if click on popup then return
+      if (this.currentPopUpID &amp;&amp; !filterBody &amp;&amp; targetElement.classList.contains(&#x27;p-dropdown-item&#x27;)) return // return if value select from popup dropdown
+      if (this.currentPopUpID &amp;&amp; !filterBody &amp;&amp; targetElement.classList.contains(&#x27;p-checkbox-icon&#x27;)) return // return if value select from popup checkbox
+      if (this.currentPopUpID &amp;&amp; !filterBody &amp;&amp; targetElement.getAttribute(&#x27;type&#x27;) &#x3D;&#x3D;&#x3D; &#x27;checkbox&#x27;) return // return if value select from popup checkbox
+      this.isFilterPopUpOpen &#x3D; false;
+      // reset unselected option if user close popup without apply option to comapre current query string options
+      if (this.currentPopUpID) {
+        const filter &#x3D; this.currentPopUpID?.split(&#x27;_&#x27;).slice(0, -1).join(&#x27;_&#x27;);
+        const queryExist &#x3D; this.arrFilterQueryString.find((element: any) &#x3D;&gt; element.name &#x3D;&#x3D;&#x3D; filter);
+        const selectedFilter &#x3D; this.arrFilterForm?.find((form: any) &#x3D;&gt; form.name.value &#x3D;&#x3D;&#x3D; filter);
+        if (selectedFilter?.type &#x3D;&#x3D;&#x3D; &#x27;checkbox&#x27;) {
+          selectedFilter?.data.forEach((element: any) &#x3D;&gt; {
+            if (!queryExist?.value.includes(element.value)) {
+              element.checked &#x3D; false;
+            }
+          });
+        }
+        if (selectedFilter?.type &#x3D;&#x3D;&#x3D; &#x27;multi-choice&#x27;) {
+          const selectedValues &#x3D; queryExist?.value.map((value: any) &#x3D;&gt; { return value.value });
+          selectedFilter?.data.forEach((element: any) &#x3D;&gt; {
+            if (!selectedValues.includes(element.value)) {
+              element.checked &#x3D; false;
+            }
+          });
+        }
+        if (selectedFilter?.type &#x3D;&#x3D;&#x3D; &#x27;dropdown&#x27; || selectedFilter?.type &#x3D;&#x3D;&#x3D; &#x27;textbox&#x27;) {
+          selectedFilter?.data.forEach((element: any) &#x3D;&gt; {
+            if (element.temp &amp;&amp; !element.select) {
+              element.temp &#x3D; undefined;
+            }
+          });
+        }
+      }
+      // reset current popup ID
+      this.currentPopUpID &#x3D; undefined;
+      // hide all another popup if there is one open otherwise all popup will be close
+      this.hideAllPopupFilter(getCurrentPopUpID);
+    }
+  }
+
+  /**
+ * Displays a filter dialog options popup for a specific filter.
+ * 
+ * This function handles the positioning and display of a filter popup dialog.
+ * It calculates the position based on the parent element&#x27;s location and adjusts
+ * for screen boundaries. It also applies visual effects like blurring the background.
+ *
+ * @param key - The identifier for the current filter. Used to find the filter data.
+ * @param parent - The ID of the parent element that triggers the popup.
+ * @param child - The ID of the child element that represents the popup dialog.
+ * 
+ * @returns {void} This function doesn&#x27;t return a value, but modifies the DOM to display the popup.
+ */
+  showFilterDialogOptions(key: unknown, parent: string, child: string): void {
+
+    // set current filter to display popup
+    this.currentFilterData &#x3D; this.arrFilterForm?.find((element: FilterFormData) &#x3D;&gt; element.name &#x3D;&#x3D; key);
+
+    // show popup by reomve hidden class from element of popup
+    const currentPopup &#x3D; document.getElementById(child);
+    currentPopup?.classList.remove(&#x27;hidden&#x27;);
+
+    // find parent, child and filter body elements
+    const eleParent &#x3D; document.getElementById(parent);
+    const eleChild &#x3D; document.getElementById(child);
+    const eleFilterBody &#x3D; document.getElementById(&#x27;filter-body&#x27;);
+    // if all element find then move ahed otherwise stop
+    if (!(eleParent &amp;&amp; eleChild &amp;&amp; eleFilterBody)) {
+      return;
+    }
+    // get posiition of parent, child and filter body elements
+    const eleParentReact &#x3D; eleParent.getBoundingClientRect();
+    const eleChildReact &#x3D; eleChild.getBoundingClientRect();
+    const eleFilterBodydReact &#x3D; eleFilterBody.getBoundingClientRect();
+    if (eleParentReact &amp;&amp; eleChildReact) {
+      // check popup height more than sceen height then move popup top by dynamic calculation
+      const isFitInScreen &#x3D; (eleParentReact.x + eleParentReact.y + eleChildReact.height) - 50;
+      // default top if popup fit in window sceen hieght
+      let defaultTop &#x3D; eleParentReact.y - eleFilterBodydReact.y - 50;
+      // if popup height more than window height
+      if (isFitInScreen &gt; window.screen.height) {
+        // substract height distance from actual top 
+        const difference &#x3D; isFitInScreen - window.screen.height;
+        defaultTop -&#x3D; difference
+      }
+      // set filter popup menu position for individual filter
+      const childLeft &#x3D; eleParentReact.width + 40;
+      eleChild.style.left &#x3D; &#x60;${childLeft}px&#x60;;
+      eleChild.style.top &#x3D; &#x60;${defaultTop}px&#x60;;
+
+      // add class to blur filter section during modification of any filter
+      const eleFilterSection &#x3D; document.getElementById(&#x27;filter-section&#x27;);
+      eleFilterSection!.classList.add(&#x27;body-filter-popup&#x27;);
+    }
+  }
+
+  /**
+   * Hides all filter popups except for the one specified by the input ID.
+   * This function manages the visibility of filter popups and updates the current popup state.
+   * It also removes the blur effect from the filter section when all popups are closed.
+   *
+   * @param getCurrentPopUpID - The ID of the popup that should remain visible (if any).
+   *                            All other popups will be hidden. If this matches no popup ID,
+   *                            all popups will be hidden.
+   * @returns void This function doesn&#x27;t return a value, but modifies the DOM and component state.
+   */
+  hideAllPopupFilter(getCurrentPopUpID: any): void {
+    // check all popup type and disbale other if already displayed
+    const getAllPopUp &#x3D; document.querySelectorAll(&#x27;.filter-popup&#x27;);
+    getAllPopUp.forEach(element &#x3D;&gt; {
+      if (getCurrentPopUpID &#x3D;&#x3D;&#x3D; element.getAttribute(&#x27;id&#x27;)) {
+        this.currentPopUpID &#x3D; getCurrentPopUpID!;
+      } else {
+        element.classList.add(&#x27;hidden&#x27;);
+        this.isFilterPopUpOpen &#x3D; false;
+      }
+    });
+  
+    // remove blur on filter section
+    const eleFilterSection &#x3D; document.getElementById(&#x27;filter-section&#x27;);
+    if (eleFilterSection) {
+      eleFilterSection.classList.remove(&#x27;body-filter-popup&#x27;);
+    }
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'FilterFormData.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

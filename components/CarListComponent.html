@@ -1,0 +1,2440 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>autocreditco documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">autocreditco documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  CarListComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/user/car-list/car-list.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-car-list</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./car-list.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./car-list.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#arrCarList" >arrCarList</a>
+                            </li>
+                            <li>
+                                <a href="#arrCarListCopy" >arrCarListCopy</a>
+                            </li>
+                            <li>
+                                <a href="#arrFilterList" >arrFilterList</a>
+                            </li>
+                            <li>
+                                <a href="#arrListingStatus" >arrListingStatus</a>
+                            </li>
+                            <li>
+                                <a href="#arrTableContentTitle" >arrTableContentTitle</a>
+                            </li>
+                            <li>
+                                <a href="#cols" >cols</a>
+                            </li>
+                            <li>
+                                <a href="#colsCSVSelected" >colsCSVSelected</a>
+                            </li>
+                            <li>
+                                <a href="#isExportCSVDialogOpen" >isExportCSVDialogOpen</a>
+                            </li>
+                            <li>
+                                <a href="#limit" >limit</a>
+                            </li>
+                            <li>
+                                <a href="#page" >page</a>
+                            </li>
+                            <li>
+                                <a href="#responsiveOptions" >responsiveOptions</a>
+                            </li>
+                            <li>
+                                <a href="#selectedColumns" >selectedColumns</a>
+                            </li>
+                            <li>
+                                <a href="#strCurrentCarStatusList" >strCurrentCarStatusList</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#activeStatusCar" >activeStatusCar</a>
+                            </li>
+                            <li>
+                                <a href="#checkFieldIsArray" >checkFieldIsArray</a>
+                            </li>
+                            <li>
+                                <a href="#checkFieldIsFromFilter" >checkFieldIsFromFilter</a>
+                            </li>
+                            <li>
+                                <a href="#checkFilterTitleFromFilterList" >checkFilterTitleFromFilterList</a>
+                            </li>
+                            <li>
+                                <a href="#checkTitleShouldToChange" >checkTitleShouldToChange</a>
+                            </li>
+                            <li>
+                                <a href="#downloadAutoTraderCSV" >downloadAutoTraderCSV</a>
+                            </li>
+                            <li>
+                                <a href="#downloadCSV" >downloadCSV</a>
+                            </li>
+                            <li>
+                                <a href="#findCarPrimaryImage" >findCarPrimaryImage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getCarList" >getCarList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#redirectToAddCar" >redirectToAddCar</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router, commonService: <a href="../injectables/CommonService.html" target="_self">CommonService</a>, csvService: <a href="../injectables/CSVService.html" target="_self">CSVService</a>, httpService: <a href="../injectables/HttpService.html" target="_self">HttpService</a>, messageService: MessageService, confirmationService: ConfirmationService, localStorageService: <a href="../injectables/LocalStorageService.html" target="_self">LocalStorageService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:52</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>commonService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CommonService.html" target="_self" >CommonService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>csvService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CSVService.html" target="_self" >CSVService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>httpService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/HttpService.html" target="_self" >HttpService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>messageService</td>
+                                                  
+                                                        <td>
+                                                                    <code>MessageService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>confirmationService</td>
+                                                  
+                                                        <td>
+                                                                    <code>ConfirmationService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>localStorageService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LocalStorageService.html" target="_self" >LocalStorageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="activeStatusCar"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>activeStatusCar</b></span>
+                        <a href="#activeStatusCar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>activeStatusCar(event: InputSwitchChangeEvent, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="156"
+                                    class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:156</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Updates the active status of a car.</p>
+<p>This asynchronous function sends a request to update the active status of a car
+based on the provided input switch event. If the update is successful, it displays
+a success message and refreshes the car list.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>InputSwitchChangeEvent</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The InputSwitchChangeEvent containing the new active status.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The unique identifier of the car to be updated.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A Promise that resolves when the car status has been updated and the car list has been refreshed.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkFieldIsArray"></a>
+                    <span class="name">
+                        <span ><b>checkFieldIsArray</b></span>
+                        <a href="#checkFieldIsArray"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>checkFieldIsArray(data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="218"
+                                    class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:218</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Checks if the given data is an array.</p>
+<p>This function uses the Array.isArray() method to determine whether
+the provided data is an array or not.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The value to be checked. Can be of any type.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A boolean value. Returns true if the data is an array, false otherwise.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkFieldIsFromFilter"></a>
+                    <span class="name">
+                        <span ><b>checkFieldIsFromFilter</b></span>
+                        <a href="#checkFieldIsFromFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>checkFieldIsFromFilter(field: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="204"
+                                    class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:204</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Checks if the given field is a filter field based on the component&#39;s filter list.</p>
+<p>This function determines whether a field is considered a filter field by searching
+for it in the component&#39;s filter list and checking its type. A field is considered
+a filter field if it exists in the filter list and its type is either &#39;textbox-list&#39;
+or &#39;checkbox&#39;.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">     filter list and has a type of &#39;textbox-list&#39; or &#39;checkbox&#39;), false otherwise.</code></pre></div></div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>field</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The name of the field to check.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A boolean value. Returns true if the field is a filter field (exists in the
+filter list and has a type of &#39;textbox-list&#39; or &#39;checkbox&#39;), false otherwise.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkFilterTitleFromFilterList"></a>
+                    <span class="name">
+                        <span ><b>checkFilterTitleFromFilterList</b></span>
+                        <a href="#checkFilterTitleFromFilterList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>checkFilterTitleFromFilterList(filter: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, title: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="233"
+                                    class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:233</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Retrieves the label for a given filter and title from the filter list.</p>
+<p>This function searches the component&#39;s filter list for a matching filter and title,
+and returns the corresponding label. If no match is found, it returns a default value.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">     Returns &#39;---&#39; if no match is found.</code></pre></div></div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>filter</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The name of the filter to search for in the filter list.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>title</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The value to match within the found filter&#39;s data.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The label corresponding to the matched filter and title. 
+Returns &#39;---&#39; if no match is found.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkTitleShouldToChange"></a>
+                    <span class="name">
+                        <span ><b>checkTitleShouldToChange</b></span>
+                        <a href="#checkTitleShouldToChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>checkTitleShouldToChange(header: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="188"
+                                    class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:188</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Checks if the given header should be converted to title case.</p>
+<p>This function determines whether the provided header string should be
+transformed into title case based on a predefined list of headers
+stored in the <code>arrTableContentTitle</code> array.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>header</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The header string to check for title case conversion.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The matching header string if found in the predefined list, otherwise undefined.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="downloadAutoTraderCSV"></a>
+                    <span class="name">
+                        <span ><b>downloadAutoTraderCSV</b></span>
+                        <a href="#downloadAutoTraderCSV"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>downloadAutoTraderCSV()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="275"
+                                    class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:275</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Generates and downloads a CSV file formatted for AutoTrader with car listing information.</p>
+<p>This method processes the car list data, formats it according to AutoTrader&#39;s specifications,
+and initiates a download of the resulting CSV file. It includes details such as car
+specifications, VIN information, photo URLs, and last modified dates.</p>
+<p>The function performs the following steps:</p>
+<ol>
+<li><p>Defines the CSV header and corresponding field names.</p>
+</li>
+<li><p>Iterates through the car list, extracting and formatting relevant information.</p>
+</li>
+<li><p>Identifies the primary photo and additional photos for each car.</p>
+</li>
+<li><p>Formats dates according to AutoTrader&#39;s requirements.</p>
+</li>
+<li><p>Generates the CSV file and triggers its download.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">         of &#39;autotrader.csv&#39; in the user&#39;s browser.</code></pre></div></li>
+</ol>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>This method doesn&#39;t return a value but triggers a file download
+of &#39;autotrader.csv&#39; in the user&#39;s browser.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="downloadCSV"></a>
+                    <span class="name">
+                        <span ><b>downloadCSV</b></span>
+                        <a href="#downloadCSV"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>downloadCSV()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="252"
+                                    class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:252</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Downloads a CSV file containing selected car data.</p>
+<p>This method filters the selected columns from <code>colsCSVSelected</code>,
+extracts the headers and fields, and then uses the <code>csvService</code>
+to generate and download a CSV file named &#39;cars.csv&#39; with the
+filtered car data.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">            a file download in the user&#39;s browser.</code></pre></div></div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>This method doesn&#39;t return a value but triggers
+a file download in the user&#39;s browser.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findCarPrimaryImage"></a>
+                    <span class="name">
+                        <span ><b>findCarPrimaryImage</b></span>
+                        <a href="#findCarPrimaryImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>findCarPrimaryImage(car: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="174"
+                                    class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:174</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Finds the primary image of a car based on the lowest position value.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">         Each image object is expected to have a &#39;position&#39; property.
+
+     the primary image. If no images are found, it returns undefined.</code></pre></div></div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>car</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>An array of image objects representing the car&#39;s images.
+Each image object is expected to have a &#39;position&#39; property.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The image object with the lowest position value, which is considered
+the primary image. If no images are found, it returns undefined.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCarList"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getCarList</b></span>
+                        <a href="#getCarList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getCarList(status: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, event?: TablePageEvent)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="84"
+                                    class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:84</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Retrieves and processes the car list based on the given status and pagination event.
+This method handles user authentication, fetches car data, and prepares it for display and export.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">     If there&#39;s no car data or the user is redirected, the function may return early.</code></pre></div></div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>status</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The status of the cars to retrieve (e.g., &#39;live&#39;, &#39;sold&#39;, &#39;removed&#39;, &#39;staging&#39;).</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>TablePageEvent</code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Optional. The table pagination event containing information about the current page and rows per page.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A Promise that resolves when the car list has been retrieved and processed.
+If there&#39;s no car data or the user is redirected, the function may return early.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:71</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Initializes the component by fetching the car list.
+This method is called automatically by Angular when the component is initialized.
+It asynchronously retrieves the car list based on the current car status list.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A Promise that resolves to void when the initialization is complete.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="redirectToAddCar"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>redirectToAddCar</b></span>
+                        <a href="#redirectToAddCar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>redirectToAddCar(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="309"
+                                    class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:309</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Redirects the user to the car management page after checking their profile status.
+If the user is not a dealer, it checks if they have an address in their profile.
+If no address is found, it prompts the user to add an address before proceeding.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">     The function doesn&#39;t return any value explicitly, but may redirect the user to different pages.</code></pre></div></div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The event object that triggered this function. Used to target the confirmation dialog.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A Promise that resolves when the redirection is complete or the confirmation dialog is shown.
+The function doesn&#39;t return any value explicitly, but may redirect the user to different pages.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="arrCarList"></a>
+                    <span class="name">
+                        <span ><b>arrCarList</b></span>
+                        <a href="#arrCarList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="arrCarListCopy"></a>
+                    <span class="name">
+                        <span ><b>arrCarListCopy</b></span>
+                        <a href="#arrCarListCopy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="arrFilterList"></a>
+                    <span class="name">
+                        <span ><b>arrFilterList</b></span>
+                        <a href="#arrFilterList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="arrListingStatus"></a>
+                    <span class="name">
+                        <span ><b>arrListingStatus</b></span>
+                        <a href="#arrListingStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    { label: &#x27;live&#x27;, icon: &#x27;local_shipping&#x27; },
+    { label: &#x27;sold&#x27;, icon: &#x27;car_tag&#x27;, info: &#x27;When a vehicle is sold, you can change its listing status to Sold to remove it from the marketplace and label it as &quot;Sold&quot; for your reporting purposes.\n\nInventory that has been placed and remains in the Sold or Removed status for more than 30 days will be completely removed from these folders and no longer accessible. If you need to keep any vehicle offline for more than 30 days, we suggest that you move these vehicles to the Staging section.&#x27; },
+    { label: &#x27;removed&#x27;, icon: &#x27;auto_delete&#x27;, info: &#x27;if you want to remove a listing from the marketplace, but the vehicle has not been sold, then you can change its listing status to Removed.\n\nInventory that has been placed and remains in the Sold or Removed status for more than 30 days will be completely removed from these folders and no longer accessible. If you need to keep any vehicle offline for more than 30 days, we suggest that you move these vehicles to the Staging folder.&#x27; },
+    { label: &#x27;staging&#x27;, icon: &#x27;downloading&#x27;, info: &#x27;A listing with a status of Staging is not live, but exists for you to keep preparing until you are ready to go live.&#x27; }
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="arrTableContentTitle"></a>
+                    <span class="name">
+                        <span ><b>arrTableContentTitle</b></span>
+                        <a href="#arrTableContentTitle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;category&#x27;, &#x27;condition&#x27;, &#x27;status&#x27;, &#x27;publish_to&#x27;]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cols"></a>
+                    <span class="name">
+                        <span ><b>cols</b></span>
+                        <a href="#cols"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Column[]</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="colsCSVSelected"></a>
+                    <span class="name">
+                        <span ><b>colsCSVSelected</b></span>
+                        <a href="#colsCSVSelected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isExportCSVDialogOpen"></a>
+                    <span class="name">
+                        <span ><b>isExportCSVDialogOpen</b></span>
+                        <a href="#isExportCSVDialogOpen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="limit"></a>
+                    <span class="name">
+                        <span ><b>limit</b></span>
+                        <a href="#limit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>10</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="page"></a>
+                    <span class="name">
+                        <span ><b>page</b></span>
+                        <a href="#page"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="responsiveOptions"></a>
+                    <span class="name">
+                        <span ><b>responsiveOptions</b></span>
+                        <a href="#responsiveOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[] | undefined</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedColumns"></a>
+                    <span class="name">
+                        <span ><b>selectedColumns</b></span>
+                        <a href="#selectedColumns"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Column[]</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="strCurrentCarStatusList"></a>
+                    <span class="name">
+                        <span ><b>strCurrentCarStatusList</b></span>
+                        <a href="#strCurrentCarStatusList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;live&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/modules/user/car-list/car-list.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewEncapsulation } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+// date format
+import dayjs from &#x27;dayjs&#x27;;
+
+// custom service
+import { HttpService } from &#x27;../../../utilities/services/http.service&#x27;;
+import { CommonService } from &#x27;../../../utilities/services/common.service&#x27;;
+import { LocalStorageService } from &#x27;../../../utilities/services/local-storage.service&#x27;;
+import { CSVService } from &#x27;../../../utilities/services/csv.service&#x27;;
+
+// primeng
+import { ConfirmationService, MessageService } from &#x27;primeng/api&#x27;;
+import { TablePageEvent } from &#x27;primeng/table&#x27;;
+import { InputSwitchChangeEvent } from &#x27;primeng/inputswitch&#x27;;
+
+interface Column {
+  field: string;
+  header: string;
+}
+
+@Component({
+  selector: &#x27;app-car-list&#x27;,
+  templateUrl: &#x27;./car-list.component.html&#x27;,
+  styleUrl: &#x27;./car-list.component.scss&#x27;,
+  encapsulation: ViewEncapsulation.None
+})
+export class CarListComponent implements OnInit {
+
+  cols!: Column[]; // table column list
+  arrCarList: any &#x3D; []; // store car&#x27;s by api
+  arrFilterList: any; // store filter to show lable of perticular filter
+  selectedColumns!: Column[]; // selected column default list
+  arrTableContentTitle &#x3D; [&#x27;category&#x27;, &#x27;condition&#x27;, &#x27;status&#x27;, &#x27;publish_to&#x27;]; // field to change content to title case
+
+  page &#x3D; 0;
+  limit &#x3D; 10;
+
+  responsiveOptions: any[] | undefined; // resposive html element of primng
+
+  isExportCSVDialogOpen: boolean &#x3D; false;
+  colsCSVSelected!: any; // table column list
+  arrCarListCopy: any &#x3D; []; // Store CSV data with label
+
+  arrListingStatus &#x3D; [
+    { label: &#x27;live&#x27;, icon: &#x27;local_shipping&#x27; },
+    { label: &#x27;sold&#x27;, icon: &#x27;car_tag&#x27;, info: &#x27;When a vehicle is sold, you can change its listing status to Sold to remove it from the marketplace and label it as &quot;Sold&quot; for your reporting purposes.\n\nInventory that has been placed and remains in the Sold or Removed status for more than 30 days will be completely removed from these folders and no longer accessible. If you need to keep any vehicle offline for more than 30 days, we suggest that you move these vehicles to the Staging section.&#x27; },
+    { label: &#x27;removed&#x27;, icon: &#x27;auto_delete&#x27;, info: &#x27;if you want to remove a listing from the marketplace, but the vehicle has not been sold, then you can change its listing status to Removed.\n\nInventory that has been placed and remains in the Sold or Removed status for more than 30 days will be completely removed from these folders and no longer accessible. If you need to keep any vehicle offline for more than 30 days, we suggest that you move these vehicles to the Staging folder.&#x27; },
+    { label: &#x27;staging&#x27;, icon: &#x27;downloading&#x27;, info: &#x27;A listing with a status of Staging is not live, but exists for you to keep preparing until you are ready to go live.&#x27; }
+  ];
+  strCurrentCarStatusList &#x3D; &#x27;live&#x27;;
+
+  constructor(
+    private readonly router: Router,
+    readonly commonService: CommonService,
+    private readonly csvService: CSVService,
+    private readonly httpService: HttpService,
+    private readonly messageService: MessageService,
+    private readonly confirmationService: ConfirmationService,
+    readonly localStorageService: LocalStorageService
+  ) { }
+
+  /**
+   * Initializes the component by fetching the car list.
+   * This method is called automatically by Angular when the component is initialized.
+   * It asynchronously retrieves the car list based on the current car status list.
+   * 
+   * @returns A Promise that resolves to void when the initialization is complete.
+   */
+  async ngOnInit(): Promise&lt;void&gt; {
+    await this.getCarList(this.strCurrentCarStatusList);
+  }
+
+  /**
+ * Retrieves and processes the car list based on the given status and pagination event.
+ * This method handles user authentication, fetches car data, and prepares it for display and export.
+ * 
+ * @param status - The status of the cars to retrieve (e.g., &#x27;live&#x27;, &#x27;sold&#x27;, &#x27;removed&#x27;, &#x27;staging&#x27;).
+ * @param event - Optional. The table pagination event containing information about the current page and rows per page.
+ * @returns A Promise that resolves when the car list has been retrieved and processed.
+ *          If there&#x27;s no car data or the user is redirected, the function may return early.
+ */
+  async getCarList(status: string, event?: TablePageEvent) {
+
+    // check user type
+    const isUserDealer &#x3D; this.localStorageService.userIsDealer();
+
+    // check user is dealer or store
+    let storeOrUser &#x3D; this.localStorageService.get(&#x27;store&#x27;);
+    if (!storeOrUser &amp;&amp; isUserDealer) {
+      this.router.navigateByUrl(&#x27;/user/store&#x27;);
+      return
+    }
+
+    if (!isUserDealer) {
+      storeOrUser &#x3D; this.localStorageService.getObject(&#x27;user&#x27;).identifier;
+    }
+
+    // check if paginate then update default value
+    if (event) {
+      this.page &#x3D; event.first / event.rows;
+      this.limit &#x3D; event.rows;
+    }
+
+    // get filter&#x27;s to set filter field&#x27;s in column
+    this.arrFilterList &#x3D; (await this.httpService.get(&#x27;filter&#x27;) as any).data;
+
+    // get dynamic data from filter
+    this.arrCarList &#x3D; await this.httpService.get(&#x60;car/user/${storeOrUser}/${status}?page&#x3D;${this.page}&amp;limit&#x3D;${this.limit}&#x60;);
+    if (!this.arrCarList?.data.length) {
+      return
+    }
+
+    //copy car list data for csv
+    this.arrCarListCopy &#x3D; JSON.parse(JSON.stringify(this.arrCarList.data));
+
+    // make list for earliest display column 
+    const arrTempSequence &#x3D; [&#x27;images&#x27;, &#x27;category&#x27;, &#x27;make&#x27;, &#x27;model&#x27;, &#x27;year&#x27;, &#x27;vin_number&#x27;, &#x27;condition&#x27;, &#x27;status&#x27;, &#x27;asking_price&#x27;];
+    // add in table column list
+    this.cols &#x3D; arrTempSequence.map((key: string) &#x3D;&gt; { return { field: key, header: this.commonService.replaceStringToCapitalize(key) } });
+    // check there is other columns in array - yes then include after earlist column list
+    Object.keys(this.arrCarList?.data[0]).map((key: string) &#x3D;&gt; {
+      const isExist &#x3D; this.cols.find((element: Column) &#x3D;&gt; element.field &#x3D;&#x3D;&#x3D; key)
+      if (isExist || key &#x3D;&#x3D;&#x3D; &#x27;_id&#x27; || key &#x3D;&#x3D;&#x3D; &#x27;description&#x27; || key &#x3D;&#x3D;&#x3D; &#x27;warrenty_description&#x27;
+        || key &#x3D;&#x3D;&#x3D; &#x27;videos&#x27; || key &#x3D;&#x3D;&#x3D; &#x27;images&#x27; || key &#x3D;&#x3D;&#x3D; &#x27;video_url&#x27;) return // if is exist then return - prevent duplication &amp; remove id as well
+      this.cols.push({ field: key, header: this.commonService.replaceStringToCapitalize(key) });
+    });
+    // add earlist column list in selected column by default
+    this.selectedColumns &#x3D; arrTempSequence.map((key: string) &#x3D;&gt; { return { field: key, header: this.commonService.replaceStringToCapitalize(key) } });
+
+    //export CSV
+    // copy cols array to select field on export csv
+    this.colsCSVSelected &#x3D; JSON.parse(JSON.stringify(this.cols));
+    this.colsCSVSelected &#x3D; this.colsCSVSelected.filter((col: any) &#x3D;&gt; ![&#x27;active&#x27;, &#x27;location&#x27;, &#x27;createdBy&#x27;, &#x27;category&#x27;].includes(col.field));
+    this.arrCarListCopy.forEach((car: any) &#x3D;&gt; {
+      Object.keys(car).forEach((key: string) &#x3D;&gt; {
+        if (this.checkFieldIsFromFilter(key)) {
+          car[key] &#x3D; this.checkFilterTitleFromFilterList(key, car[key]);
+        }
+      })
+    });
+  }
+
+  /**
+   * Updates the active status of a car.
+   * 
+   * This asynchronous function sends a request to update the active status of a car
+   * based on the provided input switch event. If the update is successful, it displays
+   * a success message and refreshes the car list.
+   * 
+   * @param event - The InputSwitchChangeEvent containing the new active status.
+   * @param id - The unique identifier of the car to be updated.
+   * @returns A Promise that resolves when the car status has been updated and the car list has been refreshed.
+   */
+  async activeStatusCar(event: InputSwitchChangeEvent, id: string) {
+    // send request to active / deactive car data
+    const result: any &#x3D; await this.httpService.patch(&#x27;car/status/&#x27; + id, { active: event.checked });
+    if (result.success) {
+      this.messageService.add({ severity: &#x27;secondary&#x27;, summary: &#x27;Success&#x27;, detail: &#x27;Car status is updated!&#x27; });
+      await this.getCarList(this.strCurrentCarStatusList);
+    }
+  }
+
+  /**
+   * Finds the primary image of a car based on the lowest position value.
+   * 
+   * @param car - An array of image objects representing the car&#x27;s images.
+   *              Each image object is expected to have a &#x27;position&#x27; property.
+   * 
+   * @returns The image object with the lowest position value, which is considered
+   *          the primary image. If no images are found, it returns undefined.
+   */
+  findCarPrimaryImage(car: any) {
+    return car.find((image: any) &#x3D;&gt; image.position &#x3D;&#x3D;&#x3D; Math.min(...car.map((img: any) &#x3D;&gt; img.position)));
+  }
+
+  /**
+   * Checks if the given header should be converted to title case.
+   * 
+   * This function determines whether the provided header string should be
+   * transformed into title case based on a predefined list of headers
+   * stored in the &#x60;arrTableContentTitle&#x60; array.
+   *
+   * @param header - The header string to check for title case conversion.
+   * @returns The matching header string if found in the predefined list, otherwise undefined.
+   */
+  checkTitleShouldToChange(header: string) {
+    return this.arrTableContentTitle.find((search: string) &#x3D;&gt; search &#x3D;&#x3D;&#x3D; header);
+  }
+
+  /**
+   * Checks if the given field is a filter field based on the component&#x27;s filter list.
+   * 
+   * This function determines whether a field is considered a filter field by searching
+   * for it in the component&#x27;s filter list and checking its type. A field is considered
+   * a filter field if it exists in the filter list and its type is either &#x27;textbox-list&#x27;
+   * or &#x27;checkbox&#x27;.
+   *
+   * @param field - The name of the field to check.
+   * @returns A boolean value. Returns true if the field is a filter field (exists in the
+   *          filter list and has a type of &#x27;textbox-list&#x27; or &#x27;checkbox&#x27;), false otherwise.
+   */
+  checkFieldIsFromFilter(field: string) {
+    const filter &#x3D; this.arrFilterList.find((element: any) &#x3D;&gt; element.name.value &#x3D;&#x3D;&#x3D; field);
+    return filter &amp;&amp; (filter.type &#x3D;&#x3D;&#x3D; &#x27;textbox-list&#x27; || filter.type &#x3D;&#x3D;&#x3D; &#x27;checkbox&#x27;);
+  }
+
+  /**
+   * Checks if the given data is an array.
+   * 
+   * This function uses the Array.isArray() method to determine whether
+   * the provided data is an array or not.
+   *
+   * @param data - The value to be checked. Can be of any type.
+   * @returns A boolean value. Returns true if the data is an array, false otherwise.
+   */
+  checkFieldIsArray(data: any): boolean {
+    return Array.isArray(data);
+  }
+
+  /**
+   * Retrieves the label for a given filter and title from the filter list.
+   * 
+   * This function searches the component&#x27;s filter list for a matching filter and title,
+   * and returns the corresponding label. If no match is found, it returns a default value.
+   *
+   * @param filter - The name of the filter to search for in the filter list.
+   * @param title - The value to match within the found filter&#x27;s data.
+   * @returns The label corresponding to the matched filter and title. 
+   *          Returns &#x27;---&#x27; if no match is found.
+   */
+  checkFilterTitleFromFilterList(filter: string, title: string) {
+    const data &#x3D; this.arrFilterList.find((element: any) &#x3D;&gt; element.name.value &#x3D;&#x3D;&#x3D; filter).data.find((data: any) &#x3D;&gt; data.value &#x3D;&#x3D;&#x3D; title);
+    if (!data) {
+      return &#x27;---&#x27;;
+    }
+    return data.label;
+  }
+
+  /**
+   * Downloads a CSV file containing selected car data.
+   * 
+   * This method filters the selected columns from &#x60;colsCSVSelected&#x60;,
+   * extracts the headers and fields, and then uses the &#x60;csvService&#x60;
+   * to generate and download a CSV file named &#x27;cars.csv&#x27; with the
+   * filtered car data.
+   * 
+   * @returns {void} This method doesn&#x27;t return a value but triggers
+   *                 a file download in the user&#x27;s browser.
+   */
+  downloadCSV(): void {
+    const header &#x3D; this.colsCSVSelected.filter((row: any) &#x3D;&gt; row.selected).map((row: Column) &#x3D;&gt; { return row.header });
+    const field &#x3D; this.colsCSVSelected.filter((row: any) &#x3D;&gt; row.selected).map((row: Column) &#x3D;&gt; { return row.field });
+    this.csvService.downloadFile(this.arrCarListCopy, header, field, &#x27;cars.csv&#x27;);
+  }
+
+  /**
+   * Generates and downloads a CSV file formatted for AutoTrader with car listing information.
+   * 
+   * This method processes the car list data, formats it according to AutoTrader&#x27;s specifications,
+   * and initiates a download of the resulting CSV file. It includes details such as car
+   * specifications, VIN information, photo URLs, and last modified dates.
+   * 
+   * The function performs the following steps:
+   * 1. Defines the CSV header and corresponding field names.
+   * 2. Iterates through the car list, extracting and formatting relevant information.
+   * 3. Identifies the primary photo and additional photos for each car.
+   * 4. Formats dates according to AutoTrader&#x27;s requirements.
+   * 5. Generates the CSV file and triggers its download.
+   * 
+   * @returns {void} This method doesn&#x27;t return a value but triggers a file download
+   *                 of &#x27;autotrader.csv&#x27; in the user&#x27;s browser.
+   */
+  downloadAutoTraderCSV(): void {
+    const header &#x3D; [&#x27;Year&#x27;, &#x27;Make&#x27;, &#x27;Model&#x27;, &#x27;Stock Number&#x27;, &#x27;VIN Number&#x27;, &#x27;VIN Status&#x27;, &#x27;Unique Identifier&#x27;, &#x27;Ad Last Modified Date&#x27;, &#x27;Photo&#x27;, &#x27;Photo Last Modified Date&#x27;, &#x27;Additional Photos&#x27;, &#x27;Additional Photos Last Modified Date&#x27;];
+    const field &#x3D; [&#x27;year&#x27;, &#x27;make&#x27;, &#x27;model&#x27;, &#x27;stock_number&#x27;, &#x27;vin_number&#x27;, &#x27;vin_status&#x27;, &#x27;unique_identifier&#x27;, &#x27;update_at&#x27;, &#x27;photo&#x27;, &#x27;photo_date&#x27;, &#x27;additional_photos&#x27;, &#x27;additional_photos_date&#x27;];
+    const arrTemp: any &#x3D; [];
+    this.arrCarListCopy.forEach((car: any) &#x3D;&gt; {
+      const minPosition &#x3D; Math.min(...car.images.map((image: any) &#x3D;&gt; { return image.position }));
+      const arrOtherImages &#x3D; car.images.filter((image: any) &#x3D;&gt; image.position !&#x3D;&#x3D; minPosition);
+      arrTemp.push({
+        year: car.year,
+        make: car.make,
+        model: car.model,
+        stock_number: car.stock_number ?? &#x27;n/a&#x27;,
+        vin_number: car.vin_number ?? &#x27;n/a&#x27;,
+        vin_status: car.condition ?? &#x27;n/a&#x27;,
+        unique_identifier: &#x27;stock&#x27;,
+        update_at: dayjs(car.updatedAt).format(&#x27;MM/DD/YYYY HH:mm:ss&#x27;),
+        photo: String(car.images[minPosition].url),
+        photo_date: dayjs(car.images[minPosition].date).format(&#x27;MM/DD/YYYY HH:mm:ss&#x27;),
+        additional_photos: (arrOtherImages.map((image: any) &#x3D;&gt; { return image.url })).join(&#x27;,&#x27;),
+        additional_photos_date: (arrOtherImages.map((image: any) &#x3D;&gt; { return dayjs(image.date).format(&#x27;MM/DD/YYYY HH:mm:ss&#x27;) })).join(&#x27;,&#x27;),
+      })
+    });
+    this.csvService.downloadFile(arrTemp, header, field, &#x27;autotrader.csv&#x27;);
+  }
+
+  /**
+   * Redirects the user to the car management page after checking their profile status.
+   * If the user is not a dealer, it checks if they have an address in their profile.
+   * If no address is found, it prompts the user to add an address before proceeding.
+   * 
+   * @param event - The event object that triggered this function. Used to target the confirmation dialog.
+   * @returns A Promise that resolves when the redirection is complete or the confirmation dialog is shown.
+   *          The function doesn&#x27;t return any value explicitly, but may redirect the user to different pages.
+   */
+  async redirectToAddCar(event: any): Promise&lt;void&gt; {
+    if (!this.localStorageService.userIsDealer()) {
+      // get user profile
+      const user: any &#x3D; await this.httpService.get(&#x27;user/profile&#x27;);
+      if (!user.address) {
+        this.confirmationService.confirm({
+          target: event.target as EventTarget,
+          message: &#x27;There is no address in your profile, Kindly add address first to add advertisement?&#x27;,
+          header: &#x27;Caution&#x27;,
+          icon: &#x27;pi pi-exclamation-triangle&#x27;,
+          key: &#x27;addressUser&#x27;,
+          rejectButtonStyleClass: &quot;p-button-text&quot;,
+          accept: () &#x3D;&gt; {
+            this.router.navigateByUrl(&#x27;/user/profile&#x27;);
+          },
+          reject: () &#x3D;&gt; {
+          }
+        });
+        return
+      }
+    }
+    this.router.navigateByUrl(&#x27;/user/car-manage&#x27;);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;flex justify-content-between align-items-center mb-3&quot;&gt;
+    &lt;div class&#x3D;&quot;flex align-items-center font-bold text-primary-600 pl-3&quot;&gt;
+        &lt;div class&#x3D;&quot;text-2xl md:text-3xl&quot;&gt;
+            Manage Car&#x27;s
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;flex align-items-center gap-2&quot;&gt;
+        &lt;p-button label&#x3D;&quot;Add New Car&quot; (onClick)&#x3D;&quot;redirectToAddCar($event)&quot; styleClass&#x3D;&quot;mr-2&quot; icon&#x3D;&quot;pi pi-plus&quot;
+            size&#x3D;&quot;small&quot;&gt;&lt;/p-button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+@defer () {
+&lt;p-tabView (onChange)&#x3D;&quot;getCarList(arrListingStatus[$event.index].label)&quot;&gt;
+    @for (item of arrListingStatus; track $index) {
+    &lt;p-tabPanel [header]&#x3D;&quot;item.label&quot; headerStyleClass&#x3D;&quot;uppercase border-noround text-sm&quot;&gt;
+        &lt;ng-template pTemplate&#x3D;&quot;header&quot;&gt;
+            &lt;div class&#x3D;&quot;flex align-items-center justify-content-center gap-2&quot;&gt;
+                &lt;span class&#x3D;&quot;material-symbols-outlined&quot;&gt;
+                    {{ item.icon }}
+                &lt;/span&gt;
+                &lt;div&gt;
+                    {{ item.label }}
+                &lt;/div&gt;
+                &lt;div *ngIf&#x3D;&quot;item.info&quot;&gt;
+                    &lt;i class&#x3D;&quot;pi pi-info-circle font-bold&quot; [pTooltip]&#x3D;&quot;item.info&quot;&gt;&lt;/i&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/ng-template&gt;
+        @if(arrCarList &amp;&amp; arrCarList?.data.length &gt; 0) {
+        &lt;p-table #dtCar [columns]&#x3D;&quot;selectedColumns&quot; dataKey&#x3D;&quot;_id&quot; [value]&#x3D;&quot;arrCarList.data&quot; [rowHover]&#x3D;&quot;false&quot;
+            [paginator]&#x3D;&quot;true&quot; [rows]&#x3D;&quot;limit&quot; [showCurrentPageReport]&#x3D;&quot;true&quot; styleClass&#x3D;&quot;shadow-1&quot; [lazy]&#x3D;&quot;true&quot;
+            currentPageReportTemplate&#x3D;&quot;Showing {first} to {last} of {totalRecords} users&quot;
+            [totalRecords]&#x3D;&quot;arrCarList.count&quot; [rowsPerPageOptions]&#x3D;&quot;[10, 20, 35, 50, 100]&quot;
+            (onPage)&#x3D;&quot;getCarList(item.label, $event)&quot;&gt;
+            &lt;ng-template pTemplate&#x3D;&quot;caption&quot;&gt;
+                &lt;div
+                    class&#x3D;&quot;flex flex-column md:flex-row align-items-center justify-content-start md:justify-content-between&quot;&gt;
+                    &lt;p-multiSelect [options]&#x3D;&quot;cols&quot; [(ngModel)]&#x3D;&quot;selectedColumns&quot; optionLabel&#x3D;&quot;header&quot; appendTo&#x3D;&quot;body&quot;
+                        selectedItemsLabel&#x3D;&quot;Select Additional Columns&quot; [style]&#x3D;&quot;{&#x27;min-width&#x27;: &#x27;200px&#x27;}&quot;
+                        placeholder&#x3D;&quot;Choose Columns&quot;&gt;&lt;/p-multiSelect&gt;
+                    &lt;div class&#x3D;&quot;flex&quot; *ngIf&#x3D;&quot;localStorageService.userIsDealer()&quot;&gt;
+                        &lt;p-button label&#x3D;&quot;Autotrader CSV&quot;
+                            styleClass&#x3D;&quot;mt-2 md:mt-0 mr-2 align-items-center py-1 button-secondary&quot; size&#x3D;&quot;small&quot;
+                            (onClick)&#x3D;&quot;downloadAutoTraderCSV()&quot;&gt;
+                            &lt;ng-template pTemplate&#x3D;&quot;icon&quot;&gt;
+                                &lt;span class&#x3D;&quot;material-symbols-outlined mr-2&quot;&gt;
+                                    export_notes
+                                &lt;/span&gt;
+                            &lt;/ng-template&gt;
+                        &lt;/p-button&gt;
+                        &lt;p-button label&#x3D;&quot;Export CSV&quot;
+                            styleClass&#x3D;&quot;mt-2 md:mt-0 mr-2 align-items-center py-1 button-secondary&quot; size&#x3D;&quot;small&quot;
+                            (onClick)&#x3D;&quot;isExportCSVDialogOpen &#x3D; true&quot;&gt;
+                            &lt;ng-template pTemplate&#x3D;&quot;icon&quot;&gt;
+                                &lt;span class&#x3D;&quot;material-symbols-outlined mr-2&quot;&gt;
+                                    export_notes
+                                &lt;/span&gt;
+                            &lt;/ng-template&gt;
+                        &lt;/p-button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/ng-template&gt;
+            &lt;ng-template pTemplate&#x3D;&quot;header&quot; let-columns&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;
+                        &lt;i class&#x3D;&quot;pi pi-info-circle ml-3&quot; tooltipPosition&#x3D;&quot;top&quot;
+                            pTooltip&#x3D;&quot;Click on below specific row button to see details of that row&quot;&gt;&lt;/i&gt;
+                    &lt;/th&gt;
+                    &lt;th *ngFor&#x3D;&quot;let col of columns&quot;&gt;
+                        {{col.header}}
+                    &lt;/th&gt;
+                    &lt;th&gt;
+                        Status
+                    &lt;/th&gt;
+                    &lt;th&gt;
+                        Actions
+                    &lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/ng-template&gt;
+            &lt;ng-template pTemplate&#x3D;&quot;body&quot; let-car let-columns&#x3D;&quot;columns&quot; let-expanded&#x3D;&quot;expanded&quot;&gt;
+                &lt;!-- (click)&#x3D;&quot;dtCar.toggleRow(car, $event)&quot; --&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;
+                        &lt;button type&#x3D;&quot;button&quot; pButton pRipple [pRowToggler]&#x3D;&quot;car&quot;
+                            class&#x3D;&quot;p-button-text p-button-rounded p-button-plain bg-primary-50&quot;
+                            [icon]&#x3D;&quot;expanded ? &#x27;pi pi-chevron-down&#x27; : &#x27;pi pi-chevron-right&#x27;&quot;&gt;&lt;/button&gt;
+                    &lt;/td&gt;
+                    &lt;td *ngFor&#x3D;&quot;let col of columns&quot;&gt;
+                        @if (col.field &#x3D;&#x3D;&#x3D; &#x27;images&#x27;) {
+                        &lt;img [src]&#x3D;&quot;findCarPrimaryImage(car[col.field]).url&quot;
+                            [alt]&#x3D;&quot;findCarPrimaryImage(car[col.field]).name&quot; [pTooltip]&#x3D;&quot;car.name&quot; tooltipPosition&#x3D;&quot;top&quot;
+                            class&#x3D;&quot;shadow-4 bg-auto bg-no-repeat bg-center cursor-pointer&quot; width&#x3D;&quot;80&quot; height&#x3D;&quot;50&quot;&gt;
+                        &lt;!-- &lt;div class&#x3D;&quot;flex&quot;&gt;
+                                    &lt;div *ngFor&#x3D;&quot;let media of car[col.field]; let iM &#x3D; index&quot;&gt;
+                                        &lt;img class&#x3D;&quot;shadow-4 bg-auto bg-no-repeat bg-center&quot; *ngIf&#x3D;&quot;media.position &#x3D;&#x3D;&#x3D; 1&quot;
+                                            [src]&#x3D;&quot;media.url&quot; alt&#x3D;&quot;Image&quot; width&#x3D;&quot;80&quot; height&#x3D;&quot;50&quot; /&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt; --&gt;
+                        } @else if (col.field &#x3D;&#x3D;&#x3D; &#x27;in_stock_date&#x27;) {
+                        {{ car[col.field] | date:&#x27;dd/MM/yyyy&#x27; }}
+                        } @else {
+                        {{ checkTitleShouldToChange(col.field) ? commonService.replaceStringToCapitalize(car[col.field])
+                        :
+                        checkFieldIsFromFilter(col.field) ? checkFilterTitleFromFilterList(col.field, car[col.field]) :
+                        car[col.field] }}
+                        }
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;p-inputSwitch [(ngModel)]&#x3D;&quot;car.active&quot; (onChange)&#x3D;&quot;activeStatusCar($event, car._id)&quot; /&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;p-button icon&#x3D;&quot;pi pi-pencil&quot; [text]&#x3D;&quot;true&quot; severity&#x3D;&quot;success&quot; routerLink&#x3D;&quot;/user/car-manage&quot;
+                            [queryParams]&#x3D;&quot;{ id: car._id}&quot;&gt;&lt;/p-button&gt;
+                        &lt;!-- &lt;p-button icon&#x3D;&quot;pi pi-trash&quot; [text]&#x3D;&quot;true&quot; styleClass&#x3D;&quot;ml-2&quot; severity&#x3D;&quot;warning&quot;
+                                        (onClick)&#x3D;&quot;deleteCar($event, car._id)&quot;&gt;&lt;/p-button&gt; --&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/ng-template&gt;
+            &lt;ng-template pTemplate&#x3D;&quot;rowexpansion&quot; let-car let-columns&#x3D;&quot;columns&quot;&gt;
+                &lt;tr&gt;
+                    &lt;td [attr.colspan]&#x3D;&quot;selectedColumns.length + 2&quot; class&#x3D;&quot;bg-primary-50&quot;&gt;
+                        &lt;div class&#x3D;&quot;flex flex-column lg:flex-row w-full&quot;&gt;
+                            &lt;!-- images --&gt;
+                            &lt;div class&#x3D;&quot;w-6 md:w-6 xl:w-4&quot;&gt;
+                                &lt;p-galleria containerClass&#x3D;&quot;shadow-2&quot;
+                                    [value]&#x3D;&quot;commonService.sortArrayField(car.images, &#x27;position&#x27;, &#x27;number&#x27;)&quot;
+                                    [showItemNavigators]&#x3D;&quot;true&quot; [showThumbnails]&#x3D;&quot;false&quot; [circular]&#x3D;&quot;true&quot;
+                                    [numVisible]&#x3D;&quot;5&quot; [showIndicators]&#x3D;&quot;true&quot; [showIndicatorsOnItem]&#x3D;&quot;true&quot;&gt;
+                                    &lt;ng-template pTemplate&#x3D;&quot;item&quot; let-item&gt;
+                                        &lt;img [src]&#x3D;&quot;item.url&quot; style&#x3D;&quot;width: 100%;&quot; width&#x3D;&quot;150&quot; height&#x3D;&quot;400&quot; /&gt;
+                                    &lt;/ng-template&gt;
+                                &lt;/p-galleria&gt;
+                            &lt;/div&gt;
+                            &lt;!-- options --&gt;
+                            &lt;div class&#x3D;&quot;flex flex-wrap w-8 pl-3 mt-2 lg:mt-0&quot;&gt;
+                                &lt;div class&#x3D;&quot;w-full&quot; [ngClass]&#x3D;&quot;col.field &#x3D;&#x3D;&#x3D; &#x27;images&#x27; ? &#x27;w-0 h-0&#x27; : &#x27;xl:w-6&#x27;&quot;
+                                    *ngFor&#x3D;&quot;let col of cols&quot;&gt;
+                                    @if(col.field &#x3D;&#x3D;&#x3D; &#x27;in_stock_date&#x27;) {
+                                    &lt;div class&#x3D;&quot;flex text-sm&quot;&gt;
+                                        &lt;span class&#x3D;&quot;font-semibold font-medium mr-1&quot;&gt;
+                                            {{ commonService.replaceStringToCapitalize(col.field) }}:
+                                        &lt;/span&gt;
+                                        {{ car[col.field] | date:&#x27;dd/MM/yyyy&#x27; }}
+                                    &lt;/div&gt;
+                                    } @else if(
+                                    col.field !&#x3D;&#x3D; &#x27;images&#x27; &amp;&amp;
+                                    col.field !&#x3D;&#x3D; &#x27;videos&#x27; &amp;&amp;
+                                    col.field !&#x3D;&#x3D; &#x27;location&#x27; &amp;&amp;
+                                    col.field !&#x3D;&#x3D; &#x27;features&#x27; &amp;&amp;
+                                    col.field !&#x3D;&#x3D; &#x27;description&#x27; &amp;&amp;
+                                    col.field !&#x3D;&#x3D; &#x27;warrenty_description&#x27;
+                                    ) {
+                                    &lt;div class&#x3D;&quot;flex text-sm&quot;&gt;
+                                        &lt;span class&#x3D;&quot;font-semibold font-medium mr-1&quot;&gt;
+                                            {{ commonService.replaceStringToCapitalize(col.field) }}:
+                                        &lt;/span&gt;
+                                        {{ checkTitleShouldToChange(col.field) ?
+                                        commonService.replaceStringToCapitalize(car[col.field]) :
+                                        checkFieldIsFromFilter(col.field) ? checkFilterTitleFromFilterList(col.field,
+                                        car[col.field]) :
+                                        car[col.field] ?? &#x27;---&#x27; }}
+                                        &lt;!-- checkFieldIsArray(car[col.field]) ? commonService.setArrayToString(car[col.field], &#x27;label&#x27;): --&gt;
+                                    &lt;/div&gt;
+                                    }
+                                &lt;/div&gt;
+                                &lt;!-- descriptions --&gt;
+                                &lt;div class&#x3D;&quot;flex w-full text-sm&quot;&gt;
+                                    &lt;div class&#x3D;&quot;flex w-6&quot;&gt;
+                                        &lt;span class&#x3D;&quot;font-semibold font-medium mr-1&quot;&gt;
+                                            Description:
+                                        &lt;/span&gt;
+                                        &lt;i class&#x3D;&quot;pi pi-info-circle&quot; tooltipStyleClass&#x3D;&quot;w-full&quot;
+                                            [pTooltip]&#x3D;&quot;tooltipDescriptionContent&quot; tooltipPosition&#x3D;&quot;top&quot;
+                                            [autoHide]&#x3D;&quot;false&quot;&gt;&lt;/i&gt;
+                                        &lt;ng-template #tooltipDescriptionContent&gt;
+                                            &lt;div class&#x3D;&quot;flex align-items-center&quot;&gt;
+                                                &lt;div class&#x3D;&quot;text-sm max-w-30rem max-h-25rem overflow-auto&quot;
+                                                    [innerHTML]&#x3D;&quot;car.description&quot;&gt;&lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/ng-template&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;flex w-6&quot;&gt;
+                                        &lt;span class&#x3D;&quot;font-semibold font-medium mr-1&quot;&gt;
+                                            Warrenty Description:
+                                        &lt;/span&gt;
+                                        &lt;i class&#x3D;&quot;pi pi-info-circle&quot; tooltipStyleClass&#x3D;&quot;w-full&quot;
+                                            [pTooltip]&#x3D;&quot;tooltipWarrentyDescriptionContent&quot; tooltipPosition&#x3D;&quot;top&quot;
+                                            [autoHide]&#x3D;&quot;false&quot;&gt;&lt;/i&gt;
+                                        &lt;ng-template #tooltipWarrentyDescriptionContent&gt;
+                                            &lt;div class&#x3D;&quot;flex align-items-center&quot;&gt;
+                                                &lt;div class&#x3D;&quot;text-sm max-w-30rem max-h-25rem overflow-auto&quot;
+                                                    [innerHTML]&#x3D;&quot;car.warrenty_description&quot;&gt;&lt;/div&gt;
+                                            &lt;/div&gt;
+                                        &lt;/ng-template&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;!-- features --&gt;
+                                &lt;div class&#x3D;&quot;w-full text-sm&quot;&gt;
+                                    &lt;span class&#x3D;&quot;font-semibold font-medium mr-1&quot;&gt;
+                                        Features:
+                                    &lt;/span&gt;
+                                    {{ commonService.setArrayToString(car.features, &#x27;label&#x27;) }}
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;!-- description --&gt;
+                        &lt;!-- &lt;div class&#x3D;&quot;flex flex-column w-full mt-5&quot;&gt;
+                                            &lt;div class&#x3D;&quot;flex flex-column w-full mb-5&quot;&gt;
+                                                &lt;p-inplace [closable]&#x3D;&quot;true&quot;&gt;
+                                                    &lt;ng-template pTemplate&#x3D;&quot;display&quot;&gt;
+                                                        &lt;span class&#x3D;&quot;bg-primary-500 px-3 py-2 border-round-md text-white&quot;&gt;Click to View
+                                                            Description&lt;/span&gt;
+                                                    &lt;/ng-template&gt;
+                                                    &lt;ng-template pTemplate&#x3D;&quot;content&quot;&gt;
+                                                        &lt;span class&#x3D;&quot;font-semibold font-medium underline&quot;&gt;
+                                                            Description:
+                                                        &lt;/span&gt;
+                                                        &lt;div [innerHTML]&#x3D;&quot;car.description&quot;&gt;&lt;/div&gt;
+                                                    &lt;/ng-template&gt;
+                                                &lt;/p-inplace&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class&#x3D;&quot;flex flex-column w-full&quot;&gt;
+                                                &lt;p-inplace [closable]&#x3D;&quot;true&quot;&gt;
+                                                    &lt;ng-template pTemplate&#x3D;&quot;display&quot;&gt;
+                                                        &lt;span class&#x3D;&quot;bg-primary-500 px-3 py-2 border-round-md text-white&quot;&gt;Click to View
+                                                            Warrenty Description&lt;/span&gt;
+                                                    &lt;/ng-template&gt;
+                                                    &lt;ng-template pTemplate&#x3D;&quot;content&quot;&gt;
+                                                        &lt;span class&#x3D;&quot;font-semibold font-medium underline&quot;&gt;
+                                                            Warrenty Description:
+                                                        &lt;/span&gt;
+                                                        &lt;div [innerHTML]&#x3D;&quot;car.warrenty_description&quot;&gt;&lt;/div&gt;
+                                                    &lt;/ng-template&gt;
+                                                &lt;/p-inplace&gt;
+                    
+                                            &lt;/div&gt;
+                                        &lt;/div&gt; --&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/ng-template&gt;
+        &lt;/p-table&gt;
+        } @else {
+        &lt;div class&#x3D;&quot;flex w-full justify-content-center p-3 font-bold shadow-1&quot;&gt;
+            No Car Found with {{ item.label| titlecase }} Status
+        &lt;/div&gt;
+        }
+    &lt;/p-tabPanel&gt;
+    }
+&lt;/p-tabView&gt;
+} @placeholder(minimum 1000ms) {
+&lt;div class&#x3D;&quot;flex card gap-2 p-2 m-3&quot;&gt;
+    &lt;p-skeleton width&#x3D;&quot;10rem&quot; height&#x3D;&quot;4rem&quot; /&gt;
+    &lt;p-skeleton width&#x3D;&quot;10rem&quot; height&#x3D;&quot;4rem&quot; /&gt;
+    &lt;p-skeleton styleClass&#x3D;&quot;hidden md:block&quot; width&#x3D;&quot;10rem&quot; height&#x3D;&quot;4rem&quot; /&gt;
+    &lt;p-skeleton styleClass&#x3D;&quot;hidden lg:block&quot; width&#x3D;&quot;10rem&quot; height&#x3D;&quot;4rem&quot; /&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;card border-round border-1 surface-border p-4 m-3 surface-card&quot;&gt;
+    &lt;div class&#x3D;&quot;flex mb-3&quot;&gt;
+        &lt;div&gt;
+            &lt;p-skeleton width&#x3D;&quot;10rem&quot; styleClass&#x3D;&quot;mb-2&quot;&gt;&lt;/p-skeleton&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;p-skeleton styleClass&#x3D;&quot;w-full&quot; height&#x3D;&quot;150px&quot;&gt;&lt;/p-skeleton&gt;
+    &lt;div class&#x3D;&quot;flex justify-content-center mt-3&quot;&gt;
+        &lt;p-skeleton width&#x3D;&quot;20rem&quot; height&#x3D;&quot;2rem&quot;&gt;&lt;/p-skeleton&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+}
+
+&lt;!-- dialog for export CSV --&gt;
+&lt;p-dialog [(visible)]&#x3D;&quot;isExportCSVDialogOpen&quot; [modal]&#x3D;&quot;true&quot; [draggable]&#x3D;&quot;false&quot; styleClass&#x3D;&quot;flex w-11 md:w-10 lg:w-9&quot;
+    (onHide)&#x3D;&quot;isExportCSVDialogOpen &#x3D; false&quot;&gt;
+    &lt;ng-template pTemplate&#x3D;&quot;header&quot;&gt;
+        &lt;div class&#x3D;&quot;flex flex-column&quot;&gt;
+            &lt;div class&#x3D;&quot;font-bold&quot;&gt;
+                CSV Option&#x27;s
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;text-xs text-color-secondary&quot;&gt;
+                Select Data field&#x27;s for export CSV file, you will get only data which you select from blow options
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/ng-template&gt;
+    &lt;div class&#x3D;&quot;flex w-full&quot;&gt;
+        &lt;div class&#x3D;&quot;formgrid grid row-gap-2 mt-2 mb-3&quot;&gt;
+            @for (item of colsCSVSelected; track item; let i &#x3D; $index) {
+            &lt;div class&#x3D;&quot;flex align-items-center col-12 lg:col-3&quot;&gt;
+                &lt;p-checkbox [binary]&#x3D;&quot;true&quot; [(ngModel)]&#x3D;&quot;item.selected&quot; [value]&#x3D;&quot;item.field&quot;
+                    [inputId]&#x3D;&quot;item.field&quot;&gt;&lt;/p-checkbox&gt;
+                &lt;label [for]&#x3D;&quot;item.field&quot; class&#x3D;&quot;ml-1&quot;&gt;{{ item.header }}&lt;/label&gt;
+            &lt;/div&gt;
+            }
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;flex w-full justify-content-center&quot;&gt;
+        &lt;p-button label&#x3D;&quot;Download CSV&quot; styleClass&#x3D;&quot;mr-2 align-items-center&quot; size&#x3D;&quot;small&quot; (onClick)&#x3D;&quot;downloadCSV()&quot;&gt;
+            &lt;ng-template pTemplate&#x3D;&quot;icon&quot;&gt;
+                &lt;span class&#x3D;&quot;material-symbols-outlined&quot;&gt;
+                    download
+                &lt;/span&gt;
+            &lt;/ng-template&gt;
+        &lt;/p-button&gt;
+    &lt;/div&gt;
+&lt;/p-dialog&gt;
+
+&lt;p-confirmDialog key&#x3D;&quot;confirmDeleteCar&quot;&gt;&lt;/p-confirmDialog&gt;
+&lt;p-confirmDialog key&#x3D;&quot;addressUser&quot;&gt;&lt;/p-confirmDialog&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="flex justify-content-between align-items-center mb-3">    <div class="flex align-items-center font-bold text-primary-600 pl-3">        <div class="text-2xl md:text-3xl">            Manage Car\'s        </div>    </div>    <div class="flex align-items-center gap-2">        <p-button label="Add New Car" (onClick)="redirectToAddCar($event)" styleClass="mr-2" icon="pi pi-plus"            size="small"></p-button>    </div></div>@defer () {<p-tabView (onChange)="getCarList(arrListingStatus[$event.index].label)">    @for (item of arrListingStatus; track $index) {    <p-tabPanel [header]="item.label" headerStyleClass="uppercase border-noround text-sm">        <ng-template pTemplate="header">            <div class="flex align-items-center justify-content-center gap-2">                <span class="material-symbols-outlined">                    {{ item.icon }}                </span>                <div>                    {{ item.label }}                </div>                <div *ngIf="item.info">                    <i class="pi pi-info-circle font-bold" [pTooltip]="item.info"></i>                </div>            </div>        </ng-template>        @if(arrCarList && arrCarList?.data.length > 0) {        <p-table #dtCar [columns]="selectedColumns" dataKey="_id" [value]="arrCarList.data" [rowHover]="false"            [paginator]="true" [rows]="limit" [showCurrentPageReport]="true" styleClass="shadow-1" [lazy]="true"            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} users"            [totalRecords]="arrCarList.count" [rowsPerPageOptions]="[10, 20, 35, 50, 100]"            (onPage)="getCarList(item.label, $event)">            <ng-template pTemplate="caption">                <div                    class="flex flex-column md:flex-row align-items-center justify-content-start md:justify-content-between">                    <p-multiSelect [options]="cols" [(ngModel)]="selectedColumns" optionLabel="header" appendTo="body"                        selectedItemsLabel="Select Additional Columns" [style]="{\'min-width\': \'200px\'}"                        placeholder="Choose Columns"></p-multiSelect>                    <div class="flex" *ngIf="localStorageService.userIsDealer()">                        <p-button label="Autotrader CSV"                            styleClass="mt-2 md:mt-0 mr-2 align-items-center py-1 button-secondary" size="small"                            (onClick)="downloadAutoTraderCSV()">                            <ng-template pTemplate="icon">                                <span class="material-symbols-outlined mr-2">                                    export_notes                                </span>                            </ng-template>                        </p-button>                        <p-button label="Export CSV"                            styleClass="mt-2 md:mt-0 mr-2 align-items-center py-1 button-secondary" size="small"                            (onClick)="isExportCSVDialogOpen = true">                            <ng-template pTemplate="icon">                                <span class="material-symbols-outlined mr-2">                                    export_notes                                </span>                            </ng-template>                        </p-button>                    </div>                </div>            </ng-template>            <ng-template pTemplate="header" let-columns>                <tr>                    <th>                        <i class="pi pi-info-circle ml-3" tooltipPosition="top"                            pTooltip="Click on below specific row button to see details of that row"></i>                    </th>                    <th *ngFor="let col of columns">                        {{col.header}}                    </th>                    <th>                        Status                    </th>                    <th>                        Actions                    </th>                </tr>            </ng-template>            <ng-template pTemplate="body" let-car let-columns="columns" let-expanded="expanded">                <!-- (click)="dtCar.toggleRow(car, $event)" -->                <tr>                    <td>                        <button type="button" pButton pRipple [pRowToggler]="car"                            class="p-button-text p-button-rounded p-button-plain bg-primary-50"                            [icon]="expanded ? \'pi pi-chevron-down\' : \'pi pi-chevron-right\'"></button>                    </td>                    <td *ngFor="let col of columns">                        @if (col.field === \'images\') {                        <img [src]="findCarPrimaryImage(car[col.field]).url"                            [alt]="findCarPrimaryImage(car[col.field]).name" [pTooltip]="car.name" tooltipPosition="top"                            class="shadow-4 bg-auto bg-no-repeat bg-center cursor-pointer" width="80" height="50">                        <!-- <div class="flex">                                    <div *ngFor="let media of car[col.field]; let iM = index">                                        <img class="shadow-4 bg-auto bg-no-repeat bg-center" *ngIf="media.position === 1"                                            [src]="media.url" alt="Image" width="80" height="50" />                                    </div>                                </div> -->                        } @else if (col.field === \'in_stock_date\') {                        {{ car[col.field] | date:\'dd/MM/yyyy\' }}                        } @else {                        {{ checkTitleShouldToChange(col.field) ? commonService.replaceStringToCapitalize(car[col.field])                        :                        checkFieldIsFromFilter(col.field) ? checkFilterTitleFromFilterList(col.field, car[col.field]) :                        car[col.field] }}                        }                    </td>                    <td>                        <p-inputSwitch [(ngModel)]="car.active" (onChange)="activeStatusCar($event, car._id)" />                    </td>                    <td>                        <p-button icon="pi pi-pencil" [text]="true" severity="success" routerLink="/user/car-manage"                            [queryParams]="{ id: car._id}"></p-button>                        <!-- <p-button icon="pi pi-trash" [text]="true" styleClass="ml-2" severity="warning"                                        (onClick)="deleteCar($event, car._id)"></p-button> -->                    </td>                </tr>            </ng-template>            <ng-template pTemplate="rowexpansion" let-car let-columns="columns">                <tr>                    <td [attr.colspan]="selectedColumns.length + 2" class="bg-primary-50">                        <div class="flex flex-column lg:flex-row w-full">                            <!-- images -->                            <div class="w-6 md:w-6 xl:w-4">                                <p-galleria containerClass="shadow-2"                                    [value]="commonService.sortArrayField(car.images, \'position\', \'number\')"                                    [showItemNavigators]="true" [showThumbnails]="false" [circular]="true"                                    [numVisible]="5" [showIndicators]="true" [showIndicatorsOnItem]="true">                                    <ng-template pTemplate="item" let-item>                                        <img [src]="item.url" style="width: 100%;" width="150" height="400" />                                    </ng-template>                                </p-galleria>                            </div>                            <!-- options -->                            <div class="flex flex-wrap w-8 pl-3 mt-2 lg:mt-0">                                <div class="w-full" [ngClass]="col.field === \'images\' ? \'w-0 h-0\' : \'xl:w-6\'"                                    *ngFor="let col of cols">                                    @if(col.field === \'in_stock_date\') {                                    <div class="flex text-sm">                                        <span class="font-semibold font-medium mr-1">                                            {{ commonService.replaceStringToCapitalize(col.field) }}:                                        </span>                                        {{ car[col.field] | date:\'dd/MM/yyyy\' }}                                    </div>                                    } @else if(                                    col.field !== \'images\' &&                                    col.field !== \'videos\' &&                                    col.field !== \'location\' &&                                    col.field !== \'features\' &&                                    col.field !== \'description\' &&                                    col.field !== \'warrenty_description\'                                    ) {                                    <div class="flex text-sm">                                        <span class="font-semibold font-medium mr-1">                                            {{ commonService.replaceStringToCapitalize(col.field) }}:                                        </span>                                        {{ checkTitleShouldToChange(col.field) ?                                        commonService.replaceStringToCapitalize(car[col.field]) :                                        checkFieldIsFromFilter(col.field) ? checkFilterTitleFromFilterList(col.field,                                        car[col.field]) :                                        car[col.field] ?? \'---\' }}                                        <!-- checkFieldIsArray(car[col.field]) ? commonService.setArrayToString(car[col.field], \'label\'): -->                                    </div>                                    }                                </div>                                <!-- descriptions -->                                <div class="flex w-full text-sm">                                    <div class="flex w-6">                                        <span class="font-semibold font-medium mr-1">                                            Description:                                        </span>                                        <i class="pi pi-info-circle" tooltipStyleClass="w-full"                                            [pTooltip]="tooltipDescriptionContent" tooltipPosition="top"                                            [autoHide]="false"></i>                                        <ng-template #tooltipDescriptionContent>                                            <div class="flex align-items-center">                                                <div class="text-sm max-w-30rem max-h-25rem overflow-auto"                                                    [innerHTML]="car.description"></div>                                            </div>                                        </ng-template>                                    </div>                                    <div class="flex w-6">                                        <span class="font-semibold font-medium mr-1">                                            Warrenty Description:                                        </span>                                        <i class="pi pi-info-circle" tooltipStyleClass="w-full"                                            [pTooltip]="tooltipWarrentyDescriptionContent" tooltipPosition="top"                                            [autoHide]="false"></i>                                        <ng-template #tooltipWarrentyDescriptionContent>                                            <div class="flex align-items-center">                                                <div class="text-sm max-w-30rem max-h-25rem overflow-auto"                                                    [innerHTML]="car.warrenty_description"></div>                                            </div>                                        </ng-template>                                    </div>                                </div>                                <!-- features -->                                <div class="w-full text-sm">                                    <span class="font-semibold font-medium mr-1">                                        Features:                                    </span>                                    {{ commonService.setArrayToString(car.features, \'label\') }}                                </div>                            </div>                        </div>                        <!-- description -->                        <!-- <div class="flex flex-column w-full mt-5">                                            <div class="flex flex-column w-full mb-5">                                                <p-inplace [closable]="true">                                                    <ng-template pTemplate="display">                                                        <span class="bg-primary-500 px-3 py-2 border-round-md text-white">Click to View                                                            Description</span>                                                    </ng-template>                                                    <ng-template pTemplate="content">                                                        <span class="font-semibold font-medium underline">                                                            Description:                                                        </span>                                                        <div [innerHTML]="car.description"></div>                                                    </ng-template>                                                </p-inplace>                                            </div>                                            <div class="flex flex-column w-full">                                                <p-inplace [closable]="true">                                                    <ng-template pTemplate="display">                                                        <span class="bg-primary-500 px-3 py-2 border-round-md text-white">Click to View                                                            Warrenty Description</span>                                                    </ng-template>                                                    <ng-template pTemplate="content">                                                        <span class="font-semibold font-medium underline">                                                            Warrenty Description:                                                        </span>                                                        <div [innerHTML]="car.warrenty_description"></div>                                                    </ng-template>                                                </p-inplace>                                                                </div>                                        </div> -->                    </td>                </tr>            </ng-template>        </p-table>        } @else {        <div class="flex w-full justify-content-center p-3 font-bold shadow-1">            No Car Found with {{ item.label| titlecase }} Status        </div>        }    </p-tabPanel>    }</p-tabView>} @placeholder(minimum 1000ms) {<div class="flex card gap-2 p-2 m-3">    <p-skeleton width="10rem" height="4rem" />    <p-skeleton width="10rem" height="4rem" />    <p-skeleton styleClass="hidden md:block" width="10rem" height="4rem" />    <p-skeleton styleClass="hidden lg:block" width="10rem" height="4rem" /></div><div class="card border-round border-1 surface-border p-4 m-3 surface-card">    <div class="flex mb-3">        <div>            <p-skeleton width="10rem" styleClass="mb-2"></p-skeleton>        </div>    </div>    <p-skeleton styleClass="w-full" height="150px"></p-skeleton>    <div class="flex justify-content-center mt-3">        <p-skeleton width="20rem" height="2rem"></p-skeleton>    </div></div>}<!-- dialog for export CSV --><p-dialog [(visible)]="isExportCSVDialogOpen" [modal]="true" [draggable]="false" styleClass="flex w-11 md:w-10 lg:w-9"    (onHide)="isExportCSVDialogOpen = false">    <ng-template pTemplate="header">        <div class="flex flex-column">            <div class="font-bold">                CSV Option\'s            </div>            <div class="text-xs text-color-secondary">                Select Data field\'s for export CSV file, you will get only data which you select from blow options            </div>        </div>    </ng-template>    <div class="flex w-full">        <div class="formgrid grid row-gap-2 mt-2 mb-3">            @for (item of colsCSVSelected; track item; let i = $index) {            <div class="flex align-items-center col-12 lg:col-3">                <p-checkbox [binary]="true" [(ngModel)]="item.selected" [value]="item.field"                    [inputId]="item.field"></p-checkbox>                <label [for]="item.field" class="ml-1">{{ item.header }}</label>            </div>            }        </div>    </div>    <div class="flex w-full justify-content-center">        <p-button label="Download CSV" styleClass="mr-2 align-items-center" size="small" (onClick)="downloadCSV()">            <ng-template pTemplate="icon">                <span class="material-symbols-outlined">                    download                </span>            </ng-template>        </p-button>    </div></p-dialog><p-confirmDialog key="confirmDeleteCar"></p-confirmDialog><p-confirmDialog key="addressUser"></p-confirmDialog></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarListComponent', 'selector': 'app-car-list'},{'name': 'CarManageComponent', 'selector': 'app-car-manage'},{'name': 'DealerDetailComponent', 'selector': 'app-dealer-detail'},{'name': 'FavouriteVehicleComponent', 'selector': 'app-favourite-vehicle'},{'name': 'FinanceApplicationComponent', 'selector': 'app-finance-application'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'InquiryComponent', 'selector': 'app-inquiry'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PrequalifyLoanComponent', 'selector': 'app-prequalify-loan'},{'name': 'PriceAlertComponent', 'selector': 'app-price-alert'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SearchAlertComponent', 'selector': 'app-search-alert'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'StoreComponent', 'selector': 'app-store'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'VehicleDetailComponent', 'selector': 'app-vehicle-detail'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CarListComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CarListComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

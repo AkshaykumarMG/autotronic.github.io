@@ -1,0 +1,1097 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>autocreditco documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">autocreditco documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  SearchAlertComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/user/search-alert/search-alert.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-search-alert</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./search-alert.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./search-alert.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#arrAlertSubscribe" >arrAlertSubscribe</a>
+                            </li>
+                            <li>
+                                <a href="#arrFilters" >arrFilters</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#findSearchLabelByValue" >findSearchLabelByValue</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getAlertSubscribe" >getAlertSubscribe</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onClickAlertSubscribe" >onClickAlertSubscribe</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#onRemoveAlertSubscribe" >onRemoveAlertSubscribe</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router, httpService: <a href="../injectables/HttpService.html" target="_self">HttpService</a>, messageService: MessageService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/modules/user/search-alert/search-alert.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>httpService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/HttpService.html" target="_self" >HttpService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>messageService</td>
+                                                  
+                                                        <td>
+                                                                    <code>MessageService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findSearchLabelByValue"></a>
+                    <span class="name">
+                        <span ><b>findSearchLabelByValue</b></span>
+                        <a href="#findSearchLabelByValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>findSearchLabelByValue(filter: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="105"
+                                    class="link-to-prism">src/app/modules/user/search-alert/search-alert.component.ts:105</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Finds and formats the search label and value for a given filter.</p>
+<p>This function processes a filter object to determine its corresponding label and value.
+It handles special cases for &#39;Distance&#39; filters and processes &#39;checkbox&#39; and &#39;textbox-list&#39; type filters differently.</p>
+<ul>
+<li>label: The display label for the filter.</li>
+<li>value: The formatted value of the filter. For &#39;Distance&#39;, it&#39;s either &#39;National&#39; or a distance in km.
+   For other types, it&#39;s a string representation of the selected option(s).</li>
+</ul>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>filter</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The filter object to process. It should contain at least a &#39;name&#39; property and a &#39;value&#39; property.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>literal type</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>An object containing:</p>
+<ul>
+<li>label: The display label for the filter.</li>
+<li>value: The formatted value of the filter. For &#39;Distance&#39;, it&#39;s either &#39;National&#39; or a distance in km.
+For other types, it&#39;s a string representation of the selected option(s).</li>
+</ul>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAlertSubscribe"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getAlertSubscribe</b></span>
+                        <a href="#getAlertSubscribe"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAlertSubscribe()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="51"
+                                    class="link-to-prism">src/app/modules/user/search-alert/search-alert.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Fetches alert subscriptions for the current user from the server.</p>
+<p>This asynchronous method sends a GET request to the &#39;alert-subscribe/user&#39; endpoint
+using the httpService. Upon successful response, it updates the arrAlertSubscribe
+property with the received data.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A promise that resolves when the alert subscriptions have been fetched and stored.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="34"
+                                    class="link-to-prism">src/app/modules/user/search-alert/search-alert.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Initializes the component by fetching filters and alert subscriptions.
+This method is called automatically by Angular when the component is initialized.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A Promise that resolves when the initialization is complete.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onClickAlertSubscribe"></a>
+                    <span class="name">
+                        <span ><b>onClickAlertSubscribe</b></span>
+                        <a href="#onClickAlertSubscribe"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onClickAlertSubscribe(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="67"
+                                    class="link-to-prism">src/app/modules/user/search-alert/search-alert.component.ts:67</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Navigates to the detail page for a specific alert subscription.</p>
+<p>This method is triggered when a user clicks on an alert subscription item.
+It uses the Angular Router to navigate to the detail page, passing the
+subscription&#39;s ID as a route parameter.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The unique identifier of the alert subscription to view.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>This method does not return a value.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onRemoveAlertSubscribe"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>onRemoveAlertSubscribe</b></span>
+                        <a href="#onRemoveAlertSubscribe"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onRemoveAlertSubscribe(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="81"
+                                    class="link-to-prism">src/app/modules/user/search-alert/search-alert.component.ts:81</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Removes an alert subscription for a specific vehicle.</p>
+<p>This asynchronous method is triggered when a user attempts to unsubscribe from a vehicle alert.
+It prevents the default event behavior, sends a delete request to the server, and updates the UI accordingly.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The DOM event object triggered by the user action.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The unique identifier of the alert subscription to be removed.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A promise that resolves when the unsubscribe process is complete.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="arrAlertSubscribe"></a>
+                    <span class="name">
+                        <span ><b>arrAlertSubscribe</b></span>
+                        <a href="#arrAlertSubscribe"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Array&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/modules/user/search-alert/search-alert.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="arrFilters"></a>
+                    <span class="name">
+                        <span ><b>arrFilters</b></span>
+                        <a href="#arrFilters"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/modules/user/search-alert/search-alert.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+// custom service
+import { HttpService } from &#x27;../../../utilities/services/http.service&#x27;;
+
+// primeng
+import { MessageService } from &#x27;primeng/api&#x27;;
+
+@Component({
+  selector: &#x27;app-search-alert&#x27;,
+  templateUrl: &#x27;./search-alert.component.html&#x27;,
+  styleUrl: &#x27;./search-alert.component.scss&#x27;
+})
+export class SearchAlertComponent {
+
+  // property to store the alert subscription data fetched from the API
+  arrAlertSubscribe: Array&lt;any&gt; &#x3D; [];
+  // property to store the filters fetched from the API
+  arrFilters: any;
+
+  constructor(
+    private readonly router: Router,
+    private readonly httpService: HttpService,
+    private readonly messageService: MessageService
+  ) { }
+
+  /**
+   * Initializes the component by fetching filters and alert subscriptions.
+   * This method is called automatically by Angular when the component is initialized.
+   * 
+   * @returns A Promise that resolves when the initialization is complete.
+   */
+  async ngOnInit(): Promise&lt;void&gt; {
+      // Fetch filters from the API and store them in arrFilters
+      this.arrFilters &#x3D; (await this.httpService.get(&#x27;filter&#x27;) as any).data;
+  
+      // Fetch alert subscriptions for the user
+      await this.getAlertSubscribe();
+  }
+
+  /**
+   * Fetches alert subscriptions for the current user from the server.
+   * 
+   * This asynchronous method sends a GET request to the &#x27;alert-subscribe/user&#x27; endpoint
+   * using the httpService. Upon successful response, it updates the arrAlertSubscribe
+   * property with the received data.
+   * 
+   * @returns {Promise&lt;void&gt;} A promise that resolves when the alert subscriptions have been fetched and stored.
+   */
+  async getAlertSubscribe(): Promise&lt;void&gt; {
+    await this.httpService.get(&#x27;alert-subscribe/user&#x27;).then((response: any) &#x3D;&gt; {
+      this.arrAlertSubscribe &#x3D; response;
+    });
+  }
+
+  /**
+   * Navigates to the detail page for a specific alert subscription.
+   * 
+   * This method is triggered when a user clicks on an alert subscription item.
+   * It uses the Angular Router to navigate to the detail page, passing the
+   * subscription&#x27;s ID as a route parameter.
+   *
+   * @param {string} id - The unique identifier of the alert subscription to view.
+   * @returns {void} This method does not return a value.
+   */
+  onClickAlertSubscribe(id: string): void {
+    this.router.navigate([&#x27;/detail/&#x27;, id]);
+  }
+
+  /**
+   * Removes an alert subscription for a specific vehicle.
+   * 
+   * This asynchronous method is triggered when a user attempts to unsubscribe from a vehicle alert.
+   * It prevents the default event behavior, sends a delete request to the server, and updates the UI accordingly.
+   *
+   * @param {any} event - The DOM event object triggered by the user action.
+   * @param {string} id - The unique identifier of the alert subscription to be removed.
+   * @returns {Promise&lt;void&gt;} A promise that resolves when the unsubscribe process is complete.
+   */
+  async onRemoveAlertSubscribe(event: any, id: string): Promise&lt;void&gt; {
+    event.stopPropagation();
+    event.preventDefault();
+    await this.httpService.delete(&#x60;alert-subscribe/${id}&#x60;)
+      .then((response: any) &#x3D;&gt; {
+        if (response.success) {
+          this.messageService.add({ severity: &#x27;secondary&#x27;, summary: &#x27;Success&#x27;, detail: &#x27;Vehicle Unsubscribed successfully!&#x27; });
+          this.getAlertSubscribe();
+        }
+      });
+  }
+
+  /**
+   * Finds and formats the search label and value for a given filter.
+   * 
+   * This function processes a filter object to determine its corresponding label and value.
+   * It handles special cases for &#x27;Distance&#x27; filters and processes &#x27;checkbox&#x27; and &#x27;textbox-list&#x27; type filters differently.
+   * 
+   * @param {any} filter - The filter object to process. It should contain at least a &#x27;name&#x27; property and a &#x27;value&#x27; property.
+   * @returns {{ label: string, value: string }} An object containing:
+   *   - label: The display label for the filter.
+   *   - value: The formatted value of the filter. For &#x27;Distance&#x27;, it&#x27;s either &#x27;National&#x27; or a distance in km.
+   *            For other types, it&#x27;s a string representation of the selected option(s).
+   */
+  findSearchLabelByValue(filter: any): { label: string; value: string; } {
+    if (filter.name &#x3D;&#x3D;&#x3D; &#x27;Distance&#x27;) {
+      return { label: &#x27;Distance&#x27;, value: filter.value &#x3D;&#x3D;&#x3D; &#x27;national&#x27; ? &#x27;National&#x27; : &#x60;${filter.value} km&#x60; };
+    }
+    const findFilter &#x3D; this.arrFilters.find((flr: any) &#x3D;&gt; flr.name.value &#x3D;&#x3D;&#x3D; filter.name);
+    let value &#x3D; &#x27;&#x27;;
+    if (findFilter &amp;&amp; findFilter.type &#x3D;&#x3D;&#x3D; &#x27;checkbox&#x27;) {
+      findFilter.data.forEach((data: any) &#x3D;&gt; {
+        if (filter.value.includes(data.value)) {
+          value +&#x3D; value ? &#x60;, ${data.label}&#x60; : &#x60;${data.label}&#x60;;
+        }
+      })
+    }
+    if(findFilter &amp;&amp; findFilter.type &#x3D;&#x3D;&#x3D; &#x27;textbox-list&#x27;) {
+      findFilter.data.forEach((data: any) &#x3D;&gt; {
+        if (filter.value &#x3D;&#x3D;&#x3D; data.value) {
+          value &#x3D; data.label ;
+        }
+      });
+    }
+    return { label: findFilter.name.label, value };
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- header --&gt;
+&lt;div class&#x3D;&quot;flex justify-content-between align-items-center mb-3&quot;&gt;
+    &lt;div class&#x3D;&quot;flex align-items-center font-bold text-3xl text-primary-600 pl-3&quot;&gt;
+        Saved Vehicles
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- search alert listing &amp; placeholder --&gt;
+@defer () {
+@if (arrAlertSubscribe &amp;&amp; arrAlertSubscribe.length &gt; 0) {
+&lt;div class&#x3D;&quot;formgrid grid&quot;&gt;
+    @for (subscribe of arrAlertSubscribe; track subscribe) {
+    &lt;div class&#x3D;&quot;field col-12 xl:col-6 cursor-pointer&quot; (click)&#x3D;&quot;onClickAlertSubscribe(subscribe._id)&quot;&gt;
+        &lt;div class&#x3D;&quot;bg-white border-round-lg shadow-1 border-1 surface-border&quot;&gt;
+            &lt;div class&#x3D;&quot;flex flex-column p-3&quot;&gt;
+                &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+                    &lt;div class&#x3D;&quot;font-bold white-space-nowrap overflow-hidden text-overflow-ellipsis&quot;&gt;
+                        {{ subscribe.name }}
+                    &lt;/div&gt;
+                    &lt;p-button [text]&#x3D;&quot;true&quot; severity&#x3D;&quot;danger&quot; styleClass&#x3D;&quot;mr-2 p-0&quot; icon&#x3D;&quot;pi pi-times&quot;
+                        (onClick)&#x3D;&quot;onRemoveAlertSubscribe($event, subscribe._id)&quot;&gt;&lt;/p-button&gt;
+                &lt;/div&gt;
+                &lt;p-divider styleClass&#x3D;&quot;my-3&quot;&gt;&lt;/p-divider&gt;
+                &lt;div class&#x3D;&quot;flex flex-wrap align-items-center gap-2&quot;&gt;
+                    @for (filter of subscribe.filter; track filter) {
+                    &lt;div class&#x3D;&quot;flex p-2 text-sm surface-hover border-1 surface-border border-round-lg&quot;&gt;
+                        {{ findSearchLabelByValue(filter).label }}:
+                        &lt;div class&#x3D;&quot;font-semibold ml-1&quot;&gt;
+                            {{ findSearchLabelByValue(filter).value }}
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    }
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    }
+&lt;/div&gt;
+} @else {
+&lt;div class&#x3D;&quot;flex card w-full flex-column justify-content-center align-items-center border-round-lg gap-3 shadow-1&quot;&gt;
+    &lt;div class&#x3D;&quot;border-circle bg-primary-500 inline-flex justify-content-center align-items-center h-6rem w-6rem&quot;&gt;
+        &lt;i class&#x3D;&quot;pi pi-times text-white text-5xl&quot;&gt;&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;font-bold&quot;&gt;
+        You don’t have any saved searches yet
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;text-color-secondary text-sm text-center&quot;&gt;
+        Looking for a specific vehicle but still haven’t find the perfect deal? Save your search and quickly jump back
+        to it whenever you want!
+    &lt;/div&gt;
+&lt;/div&gt;
+}
+} @placeholder(minimum 1000) {
+&lt;div class&#x3D;&quot;formgrid grid&quot;&gt;
+    &lt;div class&#x3D;&quot;field col-12 xl:col-6&quot;&gt;
+        &lt;div class&#x3D;&quot;bg-white border-round-lg shadow-1 border-1 surface-border relative&quot;&gt;
+            &lt;div class&#x3D;&quot;flex flex-column p-3&quot;&gt;
+                &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+                    &lt;div class&#x3D;&quot;font-bold white-space-nowrap overflow-hidden text-overflow-ellipsis&quot;&gt;
+                        &lt;p-skeleton width&#x3D;&quot;5rem&quot; height&#x3D;&quot;1rem&quot; /&gt;
+                    &lt;/div&gt;
+                    &lt;p-skeleton width&#x3D;&quot;1rem&quot; height&#x3D;&quot;1rem&quot; /&gt;
+                &lt;/div&gt;
+                &lt;p-divider styleClass&#x3D;&quot;my-3&quot;&gt;&lt;/p-divider&gt;
+                &lt;div class&#x3D;&quot;flex flex-wrap align-items-center gap-2&quot;&gt;
+                    &lt;div class&#x3D;&quot;flex p-2 text-sm surface-hover border-1 surface-border border-round-lg&quot;&gt;
+                        &lt;p-skeleton width&#x3D;&quot;1rem&quot; height&#x3D;&quot;1rem&quot; /&gt;
+                        &lt;div class&#x3D;&quot;font-semibold ml-1&quot;&gt;
+                            &lt;p-skeleton width&#x3D;&quot;1rem&quot; height&#x3D;&quot;1rem&quot; /&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;field col-12 xl:col-6&quot;&gt;
+        &lt;div class&#x3D;&quot;bg-white border-round-lg shadow-1 border-1 surface-border relative&quot;&gt;
+            &lt;div class&#x3D;&quot;flex flex-column p-3&quot;&gt;
+                &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+                    &lt;div class&#x3D;&quot;font-bold white-space-nowrap overflow-hidden text-overflow-ellipsis&quot;&gt;
+                        &lt;p-skeleton width&#x3D;&quot;5rem&quot; height&#x3D;&quot;1rem&quot; /&gt;
+                    &lt;/div&gt;
+                    &lt;p-skeleton width&#x3D;&quot;1rem&quot; height&#x3D;&quot;1rem&quot; /&gt;
+                &lt;/div&gt;
+                &lt;p-divider styleClass&#x3D;&quot;my-3&quot;&gt;&lt;/p-divider&gt;
+                &lt;div class&#x3D;&quot;flex flex-wrap align-items-center gap-2&quot;&gt;
+                    &lt;div class&#x3D;&quot;flex p-2 text-sm surface-hover border-1 surface-border border-round-lg&quot;&gt;
+                        &lt;p-skeleton width&#x3D;&quot;1rem&quot; height&#x3D;&quot;1rem&quot; /&gt;
+                        &lt;div class&#x3D;&quot;font-semibold ml-1&quot;&gt;
+                            &lt;p-skeleton width&#x3D;&quot;1rem&quot; height&#x3D;&quot;1rem&quot; /&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+}</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- header --><div class="flex justify-content-between align-items-center mb-3">    <div class="flex align-items-center font-bold text-3xl text-primary-600 pl-3">        Saved Vehicles    </div></div><!-- search alert listing & placeholder -->@defer () {@if (arrAlertSubscribe && arrAlertSubscribe.length > 0) {<div class="formgrid grid">    @for (subscribe of arrAlertSubscribe; track subscribe) {    <div class="field col-12 xl:col-6 cursor-pointer" (click)="onClickAlertSubscribe(subscribe._id)">        <div class="bg-white border-round-lg shadow-1 border-1 surface-border">            <div class="flex flex-column p-3">                <div class="flex justify-content-between align-items-center">                    <div class="font-bold white-space-nowrap overflow-hidden text-overflow-ellipsis">                        {{ subscribe.name }}                    </div>                    <p-button [text]="true" severity="danger" styleClass="mr-2 p-0" icon="pi pi-times"                        (onClick)="onRemoveAlertSubscribe($event, subscribe._id)"></p-button>                </div>                <p-divider styleClass="my-3"></p-divider>                <div class="flex flex-wrap align-items-center gap-2">                    @for (filter of subscribe.filter; track filter) {                    <div class="flex p-2 text-sm surface-hover border-1 surface-border border-round-lg">                        {{ findSearchLabelByValue(filter).label }}:                        <div class="font-semibold ml-1">                            {{ findSearchLabelByValue(filter).value }}                        </div>                    </div>                    }                </div>            </div>        </div>    </div>    }</div>} @else {<div class="flex card w-full flex-column justify-content-center align-items-center border-round-lg gap-3 shadow-1">    <div class="border-circle bg-primary-500 inline-flex justify-content-center align-items-center h-6rem w-6rem">        <i class="pi pi-times text-white text-5xl"></i>    </div>    <div class="font-bold">        You don’t have any saved searches yet    </div>    <div class="text-color-secondary text-sm text-center">        Looking for a specific vehicle but still haven’t find the perfect deal? Save your search and quickly jump back        to it whenever you want!    </div></div>}} @placeholder(minimum 1000) {<div class="formgrid grid">    <div class="field col-12 xl:col-6">        <div class="bg-white border-round-lg shadow-1 border-1 surface-border relative">            <div class="flex flex-column p-3">                <div class="flex justify-content-between align-items-center">                    <div class="font-bold white-space-nowrap overflow-hidden text-overflow-ellipsis">                        <p-skeleton width="5rem" height="1rem" />                    </div>                    <p-skeleton width="1rem" height="1rem" />                </div>                <p-divider styleClass="my-3"></p-divider>                <div class="flex flex-wrap align-items-center gap-2">                    <div class="flex p-2 text-sm surface-hover border-1 surface-border border-round-lg">                        <p-skeleton width="1rem" height="1rem" />                        <div class="font-semibold ml-1">                            <p-skeleton width="1rem" height="1rem" />                        </div>                    </div>                </div>            </div>        </div>    </div>    <div class="field col-12 xl:col-6">        <div class="bg-white border-round-lg shadow-1 border-1 surface-border relative">            <div class="flex flex-column p-3">                <div class="flex justify-content-between align-items-center">                    <div class="font-bold white-space-nowrap overflow-hidden text-overflow-ellipsis">                        <p-skeleton width="5rem" height="1rem" />                    </div>                    <p-skeleton width="1rem" height="1rem" />                </div>                <p-divider styleClass="my-3"></p-divider>                <div class="flex flex-wrap align-items-center gap-2">                    <div class="flex p-2 text-sm surface-hover border-1 surface-border border-round-lg">                        <p-skeleton width="1rem" height="1rem" />                        <div class="font-semibold ml-1">                            <p-skeleton width="1rem" height="1rem" />                        </div>                    </div>                </div>            </div>        </div>    </div></div>}</div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarListComponent', 'selector': 'app-car-list'},{'name': 'CarManageComponent', 'selector': 'app-car-manage'},{'name': 'DealerDetailComponent', 'selector': 'app-dealer-detail'},{'name': 'FavouriteVehicleComponent', 'selector': 'app-favourite-vehicle'},{'name': 'FinanceApplicationComponent', 'selector': 'app-finance-application'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'InquiryComponent', 'selector': 'app-inquiry'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PrequalifyLoanComponent', 'selector': 'app-prequalify-loan'},{'name': 'PriceAlertComponent', 'selector': 'app-price-alert'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SearchAlertComponent', 'selector': 'app-search-alert'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'StoreComponent', 'selector': 'app-store'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'VehicleDetailComponent', 'selector': 'app-vehicle-detail'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SearchAlertComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SearchAlertComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

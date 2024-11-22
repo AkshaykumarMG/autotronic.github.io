@@ -1,0 +1,783 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>autocreditco documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">autocreditco documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  LoginComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/login/login.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                            <code>MessageService</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-login</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>ReactiveFormsModule</code>
+                            <code>RouterModule</code>
+                            <code>PasswordModule</code>
+                            <code>InputTextModule</code>
+                            <code>DividerModule</code>
+                            <code>ButtonModule</code>
+                            <code>ToastModule</code>
+                            <code>AnimateOnScrollModule</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./login.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./login.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#formLogin" >formLogin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#messaging" >messaging</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#onClearForm" >onClearForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#onLoginSubmit" >onLoginSubmit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router, httpService: <a href="../injectables/HttpService.html" target="_self">HttpService</a>, messageService: MessageService, localStorageService: <a href="../injectables/LocalStorageService.html" target="_self">LocalStorageService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/components/login/login.component.ts:40</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>httpService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/HttpService.html" target="_self" >HttpService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>messageService</td>
+                                                  
+                                                        <td>
+                                                                    <code>MessageService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>localStorageService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LocalStorageService.html" target="_self" >LocalStorageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onClearForm"></a>
+                    <span class="name">
+                        <span ><b>onClearForm</b></span>
+                        <a href="#onClearForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onClearForm()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="111"
+                                    class="link-to-prism">src/app/components/login/login.component.ts:111</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Clears the login form by resetting all form controls to their initial values.
+This function is typically called when the user wants to clear all entered data from the form.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>This function does not return a value.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onLoginSubmit"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>onLoginSubmit</b></span>
+                        <a href="#onLoginSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onLoginSubmit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="62"
+                                    class="link-to-prism">src/app/components/login/login.component.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Handles the login form submission process.</p>
+<p>This asynchronous function performs the following tasks:</p>
+<ol>
+<li>Submits the login form data to the authentication service.</li>
+<li>If successful, resets the form and registers for push notifications.</li>
+<li>Stores the user data in local storage.</li>
+<li>Redirects the user to the appropriate page based on stored navigation state.</li>
+</ol>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A promise that resolves when the login process is complete.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formLogin"></a>
+                    <span class="name">
+                        <span ><b>formLogin</b></span>
+                        <a href="#formLogin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormGroup({
+    email: new FormControl(null, [Validators.required, Validators.email]),
+    password: new FormControl(null, [Validators.required, Validators.minLength(8)])
+  })</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/components/login/login.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="messaging"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>messaging</b></span>
+                        <a href="#messaging"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(Messaging)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/components/login/login.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ViewEncapsulation, inject } from &#x27;@angular/core&#x27;;
+import { Router, RouterModule } from &#x27;@angular/router&#x27;;
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from &#x27;@angular/forms&#x27;;
+import { environment } from &#x27;../../../environments/environment&#x27;;
+
+// custom services
+import { HttpService } from &#x27;../../utilities/services/http.service&#x27;;
+import { LocalStorageService } from &#x27;../../utilities/services/local-storage.service&#x27;;
+
+// firebase messaging
+import { Messaging, getToken } from &#x27;@angular/fire/messaging&#x27;;
+
+// primeng
+import { MessageService } from &#x27;primeng/api&#x27;;
+import { PasswordModule } from &#x27;primeng/password&#x27;;
+import { InputTextModule } from &#x27;primeng/inputtext&#x27;;
+import { DividerModule } from &#x27;primeng/divider&#x27;;
+import { ButtonModule } from &#x27;primeng/button&#x27;;
+import { ToastModule } from &#x27;primeng/toast&#x27;;
+import { AnimateOnScrollModule } from &#x27;primeng/animateonscroll&#x27;;
+
+@Component({
+  selector: &#x27;app-login&#x27;,
+  standalone: true,
+  imports: [ReactiveFormsModule, RouterModule, PasswordModule, InputTextModule, DividerModule, ButtonModule, ToastModule, AnimateOnScrollModule],
+  providers: [MessageService],
+  templateUrl: &#x27;./login.component.html&#x27;,
+  styleUrl: &#x27;./login.component.scss&#x27;,
+  encapsulation: ViewEncapsulation.None
+})
+export class LoginComponent {
+
+  // login form
+  formLogin &#x3D; new FormGroup({
+    email: new FormControl(null, [Validators.required, Validators.email]),
+    password: new FormControl(null, [Validators.required, Validators.minLength(8)])
+  });
+
+  // firebase notification
+  private messaging &#x3D; inject(Messaging);
+
+  constructor(
+    private readonly router: Router,
+    private readonly httpService: HttpService,
+    private readonly messageService: MessageService,
+    private readonly localStorageService: LocalStorageService,
+  ) { }
+
+  /**
+   * Handles the login form submission process.
+   * 
+   * This asynchronous function performs the following tasks:
+   * 1. Submits the login form data to the authentication service.
+   * 2. If successful, resets the form and registers for push notifications.
+   * 3. Stores the user data in local storage.
+   * 4. Redirects the user to the appropriate page based on stored navigation state.
+   * 
+   * @async
+   * @returns {Promise&lt;void&gt;} A promise that resolves when the login process is complete.
+   * @throws Will throw an error if the login process fails, which is then displayed as a toast message.
+   */
+  async onLoginSubmit(): Promise&lt;void&gt; {
+    try {
+      const data &#x3D; this.formLogin.value;
+      const result: any &#x3D; await this.httpService.post(&#x27;authentication/client-signin&#x27;, data);
+      if (result.success) {
+        // reset form
+        this.formLogin.reset();
+
+        // get token for notification
+        navigator.serviceWorker
+          .register(&quot;/assets/firebase-messaging-sw.js&quot;, {
+            type: &quot;module&quot;,
+          })
+          .then((serviceWorkerRegistration) &#x3D;&gt; {
+            getToken(this.messaging, {
+              vapidKey: environment.vapidKey,
+              serviceWorkerRegistration,
+            }).then((token) &#x3D;&gt; {
+              // This is a good place to then store it on your database for each user
+              this.httpService.patch(&#x27;authentication/notification-token&#x27;, { token });
+              this.localStorageService.set(&#x27;ne&#x27;, &#x27;true&#x27;);
+            });
+          });
+
+        // set user data in loca storage
+        this.localStorageService.setObject(&#x27;user&#x27;, result.data);
+
+        // check state is pending for page redirection
+        const moveto &#x3D; this.localStorageService.get(&#x27;moveto&#x27;);
+        // if then redirecvt there and clear move to from storage
+        if (moveto) {
+          this.localStorageService.remove(&#x27;moveto&#x27;);
+          this.router.navigateByUrl(moveto);
+        } else {
+          // redirect user to home of panel
+          this.router.navigate([&#x27;user/home&#x27;]);
+        }
+      }
+    } catch (error: any) {
+      this.messageService.add({ severity: &#x27;error&#x27;, summary: &#x27;Error&#x27;, detail: error });
+    }
+  }
+
+  /**
+   * Clears the login form by resetting all form controls to their initial values.
+   * This function is typically called when the user wants to clear all entered data from the form.
+   *
+   * @returns {void} This function does not return a value.
+   */
+  onClearForm(): void {
+    this.formLogin.reset();
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div pAnimateOnScroll enterClass&#x3D;&quot;fadein&quot; leaveClass&#x3D;&quot;fadeout&quot;
+    class&#x3D;&quot;flex justify-content-center align-items-center sticky top-0 body-content animation-duration-1000&quot;&gt;
+    &lt;div class&#x3D;&quot;gradient-success border-round-xl flex flex-column p-3 lg:px-5 lg:py-3 gap-4 w-10 md:w-8 lg:w-6 xl:w-4&quot;&gt;
+        &lt;form [formGroup]&#x3D;&quot;formLogin&quot; class&#x3D;&quot;w-full flex flex-column gap-4 mt-2&quot;&gt;
+            &lt;div class&#x3D;&quot;inline-flex flex-column gap-2&quot;&gt;
+                &lt;label for&#x3D;&quot;email&quot; class&#x3D;&quot;text-primary-50 font-semibold&quot;&gt;Email&lt;/label&gt;
+                &lt;input pInputText id&#x3D;&quot;email&quot; formControlName&#x3D;&quot;email&quot; autocomplete&#x3D;&quot;on&quot;
+                    class&#x3D;&quot;bg-white-alpha-20 border-none p-3 text-primary-50&quot; /&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;inline-flex flex-column gap-2&quot;&gt;
+                &lt;label for&#x3D;&quot;password&quot; class&#x3D;&quot;text-primary-50 font-semibold&quot;&gt;Password&lt;/label&gt;
+                &lt;p-password id&#x3D;&quot;password&quot; formControlName&#x3D;&quot;password&quot; styleClass&#x3D;&quot;w-full&quot;
+                    (keyup.enter)&#x3D;&quot;formLogin.valid ? onLoginSubmit() : undefined&quot; [toggleMask]&#x3D;&quot;true&quot;
+                    inputStyleClass&#x3D;&quot;bg-white-alpha-20 border-none p-3 text-primary-50 w-full&quot;
+                    [feedback]&#x3D;&quot;false&quot;&gt;&lt;/p-password&gt;
+                &lt;small class&#x3D;&quot;text-white text-xs&quot;&gt;At least 8 character password needed.&lt;/small&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;flex w-full justify-content-end&quot;&gt;
+                &lt;div class&#x3D;&quot;text-white border-round-md hover:bg-white-alpha-10 px-2 py-1 cursor-pointer&quot;
+                    routerLink&#x3D;&quot;/forget-password&quot;&gt;Forget Password?&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;flex align-items-center gap-2&quot;&gt;
+                &lt;p-button label&#x3D;&quot;Clear&quot; [text]&#x3D;&quot;true&quot; (onClick)&#x3D;&quot;onClearForm()&quot;
+                    styleClass&#x3D;&quot;w-full text-primary-50 border-1 border-white-alpha-30 hover:bg-white-alpha-10&quot;
+                    class&#x3D;&quot;w-full&quot;&gt;&lt;/p-button&gt;
+                &lt;p-button label&#x3D;&quot;Sign-In&quot; [text]&#x3D;&quot;true&quot; [disabled]&#x3D;&quot;formLogin.invalid&quot; (onClick)&#x3D;&quot;onLoginSubmit()&quot;
+                    styleClass&#x3D;&quot;w-full text-primary-50 border-1 border-white-alpha-30 hover:bg-white-alpha-10 button-secondary&quot;
+                    class&#x3D;&quot;w-full&quot;&gt;&lt;/p-button&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;flex w-full justify-content-center&quot;&gt;
+                &lt;p-button styleClass&#x3D;&quot;text-white hover:bg-white-alpha-10&quot; label&#x3D;&quot;Don&#x27;t have an account?&quot;
+                    routerLink&#x3D;&quot;/register&quot; [text]&#x3D;&quot;true&quot;&gt;&lt;/p-button&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p-toast position&#x3D;&quot;top-center&quot;&gt;&lt;/p-toast&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div pAnimateOnScroll enterClass="fadein" leaveClass="fadeout"    class="flex justify-content-center align-items-center sticky top-0 body-content animation-duration-1000">    <div class="gradient-success border-round-xl flex flex-column p-3 lg:px-5 lg:py-3 gap-4 w-10 md:w-8 lg:w-6 xl:w-4">        <form [formGroup]="formLogin" class="w-full flex flex-column gap-4 mt-2">            <div class="inline-flex flex-column gap-2">                <label for="email" class="text-primary-50 font-semibold">Email</label>                <input pInputText id="email" formControlName="email" autocomplete="on"                    class="bg-white-alpha-20 border-none p-3 text-primary-50" />            </div>            <div class="inline-flex flex-column gap-2">                <label for="password" class="text-primary-50 font-semibold">Password</label>                <p-password id="password" formControlName="password" styleClass="w-full"                    (keyup.enter)="formLogin.valid ? onLoginSubmit() : undefined" [toggleMask]="true"                    inputStyleClass="bg-white-alpha-20 border-none p-3 text-primary-50 w-full"                    [feedback]="false"></p-password>                <small class="text-white text-xs">At least 8 character password needed.</small>            </div>            <div class="flex w-full justify-content-end">                <div class="text-white border-round-md hover:bg-white-alpha-10 px-2 py-1 cursor-pointer"                    routerLink="/forget-password">Forget Password?</div>            </div>            <div class="flex align-items-center gap-2">                <p-button label="Clear" [text]="true" (onClick)="onClearForm()"                    styleClass="w-full text-primary-50 border-1 border-white-alpha-30 hover:bg-white-alpha-10"                    class="w-full"></p-button>                <p-button label="Sign-In" [text]="true" [disabled]="formLogin.invalid" (onClick)="onLoginSubmit()"                    styleClass="w-full text-primary-50 border-1 border-white-alpha-30 hover:bg-white-alpha-10 button-secondary"                    class="w-full"></p-button>            </div>            <div class="flex w-full justify-content-center">                <p-button styleClass="text-white hover:bg-white-alpha-10" label="Don\'t have an account?"                    routerLink="/register" [text]="true"></p-button>            </div>        </form>    </div></div><p-toast position="top-center"></p-toast></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarListComponent', 'selector': 'app-car-list'},{'name': 'CarManageComponent', 'selector': 'app-car-manage'},{'name': 'DealerDetailComponent', 'selector': 'app-dealer-detail'},{'name': 'FavouriteVehicleComponent', 'selector': 'app-favourite-vehicle'},{'name': 'FinanceApplicationComponent', 'selector': 'app-finance-application'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'InquiryComponent', 'selector': 'app-inquiry'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PrequalifyLoanComponent', 'selector': 'app-prequalify-loan'},{'name': 'PriceAlertComponent', 'selector': 'app-price-alert'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SearchAlertComponent', 'selector': 'app-search-alert'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'StoreComponent', 'selector': 'app-store'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'VehicleDetailComponent', 'selector': 'app-vehicle-detail'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'LoginComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

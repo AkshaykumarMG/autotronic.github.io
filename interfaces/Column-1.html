@@ -1,0 +1,1204 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>autocreditco documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">autocreditco documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Interfaces</li>
+  <li class="breadcrumb-item"
+  >
+  Column</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/modules/user/store/store.component.ts</code>
+        </p>
+
+
+
+
+        <section data-compodoc="block-index">
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#field" 
+>
+                                            field
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#header" 
+>
+                                            header
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section data-compodoc="block-properties">
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="field"></a>
+                                        <span class="name "><b>field</b>
+                                            <a href="#field">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>field:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="header"></a>
+                                        <span class="name "><b>header</b>
+                                            <a href="#header">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>header:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { FormGroup, FormControl, Validators } from &#x27;@angular/forms&#x27;;
+import { DomSanitizer } from &#x27;@angular/platform-browser&#x27;;
+
+// custom service
+import { HttpService } from &#x27;../../../utilities/services/http.service&#x27;;
+import { environment } from &#x27;../../../../environments/environment&#x27;;
+import { LocalStorageService } from &#x27;../../../utilities/services/local-storage.service&#x27;;
+
+// primeng
+import { MessageService } from &#x27;primeng/api&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+// crop logo
+import { ImageCroppedEvent, ImageCropperComponent } from &#x27;ngx-image-cropper&#x27;;
+import { CSVService } from &#x27;../../../utilities/services/csv.service&#x27;;
+
+interface Column {
+  field: string;
+  header: string;
+}
+
+@Component({
+  selector: &#x27;app-store&#x27;,
+  templateUrl: &#x27;./store.component.html&#x27;,
+  styleUrl: &#x27;./store.component.scss&#x27;
+})
+export class StoreComponent implements OnInit {
+
+  cols!: Column[]; // table column list
+  arrUserStores: any | undefined; // store all store
+  arrRemoteService: any; // store remote services
+  arrState &#x3D; [
+    { label: &#x27;Alberta&#x27;, value: &#x27;AB&#x27; },
+    { label: &#x27;British Columbia&#x27;, value: &#x27;BC&#x27; },
+    { label: &#x27;New Brunswick&#x27;, value: &#x27;NB&#x27; },
+    { label: &#x27;Manitoba&#x27;, value: &#x27;MB&#x27; },
+    { label: &#x27;Newfoundland and Labrador&#x27;, value: &#x27;NL&#x27; },
+    { label: &#x27;Northwest Territories&#x27;, value: &#x27;NT&#x27; },
+    { label: &#x27;Nova Scotia&#x27;, value: &#x27;NS&#x27; },
+    { label: &#x27;Nunavut&#x27;, value: &#x27;NU&#x27; },
+    { label: &#x27;Ontario&#x27;, value: &#x27;ON&#x27; },
+    { label: &#x27;Quebec&#x27;, value: &#x27;QC&#x27; },
+    { label: &#x27;Prince Edward Island&#x27;, value: &#x27;PE&#x27; },
+    { label: &#x27;Saskatchewan&#x27;, value: &#x27;SK&#x27; },
+    { label: &#x27;Yukon&#x27;, value: &#x27;YT&#x27; },
+  ]; // state list for address
+  arrCity: any; // city list for address
+  isCreateStoreDialogOpen: boolean &#x3D; false; // open store form dialog
+  arrStoreStatus &#x3D; [
+    { label: &#x27;In Process&#x27;, value: &#x27;in_process&#x27;, color: &#x27;bluegray&#x27; },
+    { label: &#x27;Verified&#x27;, value: &#x27;verified&#x27;, color: &#x27;purple&#x27; },
+    { label: &#x27;Rejected&#x27;, value: &#x27;rejected&#x27;, color: &#x27;red&#x27; },
+    { label: &#x27;Action Required&#x27;, value: &#x27;action_required&#x27;, color: &#x27;orange&#x27; },
+    { label: &#x27;Not Assign&#x27;, value: &#x27;not_assign&#x27;, color: &#x27;teal&#x27; },
+    { label: &#x27;Assign&#x27;, value: &#x27;assign&#x27;, color: &#x27;blue&#x27; }
+  ];
+
+  strUploadError: string | undefined; // store image upload error
+  strStorePatchURL: any; // store image base64 string and load image
+  file: File | null &#x3D; null; // Variable to store file
+  strFormButtonTitle: string &#x3D; &#x27;Add Store&#x27;; // change foprm submit button title as per condition
+  isLogoChanged: boolean &#x3D; false;;
+  strCurrentEditStoreID: string | undefined;
+
+  // view record
+  isViewDialogOpen: boolean &#x3D; false;
+  currentRecordToView: any;
+
+  // timeline response
+  isTimelineResponseDialogOpen: boolean &#x3D; false;
+  formTimelineResponse &#x3D; new FormGroup({
+    store: new FormControl(null, [Validators.required]),
+    note: new FormControl(null, [Validators.required]),
+    status: new FormControl(null, [Validators.required])
+  })
+  isTimelineResponseLoading: boolean &#x3D; false;
+
+  // map validation
+  strGoogleMapAPIKey &#x3D; environment.google_key; // get google key
+  isValidationMapModalOpen: boolean &#x3D; false; // open verify address modal
+  strCurrentAddressLatLng: google.maps.LatLngLiteral | undefined; // set current lat lng to show default map
+  isAddressVefied: boolean &#x3D; false; // check user verifed address
+  isAddressChanged: boolean &#x3D; false; // check user changed any field in address, if then verify them forcefully
+  markerOptions: google.maps.MarkerOptions &#x3D; { draggable: false };
+  markerPositions: google.maps.LatLngLiteral[] &#x3D; []; // add company location to mark in map
+
+  // logo crop
+  isCropDialogOpen: boolean &#x3D; false;
+  imageChangedEvent: Event | null &#x3D; null;
+  isLogoChangeOnUpdate: boolean &#x3D; false;
+  @ViewChild(&quot;cropperLogo&quot;) cropperLogo!: ImageCropperComponent;
+
+  // store operation loading
+  isStoreOperationLoading: boolean &#x3D; false;
+
+  arrCustomService &#x3D; [
+    &#x27;Connect with us for an online consultation&#x27;,
+    &#x27;Receive contactless vehicle delivery&#x27;,
+    &#x27;Buy online with Performance Concierge&#x27;
+  ]; // custom template for custom services
+
+  // form company information
+  formStore &#x3D; new FormGroup({
+    address: new FormGroup({
+      unit: new FormControl(null, [Validators.required]),
+      street: new FormControl(null, [Validators.required]),
+      city: new FormControl(null, [Validators.required]),
+      state: new FormControl(null, [Validators.required]),
+      country: new FormControl(&#x27;Canada&#x27;, [Validators.required]),
+      postal_code: new FormControl(null, [Validators.required])
+    }),
+    time: new FormGroup({
+      monday: new FormGroup({
+        in: new FormControl(&#x27;09:00&#x27;),
+        out: new FormControl(&#x27;18:00&#x27;),
+        close: new FormControl(false),
+      }),
+      tuesday: new FormGroup({
+        in: new FormControl(&#x27;09:00&#x27;),
+        out: new FormControl(&#x27;18:00&#x27;),
+        close: new FormControl(false),
+      }),
+      wednesday: new FormGroup({
+        in: new FormControl(&#x27;09:00&#x27;),
+        out: new FormControl(&#x27;18:00&#x27;),
+        close: new FormControl(false),
+      }),
+      thusday: new FormGroup({
+        in: new FormControl(&#x27;09:00&#x27;),
+        out: new FormControl(&#x27;18:00&#x27;),
+        close: new FormControl(false),
+      }),
+      friday: new FormGroup({
+        in: new FormControl(&#x27;09:00&#x27;),
+        out: new FormControl(&#x27;18:00&#x27;),
+        close: new FormControl(false),
+      }),
+      saturday: new FormGroup({
+        in: new FormControl(&#x27;09:00&#x27;),
+        out: new FormControl(&#x27;18:00&#x27;),
+        close: new FormControl(false),
+      }),
+      sunday: new FormGroup({
+        in: new FormControl(&#x27;09:00&#x27;),
+        out: new FormControl(&#x27;18:00&#x27;),
+        close: new FormControl(false),
+      }),
+    }),
+    location: new FormGroup({
+      // lat: new FormControl&lt;number | null&gt;(null, [Validators.required]),
+      // lng: new FormControl&lt;number | null&gt;(null, [Validators.required]),
+      type: new FormControl&lt;string&gt;(&#x27;Point&#x27;),
+      coordinates: new FormControl(),
+    }),
+    website: new FormControl(null),
+    google_review: new FormControl(null),
+    finance_apr: new FormControl(null),
+    name: new FormControl(null, [Validators.required]),
+    license_number: new FormControl(null, [Validators.required]),
+    email: new FormControl(null, [Validators.required, Validators.email]),
+    phone: new FormControl&lt;null | number&gt;(null, [Validators.required]),
+    alias: new FormControl(null, [Validators.required]),
+    remote_services: new FormControl(null),
+    custom_services: new FormControl(null),
+    logo: new FormControl&lt;any&gt;(null),
+  });
+
+  // view store timeline dialog
+  isStoreTimelineDialogOpen: boolean &#x3D; false;
+  objStoreTimelineDetail &#x3D; { name: &#x27;&#x27;, timeline: [], need_response: false, status: &#x27;&#x27; };
+
+  constructor(
+    private readonly csvService: CSVService,
+    private readonly sanitizer: DomSanitizer,
+    private readonly httpService: HttpService,
+    private readonly messageService: MessageService,
+    private readonly localStorageService: LocalStorageService
+  ) { }
+
+  /**
+   * Initializes the component by fetching stores, remote services, and city data.
+   * It also sets up a subscription to monitor address changes in the form.
+   * 
+   * This method is called automatically when the component is initialized.
+   * 
+   * @returns {Promise&lt;void&gt;} A promise that resolves when all initialization tasks are complete.
+   */
+  async ngOnInit(): Promise&lt;void&gt; {
+    // get current user
+    await this.getStores();
+
+    //get remote services
+    this.arrRemoteService &#x3D; await this.httpService.get(&#x27;remote-service/select&#x27;);
+
+    // set address change if yes force to user to look in google map by marker and verify
+    !(this.formStore.get(&#x27;address&#x27;) as FormGroup).valueChanges.subscribe(() &#x3D;&gt; {
+      this.isAddressChanged &#x3D; true;
+    })
+
+    // find city as per postal code from static CSV file
+    const csv: any &#x3D; await this.httpService.getWithOutsideURLCSV(&#x27;assets/csv/canadacities.csv&#x27;);
+    this.arrCity &#x3D; this.csvService.CSVToJSON(csv).map((cities: any) &#x3D;&gt; { return { city: cities.city_ascii } });
+  }
+
+  /**
+   * Retrieves the store status object based on the provided status value.
+   * If the status is &#x27;assign&#x27; or &#x27;not_assign&#x27;, it&#x27;s treated as &#x27;in_process&#x27;.
+   * 
+   * @param status - The status value to search for in the store status array.
+   * @returns The matching store status object from the arrStoreStatus array, or undefined if not found.
+   */
+  getStoreStatusByValue(status: string) {
+    status &#x3D; status &#x3D;&#x3D;&#x3D; &#x27;assign&#x27; || status &#x3D;&#x3D;&#x3D; &#x27;not_assign&#x27; ? &#x27;in_process&#x27; : status;
+    return this.arrStoreStatus.find((store: any) &#x3D;&gt; store.value &#x3D;&#x3D;&#x3D; status);
+  }
+
+  /**
+   * Retrieves store information for the dealer and sets up related data structures.
+   * 
+   * This function fetches store data from the server, populates the store array,
+   * sets up table columns, and determines if any stores need a response based on
+   * their timeline.
+   * 
+   * @returns {Promise&lt;void&gt;} A promise that resolves when the store data has been
+   *                          fetched and processed.
+   */
+  async getStores(): Promise&lt;void&gt; {
+    // get user store
+    const store: any &#x3D; await this.httpService.get(&#x27;store/dealer&#x27;);
+
+    // if user is dealer then then fill all his company information
+    if (store &amp;&amp; store.length &gt; 0) {
+      // set current user store
+      this.arrUserStores &#x3D; store;
+
+      this.cols &#x3D; [
+        { field: &#x27;logo&#x27;, header: &#x27;Logo&#x27; },
+        { field: &#x27;name&#x27;, header: &#x27;Name&#x27; },
+        { field: &#x27;alias&#x27;, header: &#x27;Alias&#x27; },
+        { field: &#x27;address&#x27;, header: &#x27;Address&#x27; },
+        { field: &#x27;status&#x27;, header: &#x27;Status&#x27; }
+      ];
+
+      this.arrUserStores.forEach((store: any) &#x3D;&gt; {
+        const lastIndex &#x3D; store.timeline.length - 1;
+        if (lastIndex &gt;&#x3D; 0 &amp;&amp; store.timeline[lastIndex].role &#x3D;&#x3D;&#x3D; &#x27;agent&#x27;) {
+          store.need_response &#x3D; true;
+        }
+      });
+    }
+  }
+
+  /**
+   * Opens the store editing form for a specific store.
+   * 
+   * This function finds the store by its ID, populates the form with the store&#x27;s data,
+   * fetches and sets up the store&#x27;s logo, and prepares the component for editing mode.
+   * 
+   * @param id - The unique identifier of the store to be edited.
+   * @returns A promise that resolves when the store data has been loaded and the form is ready for editing.
+   */
+  async openForEditStore(id: string): Promise&lt;void&gt; {
+    const store &#x3D; this.arrUserStores.find((store: any) &#x3D;&gt; store._id &#x3D;&#x3D;&#x3D; id);
+    if (store) {
+      this.isCreateStoreDialogOpen &#x3D; true;
+      this.formStore.patchValue({
+        address: {
+          unit: store.address.unit,
+          street: store.address.street,
+          city: store.address.city,
+          state: store.address.state,
+          country: store.address.country,
+          postal_code: store.address.postal_code
+        },
+        location: {
+          type: &#x27;Point&#x27;,
+          coordinates: [store.location.lng, store.location.lat]
+        },
+        time: {
+          monday: {
+            in: store.time.monday.in,
+            out: store.time.monday.out,
+            close: store.time.monday.close,
+          },
+          tuesday: {
+            in: store.time.tuesday.in,
+            out: store.time.tuesday.out,
+            close: store.time.tuesday.close,
+          },
+          wednesday: {
+            in: store.time.wednesday.in,
+            out: store.time.wednesday.out,
+            close: store.time.wednesday.close,
+          },
+          thusday: {
+            in: store.time.thusday.in,
+            out: store.time.thusday.out,
+            close: store.time.thusday.close,
+          },
+          friday: {
+            in: store.time.friday.in,
+            out: store.time.friday.out,
+            close: store.time.friday.close,
+          },
+          saturday: {
+            in: store.time.saturday.in,
+            out: store.time.saturday.out,
+            close: store.time.saturday.close,
+          },
+          sunday: {
+            in: store.time.sunday.in,
+            out: store.time.sunday.out,
+            close: store.time.sunday.close,
+          }
+        },
+        name: store.name,
+        email: store.email,
+        phone: store.phone,
+        alias: store.alias,
+        website: store.website,
+        finance_apr: store.finance_apr,
+        license_number: store.license_number,
+        google_review: store.google_review,
+        remote_services: store.remote_services,
+        custom_services: store.custom_services
+      });
+
+      // load file from url
+      const response &#x3D; await fetch(store.logo.url, { cache: &#x27;no-cache&#x27; });
+      const data &#x3D; await response.blob();
+      const file &#x3D; new File([data], store.logo.name, { type: data.type });
+      this.file &#x3D; file;
+      this.readURL(file);
+
+      this.strFormButtonTitle &#x3D; &#x27;Update Store&#x27;;
+      this.strCurrentEditStoreID &#x3D; id;
+    }
+  }
+
+  /**
+   * Checks if the address group in the form is valid.
+   * 
+   * This function retrieves the &#x27;address&#x27; form group from the main form
+   * and checks its validity status.
+   * 
+   * @returns {boolean} Returns true if the address group is invalid, false otherwise.
+   */
+  checkAddressGroupIsValid(): boolean {
+    return !(this.formStore.get(&#x27;address&#x27;) as FormGroup).valid;
+  }
+
+  /**
+   * Validates the address entered in the form using Google Maps API.
+   * 
+   * This function retrieves the address from the form, sends a request to the Google Maps
+   * Address Validation API, and processes the response. If the address is valid, it updates
+   * the map marker position and opens the validation map modal. If invalid, it displays an error message.
+   * 
+   * @async
+   * @returns {Promise&lt;void&gt;} A promise that resolves when the address validation process is complete.
+   * @throws {Error} Throws an error if the API request fails.
+   */
+  async validateAddress(): Promise&lt;void&gt; {
+    // get address from form
+    const address &#x3D; this.formStore.value.address;
+
+    // verify address by google map
+    const url &#x3D; &#x60;https://addressvalidation.googleapis.com/v1:validateAddress?key&#x3D;${environment.google_key}&#x60;;
+    const requestBody &#x3D; {
+      address: {
+        &quot;regionCode&quot;: &quot;CA&quot;,
+        &quot;addressLines&quot;: [&#x60;${address?.unit!} ${address?.street!}&#x60;, &#x60;${address?.city} ${address?.state} ${address?.postal_code}&#x60;]
+      }
+    }
+
+    // call google location api to get location lat lng
+    const response: any &#x3D; await this.httpService.postWithOutsideURL(url, requestBody);
+
+    // if address is correct then show map with maker
+    if (response.result.address) {
+      this.strCurrentAddressLatLng &#x3D; { lat: response.result.geocode.location.latitude, lng: response.result.geocode.location.longitude };
+      this.markerPositions &#x3D; []; // empty marker varray to prevent duplicate pin in map
+      this.markerPositions.push({ lat: response.result.geocode.location.latitude, lng: response.result.geocode.location.longitude }); // add marker in google map
+      this.isValidationMapModalOpen &#x3D; true; // open google map popup
+    } else {
+      this.messageService.add({ severity: &#x27;error&#x27;, summary: &#x27;Fail&#x27;, detail: &#x27;Address is not correct, kindly check all fields.&#x27; });
+    }
+  }
+
+  /**
+   * Verifies the address entered by the user and updates the form with the verified location.
+   * 
+   * This function updates the form&#x27;s location field with the latitude and longitude
+   * obtained from the address verification process. It also sets various flags to
+   * indicate that the address has been verified and closes the validation map modal.
+   * 
+   * @returns {void}
+   */
+  verifyAddress(): void {
+    this.formStore.patchValue({
+      location: {
+        type: &#x27;Point&#x27;,
+        coordinates: [this.strCurrentAddressLatLng?.lng, this.strCurrentAddressLatLng?.lat]
+      }
+    });
+    this.isAddressVefied &#x3D; true;
+    this.isValidationMapModalOpen &#x3D; false;
+    this.isAddressChanged &#x3D; false;
+    this.markerPositions &#x3D; []; // empty marker array to prevent duplicate pin in map
+  }
+
+  /**
+   * Submits the store information to create a new store or update an existing one.
+   * 
+   * This function handles the submission of store data, including:
+   * - Opening the store creation dialog
+   * - Processing form data
+   * - Handling logo upload (if applicable)
+   * - Converting phone number to the correct format
+   * - Setting store coordinates
+   * - Sending the data to the server
+   * - Handling the response and updating the UI accordingly
+   * 
+   * @async
+   * @returns {Promise&lt;void&gt;} A promise that resolves when the store information has been submitted and processed.
+   * @throws {Error} Throws an error if the submission process fails.
+   */
+  async submitStoreInformation(): Promise&lt;void&gt; {
+    this.isCreateStoreDialogOpen &#x3D; true;
+    this.isStoreOperationLoading &#x3D; true;
+
+    // process form data
+    const data: any &#x3D; this.formStore.value;
+
+    // if no new image then remove old logo
+    if (!this.strStorePatchURL) {
+      delete data.logo;
+    }
+
+    // if new image then upload it to aws s3 and set logo data in store object
+    if (this.file) {
+      // send request for upload url to aws s3
+      const urlUploadResult: any &#x3D; await this.httpService.get(&#x60;car/get-url/${this.file.type.split(&#x27;/&#x27;)[1]}/lg&#x60;);
+      // send object to aws by pre-signed url
+      await this.httpService.putURL(urlUploadResult.data.url, this.file, this.file.type);
+      const objDB &#x3D; { url: urlUploadResult.data.fullPath, path: urlUploadResult.data.path, field: &#x27;image&#x27;, name: urlUploadResult.data.mediaName, position: 0, date: new Date() };
+      data.logo &#x3D; objDB;
+    } else {
+      delete data.logo;
+    }
+
+    // convert phone in number
+    data.phone &#x3D; Number(data.phone!.replace(/-/g, &quot;&quot;));
+
+    // set coordinates
+    data.location.coordinates &#x3D; [-79.5449069, 43.769757];
+
+    await this.httpService.post(&#x27;store&#x27;, data).then(async (response: any) &#x3D;&gt; {
+      if (response.success) {
+        this.isAddressVefied &#x3D; false;
+        this.isAddressChanged &#x3D; false;
+        this.resetForm();
+        await this.getStores();
+        this.messageService.add({ severity: &#x27;secondary&#x27;, summary: &#x27;Done&#x27;, detail: &#x27;Store Added Successfully&#x27; });
+        setTimeout(() &#x3D;&gt; {
+          location.reload();
+        }, 2000);
+      }
+    }).catch((error: any) &#x3D;&gt; {
+      this.messageService.add({ severity: &#x27;error&#x27;, summary: &#x27;Fail&#x27;, detail: error, life: 5000 });
+    }).finally(() &#x3D;&gt; {
+      this.isStoreOperationLoading &#x3D; false;
+    });
+  }
+
+
+  /**
+   * Updates the information of an existing store.
+   * 
+   * This function handles the update process for a store, including logo updates,
+   * user association, and location coordinates. It sends the updated data to the server
+   * and handles the response.
+   * 
+   * @async
+   * @returns {Promise&lt;void&gt;} A promise that resolves when the store information has been updated.
+   * @throws {Error} Throws an error if the update process fails.
+   */
+  async updateStorInformation(): Promise&lt;void&gt; {
+    const store &#x3D; this.arrUserStores.find((store: any) &#x3D;&gt; store._id &#x3D;&#x3D;&#x3D; this.strCurrentEditStoreID);
+    const data: any &#x3D; this.formStore.value;
+
+    if (this.isLogoChanged) {
+      // check it&#x27;s cropped imaage or not
+      if (!this.strStorePatchURL.changingThisBreaksApplicationSecurity) {
+        // send request for upload url to aws s3
+        const urlUploadResult: any &#x3D; await this.httpService.get(&#x60;car/get-url/${this.file!.type.split(&#x27;/&#x27;)[1]}/lg&#x60;);
+        // send object to aws by pre-signed url
+        await this.httpService.putURL(urlUploadResult.data.url, this.file, this.file!.type);
+        const objDB &#x3D; { url: urlUploadResult.data.fullPath, path: urlUploadResult.data.path, field: &#x27;image&#x27;, name: urlUploadResult.data.mediaName, position: 0, date: new Date() };
+        data.logo &#x3D; objDB;
+      } else {
+        // load file from url
+        const response &#x3D; await fetch(this.strStorePatchURL.changingThisBreaksApplicationSecurity, { cache: &#x27;no-cache&#x27; });
+        const dataImage &#x3D; await response.blob();
+        const file &#x3D; new File([dataImage], &#x27;logo.jpg&#x27;, { type: dataImage.type });
+        // send request for upload url to aws s3
+        const urlUploadResult: any &#x3D; await this.httpService.get(&#x60;car/get-url/${file.type.split(&#x27;/&#x27;)[1]}/lg&#x60;);
+        // send object to aws by pre-signed url
+        await this.httpService.putURL(urlUploadResult.data.url, file, file.type);
+        const objDB &#x3D; { url: urlUploadResult.data.fullPath, path: urlUploadResult.data.path, field: &#x27;image&#x27;, name: urlUploadResult.data.mediaName, position: 0, date: new Date() };
+        data.logo &#x3D; objDB;
+      }
+    } else {
+      data.logo &#x3D; store.logo
+    }
+
+    // get user from storage
+    data.user &#x3D; this.localStorageService.getObject(&#x27;user&#x27;).identifier;
+
+    // set coordinates
+    data.location.coordinates &#x3D; [store.location.coordinates[0], store.location.coordinates[1]];
+
+    // return
+    await this.httpService.patch(&#x60;store/${this.strCurrentEditStoreID}&#x60;, data).then(async (response: any) &#x3D;&gt; {
+      if (response.success) {
+        this.isAddressVefied &#x3D; false; // set false again after submit data
+        this.isAddressChanged &#x3D; false; // address change mode reset to false
+        this.resetForm();
+        await this.getStores();
+        this.messageService.add({ severity: &#x27;secondary&#x27;, summary: &#x27;Done&#x27;, detail: &#x27;Store Updated Successfully&#x27; });
+        setTimeout(() &#x3D;&gt; {
+          location.reload();
+        }, 2000);
+      }
+    }).catch((error: any) &#x3D;&gt; {
+      this.messageService.add({ severity: &#x27;error&#x27;, summary: &#x27;Fail&#x27;, detail: error });
+    });
+  }
+
+  /**
+   * Handles the upload of an image file.
+   * 
+   * This function processes the uploaded file, checks for size and type constraints,
+   * and sets up the image for cropping and display. It also manages error states
+   * and updates relevant component properties.
+   * 
+   * @param {any} event - The file upload event object. Expected to contain the uploaded file in event.target.files[0].
+   * @returns {void}
+   * 
+   * @throws {Error} Implicitly throws an error if file size or type constraints are not met.
+   */
+  onUpload(event: any): void {
+    // set event for image crop
+    this.imageChangedEvent &#x3D; event;
+
+    // reset error
+    this.strUploadError &#x3D; undefined;
+
+    // get file from event
+    const file: File &#x3D; event.target.files[0];
+
+    // check file size
+    if (Math.round(file.size / 205) &gt; 200) {
+      this.strUploadError &#x3D; &quot;File size should be less than 200 KB&quot;;
+      return;
+    }
+
+    // check file type
+    if (![&#x27;image/jpeg&#x27;, &#x27;image/jpg&#x27;].includes(file.type)) {
+      this.strUploadError &#x3D; &quot;File type should be only JPEG or JPG&quot;;
+      return;
+    }
+
+    // set file size and display in uploader
+    this.file &#x3D; file;
+    this.readURL(file);
+    this.isLogoChanged &#x3D; true;
+    this.isLogoChangeOnUpdate &#x3D; true;
+  }
+
+  /**
+   * Handles the file change event for image cropping.
+   * This function updates the component&#x27;s imageChangedEvent property with the new event,
+   * which is typically used to trigger image cropping functionality.
+   *
+   * @param {Event} event - The file change event object containing information about the selected file.
+   * @returns {void}
+   */
+  fileChangeEvent(event: Event): void {
+    this.imageChangedEvent &#x3D; event;
+  }
+
+  /**
+   * Sets the cropped image or triggers the cropping process.
+   * 
+   * If an event is provided, it updates the component&#x27;s strStorePatchURL with the cropped image URL.
+   * If no event is provided, it triggers the crop action on the cropperLogo component.
+   * 
+   * @param {ImageCroppedEvent} [event] - The event object containing the cropped image data.
+   *        If not provided, the function will trigger the crop action instead.
+   * @returns {void}
+   */
+  setCropImage(event?: ImageCroppedEvent): void {
+    if (event) {
+      this.strStorePatchURL &#x3D; this.sanitizer.bypassSecurityTrustUrl(event.objectUrl!);
+    } else {
+      this.cropperLogo.crop();
+    }
+  }
+
+  /**
+   * Closes the image cropping dialog and resets the image display.
+   * 
+   * This function is typically called when the user cancels the image cropping process.
+   * It reads the original file URL and closes the cropping dialog.
+   * 
+   * @returns {void}
+   */
+  closeCropImage(): void {
+    this.readURL(this.file);
+    this.isCropDialogOpen &#x3D; false;
+  }
+
+  /**
+   * Reads the URL of an uploaded file and sets it as the store&#x27;s logo patch URL after compression.
+   * 
+   * This function creates a FileReader to read the input file as a data URL.
+   * Once loaded, it compresses the image and sets the result as the store&#x27;s logo patch URL.
+   * 
+   * @param input - The input file object to be read. Expected to be a File or Blob object.
+   * @returns {void}
+   */
+  readURL(input: any): void {
+    if (!input) return;
+    const reader &#x3D; new FileReader();
+    reader.onload &#x3D; async (e) &#x3D;&gt; {
+      // load image by url
+      this.strStorePatchURL &#x3D; await this.compressImage(e.target!.result, 80, 60);
+    };
+    reader.readAsDataURL(input);
+  }
+
+  /**
+   * Compresses an image to a specified size.
+   * 
+   * This function takes an image source and desired dimensions, then creates a new compressed
+   * version of the image using a canvas element. The compressed image is returned as a data URL.
+   *
+   * @param src - The source of the image. Can be a URL or a data URL.
+   * @param newX - The desired width of the compressed image in pixels.
+   * @param newY - The desired height of the compressed image in pixels.
+   * @returns A Promise that resolves with the compressed image as a data URL string, or rejects with an error if the image fails to load.
+   */
+  compressImage(src: any, newX: number, newY: number): Promise&lt;string&gt; {
+    return new Promise((res, rej) &#x3D;&gt; {
+      const img &#x3D; new Image();
+      img.src &#x3D; src;
+      img.onload &#x3D; () &#x3D;&gt; {
+        const elem &#x3D; document.createElement(&#x27;canvas&#x27;);
+        elem.width &#x3D; newX;
+        elem.height &#x3D; newY;
+        const ctx &#x3D; elem.getContext(&#x27;2d&#x27;);
+        ctx!.drawImage(img, 0, 0, newX, newY);
+        const data &#x3D; ctx!.canvas.toDataURL();
+        res(data);
+      }
+      img.onerror &#x3D; error &#x3D;&gt; rej(error);
+    })
+  }
+
+  /**
+   * Resets the store form and related component properties to their initial states.
+   * 
+   * This function performs the following actions:
+   * - Closes the create store dialog
+   * - Resets the form button title
+   * - Resets the form fields to default values
+   * - Clears any errors on city and state fields
+   * - Resets logo-related properties and edit mode flags
+   * 
+   * The form is reset with default values for address, location, and operating hours for each day of the week.
+   * 
+   * @returns {void}
+   */
+  resetForm(): void {
+    this.isCreateStoreDialogOpen &#x3D; false;
+    this.strFormButtonTitle &#x3D; &#x27;Add Store&#x27;;
+    this.formStore.reset({
+      address: {
+        country: &#x27;Canada&#x27;,
+        // city: null,
+        // state: null
+      },
+      location: {
+        type: &#x27;Point&#x27;
+      },
+      time: {
+        monday: {
+          in: &#x27;09:00&#x27;,
+          out: &#x27;18:00&#x27;,
+          close: false,
+        },
+        tuesday: {
+          in: &#x27;09:00&#x27;,
+          out: &#x27;18:00&#x27;,
+          close: false,
+        },
+        wednesday: {
+          in: &#x27;09:00&#x27;,
+          out: &#x27;18:00&#x27;,
+          close: false,
+        },
+        thusday: {
+          in: &#x27;09:00&#x27;,
+          out: &#x27;18:00&#x27;,
+          close: false,
+        },
+        friday: {
+          in: &#x27;09:00&#x27;,
+          out: &#x27;18:00&#x27;,
+          close: false,
+        },
+        saturday: {
+          in: &#x27;09:00&#x27;,
+          out: &#x27;18:00&#x27;,
+          close: false,
+        },
+        sunday: {
+          in: &#x27;09:00&#x27;,
+          out: &#x27;18:00&#x27;,
+          close: false,
+        }
+      }
+    });
+    this.formStore.get(&#x27;address.city&#x27;)?.setErrors(null);
+    this.formStore.get(&#x27;address.state&#x27;)?.setErrors(null);
+    this.strStorePatchURL &#x3D; undefined;
+    this.isLogoChanged &#x3D; false;
+    this.strCurrentEditStoreID &#x3D; undefined;
+    this.isLogoChangeOnUpdate &#x3D; false;
+  }
+
+  /**
+   * Opens a dialog to view details of a store record.
+   * 
+   * This function prepares the data for viewing by joining custom services into a string,
+   * sets the view dialog to open, and assigns the data to be viewed.
+   *
+   * @param {any} data - The store record data to be displayed in the view dialog.
+   *                     Expected to have a &#x27;custom_services&#x27; property which is an array.
+   * @returns {void}
+   */
+  openViewDialog(data: any): void {
+    data.custom_service &#x3D; data.custom_services?.join(&#x27;, &#x27;).trim();
+    this.isViewDialogOpen &#x3D; true;
+    this.currentRecordToView &#x3D; data;
+  }
+
+  /**
+   * Opens the store timeline detail dialog and populates it with the provided data.
+   * 
+   * This function sets up the store timeline detail object with information from the
+   * provided data, including name, status, response requirement, and timeline.
+   * If a response is needed, it also updates the timeline response form.
+   *
+   * @param {any} data - The store data object containing timeline details.
+   * @param {string} data.name - The name of the store.
+   * @param {string} data.status - The current status of the store.
+   * @param {boolean} data.need_response - Indicates if a response is required.
+   * @param {Array} data.timeline - The timeline data for the store.
+   * @param {string} data._id - The unique identifier of the store (used if response is needed).
+   * 
+   * @returns {void}
+   */
+  openStoreTimelineDetail(data: any): void {
+    this.isStoreTimelineDialogOpen &#x3D; true;
+    this.objStoreTimelineDetail.name &#x3D; data.name;
+    this.objStoreTimelineDetail.status &#x3D; data.status;
+    this.objStoreTimelineDetail.need_response &#x3D; data.need_response;
+    this.objStoreTimelineDetail.timeline &#x3D; data.timeline;
+    if (data.need_response) {
+      this.formTimelineResponse.patchValue({
+        status: data.status,
+        store: data._id
+      });
+    }
+  }
+
+  /**
+   * Determines if an action should be shown on the timeline response based on the given status.
+   * 
+   * This function checks if the provided status is &#x27;action_required&#x27;, which is the only status
+   * that should trigger showing an action on the timeline response.
+   *
+   * @param status - The current status of the timeline response.
+   *                 Possible values include &#x27;rejected&#x27;, &#x27;verified&#x27;, &#x27;in_process&#x27;, &#x27;assign&#x27;, &#x27;not_assign&#x27;, and &#x27;action_required&#x27;.
+   * 
+   * @returns A boolean indicating whether an action should be shown (true) or not (false).
+   */
+  showActionOnTimelineResponse(status: string): boolean {
+    // &#x27;rejected&#x27;, &#x27;verified&#x27;, &#x27;in_process&#x27;, &#x27;assign&#x27;, &#x27;not_assign&#x27;
+    return [&#x27;action_required&#x27;].includes(status);
+  }
+
+  /**
+   * Opens the timeline response dialog.
+   * 
+   * This function sets the &#x60;isTimelineResponseDialogOpen&#x60; flag to true,
+   * which typically triggers the display of a dialog for timeline responses
+   * in the user interface.
+   * 
+   * @returns {void}
+   */
+  openTimelineResposeDialog(): void {
+    this.isTimelineResponseDialogOpen &#x3D; true;
+  }
+
+  /**
+   * Submits a timeline response for a store and updates the application state.
+   * 
+   * This asynchronous function sends a POST request to update the store&#x27;s status,
+   * closes relevant dialogs, displays a success message, and refreshes the store data.
+   * If an error occurs during the process, it displays an error message.
+   * 
+   * @async
+   * @returns {Promise&lt;void&gt;} A promise that resolves when the timeline response has been submitted and processed.
+   * @throws {Error} If the HTTP request fails or if there&#x27;s an error in processing the response.
+   */
+  async onSubmitTimelineResponse(): Promise&lt;void&gt; {
+    this.isTimelineResponseLoading &#x3D; true;
+    await this.httpService.post(&#x60;store/dealer/status&#x60;, this.formTimelineResponse.value).then(async (response: any) &#x3D;&gt; {
+      if (response.success) {
+        this.isTimelineResponseDialogOpen &#x3D; false;
+        this.isStoreTimelineDialogOpen &#x3D; false;
+        this.messageService.add({ severity: &#x27;secondary&#x27;, summary: &#x27;Timeline Response&#x27;, detail: &#x27;Store timeline response sent successfully.&#x27; });
+        await this.getStores();
+      }
+    }).catch((error: any) &#x3D;&gt; {
+      this.messageService.add({ severity: &#x27;error&#x27;, summary: &#x27;Timeline Response&#x27;, detail: error });
+    }).finally(() &#x3D;&gt; {
+      this.isTimelineResponseLoading &#x3D; false;
+    })
+  }
+
+  /**
+   * Determines if the last element in the store&#x27;s timeline has a role of &#x27;agent&#x27;.
+   * 
+   * This function checks the last element of the store&#x27;s timeline array and returns
+   * true if its role is &#x27;agent&#x27;, false otherwise. If the timeline is empty, it returns false.
+   *
+   * @param {any} store - The store object containing a timeline property.
+   * @param {Array} store.timeline - An array representing the timeline of the store.
+   * @param {string} store.timeline[].role - The role associated with each timeline entry.
+   * 
+   * @returns {boolean} True if the last timeline entry has a role of &#x27;agent&#x27;, false otherwise.
+   */
+  getLastElementRoleFromTimeline(store: any) {
+    const lastIndex &#x3D; store.timeline.length - 1;
+    if (lastIndex &gt;&#x3D; 0) {
+      return store.timeline[lastIndex].role &#x3D;&#x3D;&#x3D; &#x27;agent&#x27;;
+    }
+    return false;
+  }
+
+  /**
+   * Converts a role status string to its corresponding display name.
+   * 
+   * This function takes a status string and returns the appropriate role name.
+   * It handles &#x27;dealer&#x27; and &#x27;agent&#x27; cases, with &#x27;dealer&#x27; being the default for any unrecognized input.
+   *
+   * @param {string} status - The status string to be converted. Expected values are &#x27;delaer&#x27; or &#x27;agent&#x27;.
+   * @returns {string} The converted role name: &#x27;Dealer&#x27; for &#x27;delaer&#x27; or default, &#x27;Agent&#x27; for &#x27;agent&#x27;.
+   */
+  getRoleByValue(status: string): string {
+    switch (status) {
+      case &#x27;delaer&#x27;:
+        return &#x27;Dealer&#x27;;
+      case &#x27;agent&#x27;:
+        return &#x27;Agent&#x27;;
+      default:
+        return &#x27;Dealer&#x27;;
+    }
+  }
+
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'Column-1.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

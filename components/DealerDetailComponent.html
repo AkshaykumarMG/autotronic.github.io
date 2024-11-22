@@ -1,0 +1,1848 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>autocreditco documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">autocreditco documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  DealerDetailComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/dealer-detail/dealer-detail.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-dealer-detail</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                            <code>ReactiveFormsModule</code>
+                            <code>GoogleMap</code>
+                            <code>MapMarker</code>
+                            <code>DropdownModule</code>
+                            <code>InputTextModule</code>
+                            <code>ButtonModule</code>
+                            <code>PaginatorModule</code>
+                            <code>DividerModule</code>
+                            <code>ChipModule</code>
+                            <code>AvatarModule</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./dealer-detail.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./dealer-detail.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#arrCars" >arrCars</a>
+                            </li>
+                            <li>
+                                <a href="#arrMake" >arrMake</a>
+                            </li>
+                            <li>
+                                <a href="#arrModel" >arrModel</a>
+                            </li>
+                            <li>
+                                <a href="#arrModelCopy" >arrModelCopy</a>
+                            </li>
+                            <li>
+                                <a href="#center" >center</a>
+                            </li>
+                            <li>
+                                <a href="#formFilter" >formFilter</a>
+                            </li>
+                            <li>
+                                <a href="#limit" >limit</a>
+                            </li>
+                            <li>
+                                <a href="#markerOptions" >markerOptions</a>
+                            </li>
+                            <li>
+                                <a href="#markerPositions" >markerPositions</a>
+                            </li>
+                            <li>
+                                <a href="#objStoreInfo" >objStoreInfo</a>
+                            </li>
+                            <li>
+                                <a href="#page" >page</a>
+                            </li>
+                            <li>
+                                <a href="#storeID" >storeID</a>
+                            </li>
+                            <li>
+                                <a href="#zoom" >zoom</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#findCarPrimaryImage" >findCarPrimaryImage</a>
+                            </li>
+                            <li>
+                                <a href="#findCarServices" >findCarServices</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getStoreVehicles" >getStoreVehicles</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onChangeMake" >onChangeMake</a>
+                            </li>
+                            <li>
+                                <a href="#redirectToCarDetails" >redirectToCarDetails</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#submitFormFilter" >submitFormFilter</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router, route: ActivatedRoute, httpService: <a href="../injectables/HttpService.html" target="_self">HttpService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/components/dealer-detail/dealer-detail.component.ts:53</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>httpService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/HttpService.html" target="_self" >HttpService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findCarPrimaryImage"></a>
+                    <span class="name">
+                        <span ><b>findCarPrimaryImage</b></span>
+                        <a href="#findCarPrimaryImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>findCarPrimaryImage(car: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="146"
+                                    class="link-to-prism">src/app/components/dealer-detail/dealer-detail.component.ts:146</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Finds the primary image of a car.</p>
+<p>This function searches through the car&#39;s images to find the one with the lowest position value,
+which is considered the primary image.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>car</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The car object containing an array of images.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The image object with the lowest position value, or undefined if no images are found.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findCarServices"></a>
+                    <span class="name">
+                        <span ><b>findCarServices</b></span>
+                        <a href="#findCarServices"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>findCarServices(services: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, service: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="161"
+                                    class="link-to-prism">src/app/components/dealer-detail/dealer-detail.component.ts:161</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Checks if a specific service is available for a car.</p>
+<p>This function searches through an array of services to find a match for the specified service.
+It returns the matching service object if found, or false if the service is not available
+or if the services array is empty or undefined.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>services</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>An array of service objects associated with the car.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>service</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The name of the service to search for.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>any | boolean</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The matching service object if found, or false if not found or if services is empty/undefined.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getStoreVehicles"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getStoreVehicles</b></span>
+                        <a href="#getStoreVehicles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getStoreVehicles(event?: PaginatorState)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="113"
+                                    class="link-to-prism">src/app/components/dealer-detail/dealer-detail.component.ts:113</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Fetches vehicles for the current store based on pagination parameters.</p>
+<p>This method retrieves a list of cars associated with the current store,
+applying pagination if specified. It updates the component&#39;s car list
+and pagination state.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">           If provided, it updates the current page and limit values.
+
+     The fetched data is stored in the `arrCars` property of the component.</code></pre></div></div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>PaginatorState</code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Optional PaginatorState object containing pagination information.
+If provided, it updates the current page and limit values.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A Promise that resolves when the car data has been fetched and stored.
+The fetched data is stored in the <code>arrCars</code> property of the component.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="79"
+                                    class="link-to-prism">src/app/components/dealer-detail/dealer-detail.component.ts:79</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Initializes the component by fetching store information, setting up map data,
+retrieving filter options for make and model, and fetching initial vehicle data.</p>
+<p>This method is called automatically by Angular when the component is initialized.
+It performs the following tasks:</p>
+<ol>
+<li>Fetches store information based on the store ID.</li>
+<li>Sets up the map center and marker position using the store&#39;s coordinates.</li>
+<li>Retrieves and sets up filter options for make and model.</li>
+<li>Disables the model field in the filter form by default.</li>
+<li>Fetches the initial list of vehicles for the store.</li>
+</ol>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A promise that resolves when all initialization tasks are complete.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onChangeMake"></a>
+                    <span class="name">
+                        <span ><b>onChangeMake</b></span>
+                        <a href="#onChangeMake"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onChangeMake(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="176"
+                                    class="link-to-prism">src/app/components/dealer-detail/dealer-detail.component.ts:176</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Handles the change event when a make is selected in the filter form.
+This function updates the available models based on the selected make and enables the model field.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">                 Expected to have a &#39;value&#39; property containing the selected make.
+
+            - Updates the arrModel array with models related to the selected make.
+            - Enables the &#39;model&#39; field in the filter form.</code></pre></div></div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The change event object from the make dropdown.
+Expected to have a &#39;value&#39; property containing the selected make.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>This function doesn&#39;t return a value, but it updates the component&#39;s state:</p>
+<ul>
+<li>Updates the arrModel array with models related to the selected make.</li>
+<li>Enables the &#39;model&#39; field in the filter form.</li>
+</ul>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="redirectToCarDetails"></a>
+                    <span class="name">
+                        <span ><b>redirectToCarDetails</b></span>
+                        <a href="#redirectToCarDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>redirectToCarDetails(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="130"
+                                    class="link-to-prism">src/app/components/dealer-detail/dealer-detail.component.ts:130</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Navigates to the car details page for a specific car.</p>
+<p>This function uses the Angular Router to navigate to the car details page,
+using the provided car ID to construct the URL.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The unique identifier of the car to view details for.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>void This function doesn&#39;t return a value, but triggers a navigation action.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submitFormFilter"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>submitFormFilter</b></span>
+                        <a href="#submitFormFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>submitFormFilter(event?: PaginatorState)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="198"
+                                    class="link-to-prism">src/app/components/dealer-detail/dealer-detail.component.ts:198</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Submits the filter form and fetches filtered car results for the current store.</p>
+<p>This function handles pagination and applies the current filter values when fetching cars.
+It updates the page and limit values based on the provided event or resets them to default values.
+The filtered results are then stored in the <code>arrCars</code> property.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">                              If provided, it updates the current page and limit values.
+
+                     The fetched data is stored in the `arrCars` property of the component.</code></pre></div></div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>PaginatorState</code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Optional paginator state object containing pagination information.
+ If provided, it updates the current page and limit values.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A promise that resolves when the filtered car data has been fetched and stored.
+The fetched data is stored in the <code>arrCars</code> property of the component.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="arrCars"></a>
+                    <span class="name">
+                        <span ><b>arrCars</b></span>
+                        <a href="#arrCars"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/components/dealer-detail/dealer-detail.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="arrMake"></a>
+                    <span class="name">
+                        <span ><b>arrMake</b></span>
+                        <a href="#arrMake"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/components/dealer-detail/dealer-detail.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="arrModel"></a>
+                    <span class="name">
+                        <span ><b>arrModel</b></span>
+                        <a href="#arrModel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/components/dealer-detail/dealer-detail.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="arrModelCopy"></a>
+                    <span class="name">
+                        <span ><b>arrModelCopy</b></span>
+                        <a href="#arrModelCopy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/components/dealer-detail/dealer-detail.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="center"></a>
+                    <span class="name">
+                        <span ><b>center</b></span>
+                        <a href="#center"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>google.maps.LatLngLiteral</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ lat: 24, lng: 12 }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/components/dealer-detail/dealer-detail.component.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formFilter"></a>
+                    <span class="name">
+                        <span ><b>formFilter</b></span>
+                        <a href="#formFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormGroup({
+    make: new FormControl&lt;string | null&gt;(null, [Validators.required]),
+    model: new FormControl&lt;string | null&gt;(null, [Validators.required]),
+    max_price: new FormControl&lt;string | null&gt;(null)
+  })</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/components/dealer-detail/dealer-detail.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="limit"></a>
+                    <span class="name">
+                        <span ><b>limit</b></span>
+                        <a href="#limit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>15</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/components/dealer-detail/dealer-detail.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="markerOptions"></a>
+                    <span class="name">
+                        <span ><b>markerOptions</b></span>
+                        <a href="#markerOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>google.maps.MarkerOptions</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ draggable: false }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/components/dealer-detail/dealer-detail.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="markerPositions"></a>
+                    <span class="name">
+                        <span ><b>markerPositions</b></span>
+                        <a href="#markerPositions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>google.maps.LatLngLiteral[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/components/dealer-detail/dealer-detail.component.ts:53</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="objStoreInfo"></a>
+                    <span class="name">
+                        <span ><b>objStoreInfo</b></span>
+                        <a href="#objStoreInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/components/dealer-detail/dealer-detail.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="page"></a>
+                    <span class="name">
+                        <span ><b>page</b></span>
+                        <a href="#page"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/components/dealer-detail/dealer-detail.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="storeID"></a>
+                    <span class="name">
+                        <span ><b>storeID</b></span>
+                        <a href="#storeID"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/components/dealer-detail/dealer-detail.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="zoom"></a>
+                    <span class="name">
+                        <span ><b>zoom</b></span>
+                        <a href="#zoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>14</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/components/dealer-detail/dealer-detail.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from &#x27;@angular/forms&#x27;;
+
+// custom service
+import { HttpService } from &#x27;../../utilities/services/http.service&#x27;;
+
+// map
+import { GoogleMap, MapMarker } from &#x27;@angular/google-maps&#x27;;
+
+// primeng
+import { DropdownModule } from &#x27;primeng/dropdown&#x27;;
+import { InputTextModule } from &#x27;primeng/inputtext&#x27;;
+import { ButtonModule } from &#x27;primeng/button&#x27;;
+import { PaginatorModule, PaginatorState } from &#x27;primeng/paginator&#x27;;
+import { DividerModule } from &#x27;primeng/divider&#x27;;
+import { ChipModule } from &#x27;primeng/chip&#x27;;
+import { AvatarModule } from &#x27;primeng/avatar&#x27;;
+
+@Component({
+  selector: &#x27;app-dealer-detail&#x27;,
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule, GoogleMap, MapMarker, DropdownModule, InputTextModule, ButtonModule, PaginatorModule, DividerModule, ChipModule, AvatarModule],
+  templateUrl: &#x27;./dealer-detail.component.html&#x27;,
+  styleUrl: &#x27;./dealer-detail.component.scss&#x27;
+})
+export class DealerDetailComponent implements OnInit {
+
+  // defined variables
+  objStoreInfo: any;
+  storeID!: string;
+  arrMake: any;
+  arrModel: any;
+  arrModelCopy: any;
+  arrCars: any;
+
+  // pagination
+  page: number &#x3D; 0;
+  limit: number &#x3D; 15;
+
+  // filter form
+  formFilter: FormGroup &#x3D; new FormGroup({
+    make: new FormControl&lt;string | null&gt;(null, [Validators.required]),
+    model: new FormControl&lt;string | null&gt;(null, [Validators.required]),
+    max_price: new FormControl&lt;string | null&gt;(null)
+  })
+
+  // map
+  center: google.maps.LatLngLiteral &#x3D; { lat: 24, lng: 12 };
+  zoom &#x3D; 14;
+  markerOptions: google.maps.MarkerOptions &#x3D; { draggable: false };
+  markerPositions: google.maps.LatLngLiteral[] &#x3D; [];
+
+  constructor(
+    private readonly router: Router,
+    private readonly route: ActivatedRoute,
+    private readonly httpService: HttpService
+  ) {
+    this.route.params.subscribe(async params &#x3D;&gt; {
+      this.storeID &#x3D; params[&#x27;id&#x27;];
+    });
+  }
+
+  /**
+   * Initializes the component by fetching store information, setting up map data,
+   * retrieving filter options for make and model, and fetching initial vehicle data.
+   * 
+   * This method is called automatically by Angular when the component is initialized.
+   * It performs the following tasks:
+   * 1. Fetches store information based on the store ID.
+   * 2. Sets up the map center and marker position using the store&#x27;s coordinates.
+   * 3. Retrieves and sets up filter options for make and model.
+   * 4. Disables the model field in the filter form by default.
+   * 5. Fetches the initial list of vehicles for the store.
+   * 
+   * @returns {Promise&lt;void&gt;} A promise that resolves when all initialization tasks are complete.
+   */
+  async ngOnInit(): Promise&lt;void&gt; {
+    // fetch store
+    this.objStoreInfo &#x3D; await this.httpService.get(&#x27;store/info/&#x27; + this.storeID)
+    this.center &#x3D; { lat: this.objStoreInfo.location.coordinates[1], lng: this.objStoreInfo.location.coordinates[0] };
+    // set map location
+    this.markerPositions.push({ lat: this.objStoreInfo.location.coordinates[1], lng: this.objStoreInfo.location.coordinates[0] });
+  
+    // get filters for make &amp; model
+    const filters &#x3D; (await this.httpService.get(&#x27;filter&#x27;) as any).data;
+    this.arrMake &#x3D; filters.find((ele: any) &#x3D;&gt; ele.name.value &#x3D;&#x3D;&#x3D; &#x27;make&#x27;).data;
+    this.arrModel &#x3D; filters.find((ele: any) &#x3D;&gt; ele.name.value &#x3D;&#x3D;&#x3D; &#x27;model&#x27;).data;
+    this.arrModelCopy &#x3D; JSON.parse(JSON.stringify(this.arrModel));
+  
+    //disbale model field default
+    this.formFilter.get(&#x27;model&#x27;)?.disable();
+  
+    // fetch vehicles
+    await this.getStoreVehicles();
+  }
+
+
+  /**
+   * Fetches vehicles for the current store based on pagination parameters.
+   * 
+   * This method retrieves a list of cars associated with the current store,
+   * applying pagination if specified. It updates the component&#x27;s car list
+   * and pagination state.
+   * 
+   * @param event - Optional PaginatorState object containing pagination information.
+   *                If provided, it updates the current page and limit values.
+   * 
+   * @returns A Promise that resolves when the car data has been fetched and stored.
+   *          The fetched data is stored in the &#x60;arrCars&#x60; property of the component.
+   */
+  async getStoreVehicles(event?: PaginatorState): Promise&lt;void&gt; {
+    if (event) {
+      this.page &#x3D; event.page ?? 0;
+      this.limit &#x3D; event.rows ?? 15;
+    }
+    this.arrCars &#x3D; await this.httpService.get(&#x60;car/store/${this.objStoreInfo._id}?page&#x3D;${this.page}&amp;limit&#x3D;${this.limit}&#x60;);
+  }
+
+  /**
+   * Navigates to the car details page for a specific car.
+   * 
+   * This function uses the Angular Router to navigate to the car details page,
+   * using the provided car ID to construct the URL.
+   *
+   * @param id - The unique identifier of the car to view details for.
+   * @returns void This function doesn&#x27;t return a value, but triggers a navigation action.
+   */
+  redirectToCarDetails(id: string): void {
+    this.router.navigateByUrl(&#x60;/detail/${id}&#x60;);
+  }
+
+  /**
+   * Finds the primary image of a car.
+   * 
+   * This function searches through the car&#x27;s images to find the one with the lowest position value,
+   * which is considered the primary image.
+   *
+   * @param car - The car object containing an array of images.
+   * @param car.images - An array of image objects associated with the car.
+   * @param car.images[].position - The position value of each image.
+   * 
+   * @returns The image object with the lowest position value, or undefined if no images are found.
+   */
+  findCarPrimaryImage(car: any) {
+    return car.images.find((image: any) &#x3D;&gt; image.position &#x3D;&#x3D;&#x3D; Math.min(...car.images.map((img: any) &#x3D;&gt; img.position)));
+  }
+
+  /**
+   * Checks if a specific service is available for a car.
+   * 
+   * This function searches through an array of services to find a match for the specified service.
+   * It returns the matching service object if found, or false if the service is not available
+   * or if the services array is empty or undefined.
+   *
+   * @param {any[]} services - An array of service objects associated with the car.
+   * @param {string} service - The name of the service to search for.
+   * @returns {any | boolean} The matching service object if found, or false if not found or if services is empty/undefined.
+   */
+  findCarServices(services: any, service: string): any | boolean {
+    return services &amp;&amp; services.length &gt; 0 ? services.find((srvc: any) &#x3D;&gt; srvc.value &#x3D;&#x3D;&#x3D; service) : false;
+  }
+
+  /**
+   * Handles the change event when a make is selected in the filter form.
+   * This function updates the available models based on the selected make and enables the model field.
+   *
+   * @param {any} event - The change event object from the make dropdown.
+   *                      Expected to have a &#x27;value&#x27; property containing the selected make.
+   * 
+   * @returns {void} This function doesn&#x27;t return a value, but it updates the component&#x27;s state:
+   *                 - Updates the arrModel array with models related to the selected make.
+   *                 - Enables the &#x27;model&#x27; field in the filter form.
+   */
+  onChangeMake(event: any): void {
+    // find related models to make and set
+    const dependantData &#x3D; this.arrModelCopy.filter((element: any) &#x3D;&gt; element.join &#x3D;&#x3D;&#x3D; event.value);
+    this.arrModel &#x3D; dependantData;
+  
+    // enable model field
+    this.formFilter.get(&#x27;model&#x27;)?.enable();
+  }
+
+  /**
+   * Submits the filter form and fetches filtered car results for the current store.
+   * 
+   * This function handles pagination and applies the current filter values when fetching cars.
+   * It updates the page and limit values based on the provided event or resets them to default values.
+   * The filtered results are then stored in the &#x60;arrCars&#x60; property.
+   *
+   * @param {PaginatorState} [event] - Optional paginator state object containing pagination information.
+   *                                   If provided, it updates the current page and limit values.
+   * 
+   * @returns {Promise&lt;void&gt;} A promise that resolves when the filtered car data has been fetched and stored.
+   *                          The fetched data is stored in the &#x60;arrCars&#x60; property of the component.
+   */
+  async submitFormFilter(event?: PaginatorState): Promise&lt;void&gt; {
+    if (event) {
+      this.page &#x3D; event.page ?? 0;
+      this.limit &#x3D; event.rows ?? 15;
+    } else {
+      this.page &#x3D; 0;
+      this.limit &#x3D; 15;
+    }
+    this.arrCars &#x3D; await this.httpService.post(&#x60;car/client/storefilter?page&#x3D;${this.page}&amp;limit&#x3D;${this.limit}&#x60;, { ...this.formFilter.value, store: this.objStoreInfo._id })
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;objStoreInfo&quot; class&#x3D;&quot;flex flex-column w-full p-3 gap-2&quot;&gt;
+    &lt;div class&#x3D;&quot;flex justify-content-center&quot;&gt;
+        &lt;!-- store information --&gt;
+        &lt;div class&#x3D;&quot;flex  w-11 xl:w-8 flex-column gap-2 bg-white p-3 border-round-md surface-border border-1&quot;&gt;
+            &lt;!-- logo, awards --&gt;
+            &lt;div class&#x3D;&quot;flex flex-column lg:flex-row justify-content-between&quot;&gt;
+                &lt;!-- logo, name, address --&gt;
+                &lt;div class&#x3D;&quot;flex&quot;&gt;
+                    &lt;div class&#x3D;&quot;flex mr-3&quot;&gt;
+                        &lt;img [src]&#x3D;&quot;objStoreInfo.logo.url&quot; class&#x3D;&quot;shadow-1&quot; width&#x3D;&quot;100&quot; height&#x3D;&quot;100&quot; alt&#x3D;&quot;logo&quot; /&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;flex flex-column&quot;&gt;
+                        &lt;div class&#x3D;&quot;font-semibold font-medium text-md mb-1&quot;&gt;
+                            {{ objStoreInfo.name }}
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;flex flex-column text-xs&quot;&gt;
+                            &lt;div class&#x3D;&quot;flex&quot;&gt;
+                                {{ objStoreInfo.address.unit}}
+                                {{ objStoreInfo.address.street}},
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;flex&quot;&gt;
+                                {{ objStoreInfo.address.city}}
+                                {{ objStoreInfo.address.state}},
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;flex&quot;&gt;
+                                {{ objStoreInfo.address.postal_code}}
+                                {{ objStoreInfo.address.country}}
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;!-- awards --&gt;
+                &lt;div class&#x3D;&quot;flex flex-wrap gap-2 mt-3 lg:mt-0 mr-1 lg:mr-5&quot;&gt;
+                    @for(award of objStoreInfo.award; track award) {
+                    &lt;img [src]&#x3D;&quot;award.image.url&quot; width&#x3D;&quot;80&quot; height&#x3D;&quot;80&quot; class&#x3D;&quot;ml-2&quot; [alt]&#x3D;&quot;award.name&quot; /&gt;
+                    }
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!-- custom services --&gt;
+            &lt;div class&#x3D;&quot;p-2 mt-2&quot;&gt;
+                &lt;div class&#x3D;&quot;mb-3 text-lg font-bold&quot;&gt;Services Offering&lt;/div&gt;
+                &lt;div class&#x3D;&quot;formgrid grid w-full row-gap-2&quot;&gt;
+                    @for (service of objStoreInfo.custom_services; track service) {
+                    &lt;div class&#x3D;&quot;col-12 lg:col-6 xl:col-4&quot;&gt;
+                        &lt;div class&#x3D;&quot;text-sm&quot;&gt;
+                            &lt;i class&#x3D;&quot;pi pi-check text-green-500 mr-2&quot;&gt;&lt;/i&gt;
+                            {{ service }}
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    }
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!-- remote services --&gt;
+            &lt;div class&#x3D;&quot;p-2 mt-2&quot;&gt;
+                &lt;div class&#x3D;&quot;mb-3 text-lg font-bold&quot;&gt;Expolore Remote Services&lt;/div&gt;
+                &lt;div class&#x3D;&quot;formgrid grid&quot;&gt;
+                    @for (service of objStoreInfo.remote_services; track service) {
+                    &lt;div class&#x3D;&quot;field col-12 xl:col-4&quot;&gt;
+                        &lt;div
+                            class&#x3D;&quot;flex align-items-center surface-ground p-2 border-round-md border-200 border-1 text-sm&quot;&gt;
+                            &lt;img [src]&#x3D;&quot;service.image.url&quot; class&#x3D;&quot;ml-1&quot; width&#x3D;&quot;50&quot; height&#x3D;&quot;50&quot; [alt]&#x3D;&quot;service.name&quot; /&gt;
+                            &lt;div class&#x3D;&quot;flex flex-column ml-0 xl:ml-3&quot;&gt;
+                                &lt;div class&#x3D;&quot;text-sm mb-1&quot;&gt; {{ service.name }}&lt;/div&gt;
+                                &lt;div class&#x3D;&quot;text-xs text-color-secondary text-justify&quot;&gt; {{ service.description }}&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    }
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;flex justify-content-center &quot;&gt;
+        &lt;div class&#x3D;&quot;flex flex-column justify-content-center w-11 xl:w-8&quot; *ngIf&#x3D;&quot;arrCars&quot;&gt;
+            &lt;!-- filter --&gt;
+            &lt;div class&#x3D;&quot;flex flex-column gap-2 bg-white p-3 border-round-md surface-border border-1&quot;&gt;
+                &lt;div class&#x3D;&quot;text-xl text-600 font-bold mt-2 mb-3&quot;&gt;Total {{ arrCars.total }} vehicles for sale&lt;/div&gt;
+                &lt;form [formGroup]&#x3D;&quot;formFilter&quot; class&#x3D;&quot;formgrid grid&quot;&gt;
+                    &lt;div class&#x3D;&quot;field col-12 lg:col-4&quot;&gt;
+                        &lt;p-dropdown [options]&#x3D;&quot;arrMake&quot; placeholder&#x3D;&quot;Any Make&quot; optionLabel&#x3D;&quot;label&quot;
+                            formControlName&#x3D;&quot;make&quot; [filter]&#x3D;&quot;true&quot; optionValue&#x3D;&quot;value&quot; styleClass&#x3D;&quot;w-full&quot;
+                            (onChange)&#x3D;&quot;onChangeMake($event)&quot;&gt;
+                        &lt;/p-dropdown&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;field col-12 lg:col-4&quot;&gt;
+                        &lt;p-dropdown [options]&#x3D;&quot;arrModel&quot; placeholder&#x3D;&quot;Any Model&quot; optionLabel&#x3D;&quot;label&quot;
+                            formControlName&#x3D;&quot;model&quot; [filter]&#x3D;&quot;true&quot; optionValue&#x3D;&quot;value&quot; styleClass&#x3D;&quot;w-full&quot;&gt;
+                        &lt;/p-dropdown&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;field col-12 lg:col-2 xl:col-3&quot;&gt;
+                        &lt;input pInputText aria-describedby&#x3D;&quot;postal-code-help&quot; formControlName&#x3D;&quot;max_price&quot;
+                            placeholder&#x3D;&quot;Max Price&quot; class&#x3D;&quot;w-full&quot; /&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;col-12 lg:col-2 xl:col-1&quot;&gt;
+                        &lt;p-button label&#x3D;&quot;Search&quot; aria-label&#x3D;&quot;Submit&quot; [disabled]&#x3D;&quot;formFilter.invalid&quot;
+                            styleClass&#x3D;&quot;w-full button-primary&quot; (onClick)&#x3D;&quot;submitFormFilter()&quot;&gt;&lt;/p-button&gt;
+                    &lt;/div&gt;
+                &lt;/form&gt;
+                &lt;div class&#x3D;&quot;flex justify-content-center&quot;&gt;
+                    &lt;p-paginator (onPageChange)&#x3D;&quot;formFilter.valid ? submitFormFilter($event) : getStoreVehicles($event)&quot;
+                        [first]&#x3D;&quot;limit * page&quot; [rows]&#x3D;&quot;limit&quot; [totalRecords]&#x3D;&quot;arrCars!.total ?? 0&quot;
+                        [rowsPerPageOptions]&#x3D;&quot;[15, 30, 45, 90]&quot; /&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!-- vehicle list --&gt;
+            &lt;div class&#x3D;&quot;formgrid grid mt-2&quot;&gt;
+                @for(car of arrCars.data; track car._id; let i &#x3D; $index) {
+                &lt;div (click)&#x3D;&quot;redirectToCarDetails(car._id)&quot; class&#x3D;&quot;field col-12 md:col-6 lg:col-3 xl:col-4&quot;&gt;
+                    &lt;div
+                        class&#x3D;&quot;flex flex-column bg-white shadow-1 cursor-pointer border-round border-1 border-solid surface-border&quot;&gt;
+                        &lt;div class&#x3D;&quot;flex flex-column w-full&quot;&gt;
+                            &lt;div class&#x3D;&quot;flex w-full max-w-25rem h-15rem relative&quot;&gt;
+                                &lt;img [src]&#x3D;&quot;findCarPrimaryImage(car).url&quot; [alt]&#x3D;&quot;car.name&quot;
+                                    class&#x3D;&quot;bg-auto bg-no-repeat bg-center w-full border-round&quot;&gt;
+                                &lt;div class&#x3D;&quot;flex gap-2 absolute ml-2 mb-2 left-0 bottom-0&quot;&gt;
+                                    &lt;div class&#x3D;&quot;flex align-items-center surface-600 text-white py-1 px-2 border-round&quot;&gt;
+                                        &lt;i class&#x3D;&quot;pi pi-camera mr-2&quot;&gt;&lt;/i&gt;
+                                        {{ car.images.length }}
+                                    &lt;/div&gt;
+                                    &lt;div *ngIf&#x3D;&quot;car.videos.length &gt; 0&quot;
+                                        class&#x3D;&quot;flex align-items-center surface-600 text-white py-1 px-2 border-round&quot;&gt;
+                                        &lt;i class&#x3D;&quot;pi pi-video&quot;&gt;&lt;/i&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;flex flex-column w-full px-3&quot;&gt;
+                                &lt;div class&#x3D;&quot;flex text-xs mt-2 text-color-secondary w-full&quot;&gt;
+                                    &lt;div class&#x3D;&quot;flex align-items-center&quot;&gt;
+                                        &lt;span class&#x3D;&quot;material-symbols-outlined mr-1&quot;&gt;construction&lt;/span&gt;
+                                        {{ car.condition | titlecase }}
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;flex align-items-center ml-3&quot;&gt;
+                                        &lt;span class&#x3D;&quot;material-symbols-outlined mr-1&quot;&gt;speed&lt;/span&gt;
+                                        {{ car.odometer }} KM
+                                    &lt;/div&gt;
+                                    &lt;div class&#x3D;&quot;flex align-items-center ml-3&quot; *ngIf&#x3D;&quot;car.distance&quot;&gt;
+                                        &lt;span class&#x3D;&quot;material-symbols-outlined mr-1&quot;&gt;pin_drop&lt;/span&gt;
+                                        &lt;div class&#x3D;&quot;flex ml-1&quot;&gt; {{ car.distance }} &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div
+                                    class&#x3D;&quot;text-sm mt-1 font-semibold white-space-nowrap overflow-hidden text-overflow-ellipsis&quot;&gt;
+                                    {{ car.name }}
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;flex text-color text-sm mt-2 flex-wrap gap-1&quot;&gt;
+                                    &lt;p-chip *ngIf&#x3D;&quot;findCarServices(car.home_services, &#x27;trade_in_available&#x27;)&quot;
+                                        styleClass&#x3D;&quot;font-semibold text-xs mb-1 mr-1&quot; label&#x3D;&quot;Trade-In Online&quot;&gt;&lt;/p-chip&gt;
+                                    &lt;p-chip *ngIf&#x3D;&quot;findCarServices(car.home_services, &#x27;buy_online&#x27;)&quot;
+                                        styleClass&#x3D;&quot;font-semibold text-xs mb-1 mr-1&quot; label&#x3D;&quot;Buy Online&quot;&gt;&lt;/p-chip&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;p-divider styleClass&#x3D;&quot;my-2 px-3&quot;&gt;&lt;/p-divider&gt;
+                        &lt;div class&#x3D;&quot;flex w-full align-items-center px-3 mb-3&quot;&gt;
+                            &lt;div class&#x3D;&quot;flex w-6  align-items-center&quot;&gt;
+                                &lt;div class&#x3D;&quot;flex text-md font-semibold&quot;&gt;
+                                    {{ car.asking_price | currency:&#x27;USD&#x27;:&#x27;symbol&#x27;:&#x27;2.0&#x27; }}
+                                &lt;/div&gt;
+                                &lt;div class&#x3D;&quot;mt-1 ml-2 text-color-secondary text-xs mb-1&quot;&gt;Dealer Price&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                }
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;flex justify-content-center&quot;&gt;
+        &lt;div class&#x3D;&quot;flex flex-column justify-content-center w-11 xl:w-8 shadow-1&quot;&gt;
+            &lt;google-map height&#x3D;&quot;400px&quot; width&#x3D;&quot;750px&quot; [center]&#x3D;&quot;center&quot; [zoom]&#x3D;&quot;zoom&quot;&gt;
+                @for (position of markerPositions; track position) {
+                &lt;map-marker [position]&#x3D;&quot;position&quot; [options]&#x3D;&quot;markerOptions&quot; /&gt;
+                }
+            &lt;/google-map&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="objStoreInfo" class="flex flex-column w-full p-3 gap-2">    <div class="flex justify-content-center">        <!-- store information -->        <div class="flex  w-11 xl:w-8 flex-column gap-2 bg-white p-3 border-round-md surface-border border-1">            <!-- logo, awards -->            <div class="flex flex-column lg:flex-row justify-content-between">                <!-- logo, name, address -->                <div class="flex">                    <div class="flex mr-3">                        <img [src]="objStoreInfo.logo.url" class="shadow-1" width="100" height="100" alt="logo" />                    </div>                    <div class="flex flex-column">                        <div class="font-semibold font-medium text-md mb-1">                            {{ objStoreInfo.name }}                        </div>                        <div class="flex flex-column text-xs">                            <div class="flex">                                {{ objStoreInfo.address.unit}}                                {{ objStoreInfo.address.street}},                            </div>                            <div class="flex">                                {{ objStoreInfo.address.city}}                                {{ objStoreInfo.address.state}},                            </div>                            <div class="flex">                                {{ objStoreInfo.address.postal_code}}                                {{ objStoreInfo.address.country}}                            </div>                        </div>                    </div>                </div>                <!-- awards -->                <div class="flex flex-wrap gap-2 mt-3 lg:mt-0 mr-1 lg:mr-5">                    @for(award of objStoreInfo.award; track award) {                    <img [src]="award.image.url" width="80" height="80" class="ml-2" [alt]="award.name" />                    }                </div>            </div>            <!-- custom services -->            <div class="p-2 mt-2">                <div class="mb-3 text-lg font-bold">Services Offering</div>                <div class="formgrid grid w-full row-gap-2">                    @for (service of objStoreInfo.custom_services; track service) {                    <div class="col-12 lg:col-6 xl:col-4">                        <div class="text-sm">                            <i class="pi pi-check text-green-500 mr-2"></i>                            {{ service }}                        </div>                    </div>                    }                </div>            </div>            <!-- remote services -->            <div class="p-2 mt-2">                <div class="mb-3 text-lg font-bold">Expolore Remote Services</div>                <div class="formgrid grid">                    @for (service of objStoreInfo.remote_services; track service) {                    <div class="field col-12 xl:col-4">                        <div                            class="flex align-items-center surface-ground p-2 border-round-md border-200 border-1 text-sm">                            <img [src]="service.image.url" class="ml-1" width="50" height="50" [alt]="service.name" />                            <div class="flex flex-column ml-0 xl:ml-3">                                <div class="text-sm mb-1"> {{ service.name }}</div>                                <div class="text-xs text-color-secondary text-justify"> {{ service.description }}</div>                            </div>                        </div>                    </div>                    }                </div>            </div>        </div>    </div>    <div class="flex justify-content-center ">        <div class="flex flex-column justify-content-center w-11 xl:w-8" *ngIf="arrCars">            <!-- filter -->            <div class="flex flex-column gap-2 bg-white p-3 border-round-md surface-border border-1">                <div class="text-xl text-600 font-bold mt-2 mb-3">Total {{ arrCars.total }} vehicles for sale</div>                <form [formGroup]="formFilter" class="formgrid grid">                    <div class="field col-12 lg:col-4">                        <p-dropdown [options]="arrMake" placeholder="Any Make" optionLabel="label"                            formControlName="make" [filter]="true" optionValue="value" styleClass="w-full"                            (onChange)="onChangeMake($event)">                        </p-dropdown>                    </div>                    <div class="field col-12 lg:col-4">                        <p-dropdown [options]="arrModel" placeholder="Any Model" optionLabel="label"                            formControlName="model" [filter]="true" optionValue="value" styleClass="w-full">                        </p-dropdown>                    </div>                    <div class="field col-12 lg:col-2 xl:col-3">                        <input pInputText aria-describedby="postal-code-help" formControlName="max_price"                            placeholder="Max Price" class="w-full" />                    </div>                    <div class="col-12 lg:col-2 xl:col-1">                        <p-button label="Search" aria-label="Submit" [disabled]="formFilter.invalid"                            styleClass="w-full button-primary" (onClick)="submitFormFilter()"></p-button>                    </div>                </form>                <div class="flex justify-content-center">                    <p-paginator (onPageChange)="formFilter.valid ? submitFormFilter($event) : getStoreVehicles($event)"                        [first]="limit * page" [rows]="limit" [totalRecords]="arrCars!.total ?? 0"                        [rowsPerPageOptions]="[15, 30, 45, 90]" />                </div>            </div>            <!-- vehicle list -->            <div class="formgrid grid mt-2">                @for(car of arrCars.data; track car._id; let i = $index) {                <div (click)="redirectToCarDetails(car._id)" class="field col-12 md:col-6 lg:col-3 xl:col-4">                    <div                        class="flex flex-column bg-white shadow-1 cursor-pointer border-round border-1 border-solid surface-border">                        <div class="flex flex-column w-full">                            <div class="flex w-full max-w-25rem h-15rem relative">                                <img [src]="findCarPrimaryImage(car).url" [alt]="car.name"                                    class="bg-auto bg-no-repeat bg-center w-full border-round">                                <div class="flex gap-2 absolute ml-2 mb-2 left-0 bottom-0">                                    <div class="flex align-items-center surface-600 text-white py-1 px-2 border-round">                                        <i class="pi pi-camera mr-2"></i>                                        {{ car.images.length }}                                    </div>                                    <div *ngIf="car.videos.length > 0"                                        class="flex align-items-center surface-600 text-white py-1 px-2 border-round">                                        <i class="pi pi-video"></i>                                    </div>                                </div>                            </div>                            <div class="flex flex-column w-full px-3">                                <div class="flex text-xs mt-2 text-color-secondary w-full">                                    <div class="flex align-items-center">                                        <span class="material-symbols-outlined mr-1">construction</span>                                        {{ car.condition | titlecase }}                                    </div>                                    <div class="flex align-items-center ml-3">                                        <span class="material-symbols-outlined mr-1">speed</span>                                        {{ car.odometer }} KM                                    </div>                                    <div class="flex align-items-center ml-3" *ngIf="car.distance">                                        <span class="material-symbols-outlined mr-1">pin_drop</span>                                        <div class="flex ml-1"> {{ car.distance }} </div>                                    </div>                                </div>                                <div                                    class="text-sm mt-1 font-semibold white-space-nowrap overflow-hidden text-overflow-ellipsis">                                    {{ car.name }}                                </div>                                <div class="flex text-color text-sm mt-2 flex-wrap gap-1">                                    <p-chip *ngIf="findCarServices(car.home_services, \'trade_in_available\')"                                        styleClass="font-semibold text-xs mb-1 mr-1" label="Trade-In Online"></p-chip>                                    <p-chip *ngIf="findCarServices(car.home_services, \'buy_online\')"                                        styleClass="font-semibold text-xs mb-1 mr-1" label="Buy Online"></p-chip>                                </div>                            </div>                        </div>                        <p-divider styleClass="my-2 px-3"></p-divider>                        <div class="flex w-full align-items-center px-3 mb-3">                            <div class="flex w-6  align-items-center">                                <div class="flex text-md font-semibold">                                    {{ car.asking_price | currency:\'USD\':\'symbol\':\'2.0\' }}                                </div>                                <div class="mt-1 ml-2 text-color-secondary text-xs mb-1">Dealer Price</div>                            </div>                        </div>                    </div>                </div>                }            </div>        </div>    </div>    <div class="flex justify-content-center">        <div class="flex flex-column justify-content-center w-11 xl:w-8 shadow-1">            <google-map height="400px" width="750px" [center]="center" [zoom]="zoom">                @for (position of markerPositions; track position) {                <map-marker [position]="position" [options]="markerOptions" />                }            </google-map>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarListComponent', 'selector': 'app-car-list'},{'name': 'CarManageComponent', 'selector': 'app-car-manage'},{'name': 'DealerDetailComponent', 'selector': 'app-dealer-detail'},{'name': 'FavouriteVehicleComponent', 'selector': 'app-favourite-vehicle'},{'name': 'FinanceApplicationComponent', 'selector': 'app-finance-application'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'InquiryComponent', 'selector': 'app-inquiry'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PrequalifyLoanComponent', 'selector': 'app-prequalify-loan'},{'name': 'PriceAlertComponent', 'selector': 'app-price-alert'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SearchAlertComponent', 'selector': 'app-search-alert'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'StoreComponent', 'selector': 'app-store'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'VehicleDetailComponent', 'selector': 'app-vehicle-detail'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'DealerDetailComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'DealerDetailComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
